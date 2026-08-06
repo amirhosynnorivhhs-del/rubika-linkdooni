@@ -1,6 +1,7 @@
-<!DOCTYPE html><html lang="fa" dir="rtl"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>لینک‌دونی کرمانشاه</title><style>
+<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>لینک‌دونی کرمانشاه</title><style>
 
 *{
 box-sizing:border-box;
@@ -16,13 +17,53 @@ body{
 min-height:100vh;
 font-family:Tahoma,Arial,sans-serif;
 color:#fff;
+
 background:
-radial-gradient(circle at 15% 10%,rgba(139,40,255,.28),transparent 28%),
-radial-gradient(circle at 90% 30%,rgba(91,20,180,.25),transparent 30%),
-linear-gradient(145deg,#020203,#09040f 50%,#030305);
+radial-gradient(
+circle at 15% 5%,
+rgba(150,45,255,.30),
+transparent 28%
+),
+
+radial-gradient(
+circle at 90% 25%,
+rgba(90,20,180,.25),
+transparent 30%
+),
+
+linear-gradient(
+145deg,
+#020203,
+#09040f 50%,
+#030305
+);
 }
 
-/* صفحه */
+
+/* HEADER */
+
+.header{
+padding:20px 15px 35px;
+
+border-radius:
+0 0 35px 35px;
+
+background:
+linear-gradient(
+135deg,
+rgba(15,7,25,.98),
+rgba(64,17,105,.92)
+);
+
+border-bottom:
+1px solid
+rgba(210,140,255,.45);
+
+box-shadow:
+0 20px 70px
+rgba(112,30,255,.25);
+}
+
 
 .container{
 width:100%;
@@ -30,18 +71,6 @@ max-width:720px;
 margin:auto;
 }
 
-/* هدر */
-
-.header{
-padding:20px 15px 35px;
-border-radius:0 0 35px 35px;
-background:
-linear-gradient(135deg,
-rgba(15,7,25,.98),
-rgba(64,17,105,.92));
-border-bottom:1px solid rgba(206,132,255,.45);
-box-shadow:0 20px 70px rgba(112,30,255,.25);
-}
 
 .top{
 display:flex;
@@ -50,26 +79,32 @@ justify-content:space-between;
 gap:10px;
 }
 
+
 .logo{
 font-size:19px;
 font-weight:bold;
+
 text-shadow:
 0 0 10px rgba(218,163,255,.8),
 0 0 25px rgba(139,50,255,.5);
 }
+
 
 .top-links{
 display:flex;
 gap:7px;
 }
 
+
 .top-links a{
-position:relative;
-overflow:hidden;
 text-decoration:none;
 color:#fff;
-padding:10px 12px;
+
+padding:
+10px 12px;
+
 border-radius:12px;
+
 font-size:10px;
 font-weight:bold;
 
@@ -80,88 +115,69 @@ rgba(255,255,255,.20),
 rgba(255,255,255,.05)
 );
 
-border:1px solid rgba(255,255,255,.35);
+border:
+1px solid
+rgba(255,255,255,.35);
 
 box-shadow:
-inset 1px 1px 2px rgba(255,255,255,.5),
-inset -1px -1px 2px rgba(0,0,0,.3),
-0 0 18px rgba(148,48,255,.25);
+inset 1px 1px 2px
+rgba(255,255,255,.5),
 
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
+inset -1px -1px 2px
+rgba(0,0,0,.3),
+
+0 0 18px
+rgba(148,48,255,.25);
+
+backdrop-filter:
+blur(12px);
+
+-webkit-backdrop-filter:
+blur(12px);
 }
 
-/* برق شیشه */
 
-.top-links a::after,
-.action::after,
-.category::after,
-.search button::after{
-
-content:"";
-
-position:absolute;
-
-top:-80%;
-left:-80%;
-
-width:55%;
-height:260%;
-
-transform:rotate(35deg);
-
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.55),
-transparent
-);
-
-opacity:.35;
-
-transition:.5s;
-}
-
-.top-links a:hover::after,
-.action:hover::after,
-.category:hover::after,
-.search button:hover::after{
-
-left:130%;
-
-}
-
-/* هیرو */
+/* HERO */
 
 .hero{
 text-align:center;
-padding:35px 5px 0;
+
+padding:
+35px 5px 0;
 }
+
 
 .hero h1{
 font-size:25px;
 line-height:1.7;
+
 margin-bottom:10px;
 
 text-shadow:
-0 0 12px rgba(224,177,255,.8),
-0 0 35px rgba(141,43,255,.55);
+0 0 12px
+rgba(224,177,255,.8),
+
+0 0 35px
+rgba(141,43,255,.55);
 }
+
 
 .hero p{
 font-size:12px;
 line-height:2;
+
 color:#d8cce0;
 }
 
-/* جستجو */
+
+/* SEARCH */
 
 .search{
-position:relative;
 display:flex;
 gap:6px;
+
 margin-top:22px;
+
 padding:6px;
 
 border-radius:17px;
@@ -173,89 +189,135 @@ rgba(255,255,255,.16),
 rgba(255,255,255,.035)
 );
 
-border:1px solid rgba(255,255,255,.30);
+border:
+1px solid
+rgba(255,255,255,.30);
 
 box-shadow:
-inset 1px 1px 2px rgba(255,255,255,.4),
-inset -2px -2px 4px rgba(0,0,0,.5),
-0 0 25px rgba(131,38,255,.22);
+inset 1px 1px 2px
+rgba(255,255,255,.4),
 
-backdrop-filter:blur(15px);
--webkit-backdrop-filter:blur(15px);
+inset -2px -2px 4px
+rgba(0,0,0,.5),
+
+0 0 25px
+rgba(131,38,255,.22);
+
+backdrop-filter:
+blur(15px);
+
+-webkit-backdrop-filter:
+blur(15px);
 }
+
 
 .search input{
 width:100%;
 min-width:0;
+
 border:0;
 outline:0;
+
 background:transparent;
+
 color:#fff;
+
 padding:13px;
+
 font-family:Tahoma;
 font-size:12px;
 }
+
 
 .search input::placeholder{
 color:#b8a9c1;
 }
 
+
 .search button{
-position:relative;
-overflow:hidden;
-border:1px solid rgba(235,206,255,.5);
+border:1px solid
+rgba(235,206,255,.5);
+
 color:#fff;
+
 font-family:Tahoma;
 font-weight:bold;
-padding:0 17px;
+
+padding:
+0 17px;
+
 border-radius:12px;
+
 cursor:pointer;
 
 background:
 linear-gradient(
 135deg,
-rgba(174,83,255,.75),
-rgba(83,24,150,.8)
+rgba(174,83,255,.85),
+rgba(83,24,150,.9)
 );
 
 box-shadow:
-inset 1px 1px 2px rgba(255,255,255,.45),
-inset -2px -2px 3px rgba(0,0,0,.35),
-0 0 20px rgba(145,45,255,.4);
+inset 1px 1px 2px
+rgba(255,255,255,.45),
+
+inset -2px -2px 3px
+rgba(0,0,0,.35),
+
+0 0 20px
+rgba(145,45,255,.4);
 }
 
-/* محتوای اصلی */
+
+/* MAIN */
 
 main{
 width:100%;
 max-width:720px;
+
 margin:auto;
-padding:23px 15px;
+
+padding:
+23px 15px;
 }
+
 
 .section-title{
 display:flex;
+
 align-items:center;
+
 justify-content:space-between;
+
 margin-bottom:14px;
 }
+
 
 .section-title h2{
 font-size:16px;
 }
+
 
 .section-title span{
 font-size:10px;
 color:#a99caf;
 }
 
-/* دسته بندی */
+
+/* CATEGORIES */
 
 .categories{
 display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
+
+grid-template-columns:
+repeat(
+2,
+minmax(0,1fr)
+);
+
 gap:12px;
 }
+
 
 .category{
 position:relative;
@@ -277,20 +339,29 @@ rgba(255,255,255,.055) 45%,
 rgba(124,40,190,.16)
 );
 
-border:1px solid rgba(255,255,255,.34);
+border:
+1px solid
+rgba(255,255,255,.34);
 
 box-shadow:
 
-inset 2px 2px 3px rgba(255,255,255,.42),
+inset 2px 2px 3px
+rgba(255,255,255,.42),
 
-inset -3px -3px 5px rgba(0,0,0,.45),
+inset -3px -3px 5px
+rgba(0,0,0,.45),
 
-0 10px 25px rgba(0,0,0,.4),
+0 10px 25px
+rgba(0,0,0,.4),
 
-0 0 20px rgba(132,42,255,.18);
+0 0 20px
+rgba(132,42,255,.18);
 
-backdrop-filter:blur(15px);
--webkit-backdrop-filter:blur(15px);
+backdrop-filter:
+blur(15px);
+
+-webkit-backdrop-filter:
+blur(15px);
 
 cursor:pointer;
 
@@ -300,69 +371,84 @@ box-shadow .2s,
 border-color .2s;
 }
 
+
 .category:hover{
+transform:
+translateY(-3px);
 
-transform:translateY(-3px);
-
-border-color:rgba(218,166,255,.8);
+border-color:
+rgba(218,166,255,.8);
 
 box-shadow:
 
-inset 2px 2px 4px rgba(255,255,255,.55),
+inset 2px 2px 4px
+rgba(255,255,255,.55),
 
-inset -3px -3px 5px rgba(0,0,0,.4),
+inset -3px -3px 5px
+rgba(0,0,0,.4),
 
-0 12px 35px rgba(0,0,0,.45),
+0 12px 35px
+rgba(0,0,0,.45),
 
-0 0 30px rgba(150,50,255,.4);
-
+0 0 30px
+rgba(150,50,255,.4);
 }
+
 
 .category:active{
 transform:scale(.95);
 }
 
+
 .category .icon{
 display:block;
-font-size:31px;
-padding-top:17px;
 
-filter:
-drop-shadow(
-0 0 8px rgba(204,143,255,.6)
-);
+font-size:31px;
+
+padding-top:17px;
 }
+
 
 .category .name{
 display:block;
+
 margin-top:9px;
+
 font-size:11px;
+
 font-weight:bold;
 }
 
-/* دکمه ها */
+
+/* BUTTONS */
 
 .actions{
 display:grid;
+
 gap:12px;
-margin:23px 0;
+
+margin:
+23px 0;
 }
 
-.action{
-position:relative;
-overflow:hidden;
 
+.action{
 display:block;
+
 width:100%;
 
 padding:16px;
 
-border-radius:16px;
+border-radius:17px;
 
 text-align:center;
+
 text-decoration:none;
 
-font-size:12px;
+font-family:Tahoma;
+
+font-size:13px;
+
 font-weight:bold;
 
 color:#fff;
@@ -370,75 +456,102 @@ color:#fff;
 background:
 linear-gradient(
 135deg,
-rgba(255,255,255,.20),
-rgba(255,255,255,.045) 50%,
-rgba(128,42,200,.20)
+rgba(178,82,255,.82),
+rgba(72,19,130,.92)
 );
 
-border:1px solid rgba(255,255,255,.35);
+border:
+1px solid
+rgba(239,211,255,.65);
 
 box-shadow:
 
-inset 2px 2px 3px rgba(255,255,255,.42),
+inset 2px 2px 4px
+rgba(255,255,255,.48),
 
-inset -3px -3px 5px rgba(0,0,0,.4),
+inset -3px -3px 5px
+rgba(0,0,0,.38),
 
-0 12px 28px rgba(0,0,0,.4),
+0 10px 28px
+rgba(0,0,0,.45),
 
-0 0 22px rgba(140,42,255,.25);
+0 0 25px
+rgba(151,45,255,.35);
 
-backdrop-filter:blur(15px);
--webkit-backdrop-filter:blur(15px);
+backdrop-filter:
+blur(12px);
 
-transition:.2s;
+-webkit-backdrop-filter:
+blur(12px);
+
+transition:
+transform .2s,
+box-shadow .2s;
 }
+
 
 .action:hover{
 
-transform:translateY(-2px);
-
-border-color:
-rgba(224,175,255,.85);
+transform:
+translateY(-2px);
 
 box-shadow:
 
-inset 2px 2px 4px rgba(255,255,255,.55),
+inset 2px 2px 4px
+rgba(255,255,255,.55),
 
-inset -3px -3px 5px rgba(0,0,0,.4),
+inset -3px -3px 5px
+rgba(0,0,0,.4),
 
-0 15px 35px rgba(0,0,0,.5),
+0 15px 35px
+rgba(0,0,0,.5),
 
-0 0 32px rgba(154,47,255,.45);
+0 0 35px
+rgba(163,50,255,.55);
 }
+
+
+.action:active{
+transform:
+scale(.97);
+}
+
 
 .add-link{
+
 background:
 linear-gradient(
 135deg,
-rgba(112,43,181,.48),
-rgba(255,255,255,.08)
+#9b42ec,
+#55149a
 );
 }
+
 
 .premium-link{
+
 background:
 linear-gradient(
 135deg,
-rgba(180,55,255,.58),
-rgba(78,20,130,.35)
+#c35cff,
+#7019ad
 );
 }
 
-/* کارت لینک */
+
+/* CARDS */
 
 .cards{
 display:grid;
 gap:11px;
 }
 
+
 .card{
 display:flex;
+
 align-items:center;
+
 gap:11px;
 
 width:100%;
@@ -454,27 +567,39 @@ rgba(255,255,255,.16),
 rgba(255,255,255,.045)
 );
 
-border:1px solid rgba(255,255,255,.27);
+border:
+1px solid
+rgba(255,255,255,.27);
 
 box-shadow:
 
-inset 1px 1px 3px rgba(255,255,255,.35),
+inset 1px 1px 3px
+rgba(255,255,255,.35),
 
-inset -2px -2px 4px rgba(0,0,0,.4),
+inset -2px -2px 4px
+rgba(0,0,0,.4),
 
-0 10px 25px rgba(0,0,0,.35);
+0 10px 25px
+rgba(0,0,0,.35);
 
-backdrop-filter:blur(14px);
--webkit-backdrop-filter:blur(14px);
+backdrop-filter:
+blur(14px);
+
+-webkit-backdrop-filter:
+blur(14px);
 }
+
 
 .avatar{
 width:48px;
 height:48px;
+
 min-width:48px;
 
 display:flex;
+
 align-items:center;
+
 justify-content:center;
 
 border-radius:14px;
@@ -488,38 +613,57 @@ rgba(183,91,255,.35),
 rgba(73,21,120,.3)
 );
 
-border:1px solid rgba(224,180,255,.35);
+border:
+1px solid
+rgba(224,180,255,.35);
 
 box-shadow:
-inset 1px 1px 2px rgba(255,255,255,.35),
-0 0 18px rgba(139,44,255,.25);
+inset 1px 1px 2px
+rgba(255,255,255,.35),
+
+0 0 18px
+rgba(139,44,255,.25);
 }
+
 
 .card-info{
 flex:1;
 min-width:0;
 }
 
+
 .card-info h3{
-margin:0 0 6px;
+margin:
+0 0 6px;
+
 font-size:13px;
+
 overflow:hidden;
+
 text-overflow:ellipsis;
+
 white-space:nowrap;
 }
+
 
 .meta{
 color:#b8aebe;
+
 font-size:10px;
+
 line-height:1.8;
 }
 
+
 .view{
 color:#fff;
+
 text-decoration:none;
+
 white-space:nowrap;
 
-padding:9px 11px;
+padding:
+9px 11px;
 
 border-radius:10px;
 
@@ -532,18 +676,26 @@ rgba(174,76,255,.55),
 rgba(78,23,135,.55)
 );
 
-border:1px solid rgba(232,198,255,.4);
+border:
+1px solid
+rgba(232,198,255,.4);
 
 box-shadow:
-inset 1px 1px 2px rgba(255,255,255,.4),
-0 0 15px rgba(139,43,255,.25);
+inset 1px 1px 2px
+rgba(255,255,255,.4),
+
+0 0 15px
+rgba(139,43,255,.25);
 }
 
-/* خالی */
+
+/* EMPTY */
 
 .empty{
 width:100%;
-padding:28px 15px;
+
+padding:
+28px 15px;
 
 border-radius:18px;
 
@@ -552,6 +704,7 @@ text-align:center;
 color:#a99caf;
 
 font-size:12px;
+
 line-height:2;
 
 background:
@@ -561,50 +714,69 @@ rgba(255,255,255,.11),
 rgba(255,255,255,.035)
 );
 
-border:1px solid rgba(255,255,255,.20);
+border:
+1px solid
+rgba(255,255,255,.20);
 
 box-shadow:
-inset 1px 1px 3px rgba(255,255,255,.25),
-0 10px 25px rgba(0,0,0,.3);
+inset 1px 1px 3px
+rgba(255,255,255,.25),
+
+0 10px 25px
+rgba(0,0,0,.3);
 }
 
-/* فوتر */
+
+/* FOOTER */
 
 footer{
 text-align:center;
+
 color:#817587;
+
 font-size:10px;
-padding:23px 10px 35px;
+
+padding:
+23px 10px 35px;
 }
 
-/* موبایل */
+
+/* MOBILE */
 
 @media(max-width:420px){
 
 .top{
 flex-direction:column;
+
 align-items:stretch;
 }
 
+
 .logo{
 text-align:center;
+
 margin-bottom:4px;
 }
+
 
 .top-links{
 width:100%;
 }
 
+
 .top-links a{
 flex:1;
+
 text-align:center;
 }
+
 
 .hero h1{
 font-size:21px;
 }
 
 }
+
 
 @media(max-width:350px){
 
@@ -614,18 +786,18 @@ grid-template-columns:1fr;
 
 }
 
-</style></head><body><header class="header"><div class="container"><div class="top"><div class="logo">
-🔗 لینک‌دونی کرمانشاه
-</div><div class="top-links"><a href="admin.html">
-🛠️ مدیریت
-</a><a href="register.html">
-👤 ورود
-</a></div></div><div class="hero"><h1>
-لینک‌دونی کرمانشاه
-</h1><p>
-گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن
-<br>
-معرفی، جستجو و ثبت لینک در یکجا
+</style></head><body><header class="header"><div class="container"><div class="top"><div class="logo">🔗 لینک‌دونی کرمانشاه
+
+</div><div class="top-links"><a href="admin.html">🛠️ مدیریت
+
+</a><a href="register.html">👤 ورود
+
+</a></div></div><div class="hero"><h1>لینک‌دونی کرمانشاه
+
+</h1><p>گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن
+
+<br>معرفی، جستجو و ثبت لینک در یکجا
+
 </p></div><div class="search"><input
 id="searchInput"
 type="search"
@@ -640,12 +812,11 @@ onclick="searchLinks()"
 «»
 
 جستجو
-</button>
 
-</div></div></header><main><div class="section-title"><h2>
-📂 دسته‌بندی‌ها
-</h2><span id="categoryText">
-همه
+</button></div></div></header><main><div class="section-title"><h2>📂 دسته‌بندی‌ها
+
+</h2><span id="categoryText">همه
+
 </span></div><div class="categories"><button
 class="category"
 type="button"
@@ -653,9 +824,9 @@ onclick="showCategory('all')"
 
 «»
 
-<span class="icon">⭐</span>
-
-<span class="name">
+<span class="icon">
+⭐
+</span><span class="name">
 همه لینک‌ها
 </span></button><button
 class="category"
@@ -664,9 +835,9 @@ onclick="showCategory('group')"
 
 «»
 
-<span class="icon">👥</span>
-
-<span class="name">
+<span class="icon">
+👥
+</span><span class="name">
 گروه‌های روبیکا
 </span></button><button
 class="category"
@@ -675,9 +846,9 @@ onclick="showCategory('channel')"
 
 «»
 
-<span class="icon">📢</span>
-
-<span class="name">
+<span class="icon">
+📢
+</span><span class="name">
 کانال‌های روبیکا
 </span></button><button
 class="category"
@@ -686,9 +857,9 @@ onclick="showCategory('music')"
 
 «»
 
-<span class="icon">🎵</span>
-
-<span class="name">
+<span class="icon">
+🎵
+</span><span class="name">
 موزیک
 </span></button><button
 class="category"
@@ -697,9 +868,9 @@ onclick="showCategory('movie')"
 
 «»
 
-<span class="icon">🎬</span>
-
-<span class="name">
+<span class="icon">
+🎬
+</span><span class="name">
 فیلم و سریال
 </span></button><button
 class="category"
@@ -708,9 +879,9 @@ onclick="showCategory('game')"
 
 «»
 
-<span class="icon">🎮</span>
-
-<span class="name">
+<span class="icon">
+🎮
+</span><span class="name">
 بازی و سرگرمی
 </span></button><button
 class="category"
@@ -719,11 +890,11 @@ onclick="showCategory('education')"
 
 «»
 
-<span class="icon">📚</span>
-
-<span class="name">
+<span class="icon">
+📚
+</span><span class="name">
 آموزشی
-</span></button></div><div class="actions"><a
+</span></button></div><!-- ثبت لینک --><div class="actions"><a
 href="add-link.html"
 class="action add-link"
 
@@ -739,10 +910,10 @@ class="action premium-link"
 
 💎 ثبت لینک ویژه
 
-</a></div><div class="section-title"><h2 id="listTitle">
-⭐ لینک‌های منتخب
-</h2><span id="count">
-۰ مورد
+</a></div><div class="section-title"><h2 id="listTitle">⭐ لینک‌های منتخب
+
+</h2><span id="count">۰ مورد
+
 </span></div><div
 id="userLinks"
 class="cards"
@@ -751,7 +922,9 @@ class="cards"
 
 </footer><script>
 
+
 let savedLinks=[];
+
 
 try{
 
@@ -760,11 +933,14 @@ JSON.parse(
 localStorage.getItem("rubikaLinks")
 )||[];
 
-}catch(error){
+}
+
+catch(error){
 
 savedLinks=[];
 
 }
+
 
 
 function clean(value){
@@ -776,16 +952,23 @@ return String(value||"")
 }
 
 
+
 function escapeText(value){
 
 return String(value)
+
 .replace(/&/g,"&amp;")
+
 .replace(/</g,"&lt;")
+
 .replace(/>/g,"&gt;")
+
 .replace(/"/g,"&quot;")
+
 .replace(/'/g,"&#039;");
 
 }
+
 
 
 function renderLinks(list){
@@ -796,7 +979,9 @@ document.getElementById("userLinks");
 const count=
 document.getElementById("count");
 
+
 box.innerHTML="";
+
 
 count.innerText=
 list.length+" مورد";
@@ -832,30 +1017,39 @@ list.forEach(function(item){
 const card=
 document.createElement("div");
 
+
 card.className="card";
 
 
 const type=
 clean(item.type);
 
+
 const icon=
 type==="channel"
 ?"📢"
 :"👥";
+
 
 const typeName=
 type==="channel"
 ?"کانال"
 :"گروه";
 
+
 const title=
-item.title||"بدون نام";
+item.title||
+"بدون نام";
+
 
 const category=
-item.category||"سایر";
+item.category||
+"سایر";
+
 
 const link=
-item.link||"#";
+item.link||
+"#";
 
 
 card.innerHTML=`
@@ -915,6 +1109,7 @@ box.appendChild(card);
 }
 
 
+
 function showCategory(type){
 
 let results;
@@ -924,11 +1119,16 @@ if(type==="all"){
 
 results=savedLinks;
 
-document.getElementById("categoryText")
+
+document
+.getElementById("categoryText")
 .innerText="همه";
 
-document.getElementById("listTitle")
-.innerText="⭐ لینک‌های منتخب";
+
+document
+.getElementById("listTitle")
+.innerText=
+"⭐ لینک‌های منتخب";
 
 }
 
@@ -946,14 +1146,16 @@ return clean(item.type)===type;
 });
 
 
-document.getElementById("categoryText")
+document
+.getElementById("categoryText")
 .innerText=
 type==="group"
 ?"گروه‌ها"
 :"کانال‌ها";
 
 
-document.getElementById("listTitle")
+document
+.getElementById("listTitle")
 .innerText=
 type==="group"
 ?"👥 گروه‌های روبیکا"
@@ -985,12 +1187,14 @@ education:"📚 آموزشی"
 };
 
 
-document.getElementById("categoryText")
+document
+.getElementById("categoryText")
 .innerText=
 names[type]||"دسته";
 
 
-document.getElementById("listTitle")
+document
+.getElementById("listTitle")
 .innerText=
 names[type]||"📂 دسته‌بندی";
 
@@ -1002,10 +1206,12 @@ renderLinks(results);
 }
 
 
+
 function searchLinks(){
 
 const input=
 document.getElementById("searchInput");
+
 
 const keyword=
 clean(input.value);
@@ -1026,8 +1232,11 @@ savedLinks.filter(function(item){
 const text=
 
 String(item.title||"")+" "+
+
 String(item.description||"")+" "+
+
 String(item.category||"")+" "+
+
 String(item.type||"");
 
 
@@ -1037,16 +1246,21 @@ return clean(text)
 });
 
 
-document.getElementById("categoryText")
+document
+.getElementById("categoryText")
 .innerText="جستجو";
 
-document.getElementById("listTitle")
-.innerText="🔎 نتایج جستجو";
+
+document
+.getElementById("listTitle")
+.innerText=
+"🔎 نتایج جستجو";
 
 
 renderLinks(results);
 
 }
+
 
 
 document
@@ -1061,10 +1275,10 @@ searchLinks();
 
 }
 
-}
-);
+});
 
 
 renderLinks(savedLinks);
+
 
 </script></body></html>

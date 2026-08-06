@@ -1,0 +1,27 @@
+{
+  "name": "لینک‌دونی کرمانشاه",
+  "short_name": "لینک‌دونی",
+  "description": "گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#030305",
+  "theme_color": "#6d20a8",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

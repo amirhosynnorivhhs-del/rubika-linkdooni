@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>پنل مدیریت | لینک‌دونی روبیکا</title><style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+
+margin:0;
+
+font-family:
+Tahoma,
+Arial,
+sans-serif;
+
+background:#f4f6fb;
+
+color:#172033;
+
+padding:20px;
+
+}
+
+.container{
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+.header{
+
+background:
+linear-gradient(
+135deg,
+#4d5bea,
+#7138d8
+);
+
+color:white;
+
+padding:22px;
+
+border-radius:20px;
+
+margin-bottom:18px;
+
+}
+
+.header h1{
+
+margin:0 0 8px;
+
+font-size:20px;
+
+}
+
+.header p{
+
+margin:0;
+
+font-size:12px;
+
+opacity:.9;
+
+}
+
+.actions{
+
+display:flex;
+
+gap:10px;
+
+margin-bottom:18px;
+
+}
+
+.btn{
+
+flex:1;
+
+border:0;
+
+border-radius:12px;
+
+padding:13px;
+
+font-family:Tahoma;
+
+font-weight:bold;
+
+text-decoration:none;
+
+text-align:center;
+
+cursor:pointer;
+
+}
+
+.home{
+
+background:#172033;
+
+color:white;
+
+}
+
+.clear{
+
+background:#ffe8e8;
+
+color:#d33;
+
+}
+
+.stats{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:10px;
+
+margin-bottom:18px;
+
+}
+
+.stat{
+
+background:white;
+
+border-radius:16px;
+
+padding:18px;
+
+text-align:center;
+
+border:1px solid #e7e9f0;
+
+}
+
+.stat strong{
+
+display:block;
+
+font-size:22px;
+
+color:#4d55e8;
+
+margin-bottom:5px;
+
+}
+
+.stat span{
+
+font-size:11px;
+
+color:#777;
+
+}
+
+.requests{
+
+display:grid;
+
+gap:12px;
+
+}
+
+.request{
+
+background:white;
+
+border-radius:17px;
+
+padding:16px;
+
+border:1px solid #e7e9f0;
+
+}
+
+.request h3{
+
+margin:0 0 10px;
+
+font-size:15px;
+
+}
+
+.info{
+
+font-size:11px;
+
+line-height:2;
+
+color:#666;
+
+}
+
+.request-buttons{
+
+display:flex;
+
+gap:8px;
+
+margin-top:13px;
+
+}
+
+.approve{
+
+flex:1;
+
+background:#18a957;
+
+color:white;
+
+border:0;
+
+border-radius:10px;
+
+padding:10px;
+
+font-family:Tahoma;
+
+cursor:pointer;
+
+}
+
+.reject{
+
+flex:1;
+
+background:#ffe5e5;
+
+color:#d33;
+
+border:0;
+
+border-radius:10px;
+
+padding:10px;
+
+font-family:Tahoma;
+
+cursor:pointer;
+
+}
+
+.empty{
+
+background:white;
+
+border-radius:17px;
+
+padding:30px 15px;
+
+text-align:center;
+
+color:#777;
+
+font-size:13px;
+
+}
+
+</style></head><body><div class="container"><div class="header"><h1>
+🛠️ پنل مدیریت لینک‌دونی روبیکا
+</h1><p>
+مدیریت درخواست‌های ثبت لینک
+</p></div><div class="actions"><a
+href="index.html"
+class="btn home"
+
+«»
+
+🏠 صفحه اصلی
+</a>
+
+<button
+class="btn clear"
+onclick="clearRequests()"
+
+«»
+
+🗑️ پاک کردن درخواست‌ها
+</button>
+
+</div><div class="stats"><div class="stat"><strong id="total">
+۰
+</strong><span>
+کل درخواست‌ها
+</span></div><div class="stat"><strong id="waiting">
+۰
+</strong><span>
+در انتظار بررسی
+</span></div></div><div
+class="requests"
+id="requests"
+>
+</div></div><script>
+
+
+function getRequests(){
+
+return JSON.parse(
+localStorage.getItem("premiumRequests")
+) || [];
+
+}
+
+
+
+function renderRequests(){
+
+let requests =
+getRequests();
+
+let container =
+document.getElementById("requests");
+
+let total =
+document.getElementById("total");
+
+let waiting =
+document.getElementById("waiting");
+
+
+total.innerText =
+requests.length;
+
+
+waiting.innerText =
+requests.filter(
+function(item){
+
+return item.status ===
+"waiting";
+
+}
+).length;
+
+
+container.innerHTML = "";
+
+
+if(requests.length === 0){
+
+container.innerHTML = `
+
+<div class="empty">
+
+📭
+
+<br><br>
+
+درخواستی برای نمایش وجود ندارد.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+requests.forEach(
+function(item,index){
+
+let div =
+document.createElement("div");
+
+div.className =
+"request";
+
+
+let statusText =
+item.status === "approved"
+? "✅ تأیید شده"
+: item.status === "rejected"
+? "❌ رد شده"
+: "⏳ در انتظار بررسی";
+
+
+div.innerHTML = `
+
+<h3>
+${item.title || "بدون نام"}
+</h3>
+
+<div class="info">
+
+🔗 لینک:
+${item.link || "-"}
+
+<br>
+
+📝 توضیحات:
+${item.description || "بدون توضیحات"}
+
+<br>
+
+💰 مبلغ:
+${item.amount || 50000}
+تومان
+
+<br>
+
+📅 تاریخ:
+${item.date || "-"}
+
+<br>
+
+📌 وضعیت:
+${statusText}
+
+</div>
+
+
+<div class="request-buttons">
+
+<button
+class="approve"
+onclick="approveRequest(${index})"
+>
+✅ تأیید
+</button>
+
+<button
+class="reject"
+onclick="rejectRequest(${index})"
+>
+❌ رد
+</button>
+
+</div>
+
+`;
+
+
+container.appendChild(div);
+
+});
+
+}
+
+
+
+function approveRequest(index){
+
+let requests =
+getRequests();
+
+
+requests[index].status =
+"approved";
+
+
+localStorage.setItem(
+"premiumRequests",
+JSON.stringify(requests)
+);
+
+
+renderRequests();
+
+alert(
+"✅ درخواست تأیید شد."
+);
+
+}
+
+
+
+function rejectRequest(index){
+
+let requests =
+getRequests();
+
+
+requests[index].status =
+"rejected";
+
+
+localStorage.setItem(
+"premiumRequests",
+JSON.stringify(requests)
+);
+
+
+renderRequests();
+
+alert(
+"❌ درخواست رد شد."
+);
+
+}
+
+
+
+function clearRequests(){
+
+if(
+!confirm(
+"آیا مطمئن هستید همه درخواست‌ها پاک شوند؟"
+)
+){
+
+return;
+
+}
+
+
+localStorage.removeItem(
+"premiumRequests"
+);
+
+
+renderRequests();
+
+}
+
+
+
+renderRequests();
+
+
+</script></body></html>

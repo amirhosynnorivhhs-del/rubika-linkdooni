@@ -1,305 +1,942 @@
-<!DOCTYPE html><html lang="fa" dir="rtl"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>لینک‌دونی روبیکا</title><style>
+<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>لینک‌دونی کرمانشاه</title><style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
     box-sizing:border-box;
-}
-
-html,body{
     margin:0;
     padding:0;
-    width:100%;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+html{
+    min-height:100%;
+    background:#050507;
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#f4f6fb;
-    color:#172033;
+
+    min-height:100vh;
+
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
+    color:#ffffff;
+
+    background:
+
+    radial-gradient(
+        circle at 15% 10%,
+        rgba(132,55,255,.20),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 90% 25%,
+        rgba(185,70,255,.13),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        145deg,
+        #030304,
+        #0a0710 45%,
+        #050507
+    );
+
 }
 
-.header{
-    width:100%;
-    background:linear-gradient(135deg,#4d5bea,#7138d8);
-    color:#fff;
-    padding:20px 15px 30px;
-    border-radius:0 0 28px 28px;
-}
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
+
     width:100%;
-    max-width:700px;
+
+    max-width:720px;
+
     margin:0 auto;
+
 }
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+    width:100%;
+
+    padding:
+    18px
+    15px
+    35px;
+
+    border-radius:
+    0
+    0
+    32px
+    32px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        rgba(20,12,32,.95),
+        rgba(61,20,105,.82)
+    );
+
+    border-bottom:
+    1px solid
+    rgba(190,110,255,.35);
+
+    box-shadow:
+    0 15px 50px
+    rgba(112,36,220,.18);
+
+}
+
+
+/* =========================
+   TOP
+========================= */
 
 .top{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:10px;
+
 }
+
 
 .logo{
-    font-size:18px;
+
+    font-size:19px;
+
     font-weight:bold;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 15px
+    rgba(184,105,255,.65);
+
 }
+
+
+/* =========================
+   TOP BUTTONS
+========================= */
 
 .top-links{
+
     display:flex;
-    gap:6px;
+
+    gap:7px;
+
 }
+
 
 .top-links a{
+
     display:inline-block;
-    background:#fff;
-    color:#4d55d8;
+
     text-decoration:none;
-    padding:9px 10px;
-    border-radius:10px;
+
+    color:#ffffff;
+
+    padding:
+    9px
+    11px;
+
+    border-radius:12px;
+
     font-size:10px;
+
     font-weight:bold;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid
+    rgba(255,255,255,.20);
+
+    backdrop-filter:
+    blur(14px);
+
+    -webkit-backdrop-filter:
+    blur(14px);
+
+    box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.14),
+
+    0 5px 20px
+    rgba(0,0,0,.25);
+
+    transition:.2s;
+
 }
+
+
+.top-links a:hover{
+
+    border-color:
+    rgba(197,116,255,.8);
+
+    box-shadow:
+    0 0 18px
+    rgba(151,62,255,.35);
+
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
+
     text-align:center;
-    padding:30px 5px 0;
+
+    padding:
+    35px
+    5px
+    0;
+
 }
+
 
 .hero h1{
-    margin:0 0 10px;
-    font-size:22px;
+
+    margin-bottom:12px;
+
+    font-size:24px;
+
+    line-height:1.7;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 25px
+    rgba(179,91,255,.55);
+
 }
+
 
 .hero p{
-    margin:0;
+
     font-size:12px;
+
     line-height:2;
+
+    color:#cfc5d9;
+
 }
+
+
+/* =========================
+   SEARCH
+========================= */
 
 .search{
+
     display:flex;
-    gap:5px;
-    background:#fff;
+
+    gap:6px;
+
+    margin-top:22px;
+
     padding:6px;
-    margin-top:20px;
-    border-radius:14px;
+
+    border-radius:16px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid
+    rgba(255,255,255,.18);
+
+    backdrop-filter:
+    blur(18px);
+
+    -webkit-backdrop-filter:
+    blur(18px);
+
+    box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.10),
+
+    0 10px 35px
+    rgba(0,0,0,.35);
+
 }
+
 
 .search input{
+
     width:100%;
+
     min-width:0;
+
     border:0;
+
     outline:0;
-    padding:12px;
+
+    background:transparent;
+
+    color:#ffffff;
+
+    padding:13px;
+
     font-family:Tahoma;
+
     font-size:12px;
+
 }
+
+
+.search input::placeholder{
+
+    color:#b9adbf;
+
+}
+
 
 .search button{
+
     border:0;
-    background:#4d5bea;
-    color:#fff;
-    border-radius:10px;
-    padding:0 14px;
+
+    cursor:pointer;
+
+    color:#ffffff;
+
     font-family:Tahoma;
+
     font-weight:bold;
+
+    padding:
+    0
+    15px;
+
+    border-radius:11px;
+
+    background:
+    rgba(157,67,255,.35);
+
+    border:
+    1px solid
+    rgba(211,157,255,.45);
+
+    backdrop-filter:
+    blur(12px);
+
+    -webkit-backdrop-filter:
+    blur(12px);
+
+    box-shadow:
+    0 0 18px
+    rgba(143,47,255,.25);
+
 }
+
+
+/* =========================
+   MAIN
+========================= */
 
 main{
+
     width:100%;
-    max-width:700px;
+
+    max-width:720px;
+
     margin:0 auto;
-    padding:20px 15px;
+
+    padding:
+    22px
+    15px;
+
 }
+
+
+/* =========================
+   SECTION TITLE
+========================= */
 
 .section-title{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
-    margin-bottom:12px;
+
+    margin-bottom:14px;
+
 }
+
 
 .section-title h2{
-    margin:0;
+
     font-size:16px;
+
+    color:#ffffff;
+
 }
+
 
 .section-title span{
-    color:#777;
+
+    color:#a99eaf;
+
     font-size:10px;
+
 }
+
+
+/* =========================
+   CATEGORIES
+========================= */
 
 .categories{
+
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
+
+    grid-template-columns:
+    repeat(
+        2,
+        minmax(0,1fr)
+    );
+
+    gap:11px;
+
 }
+
 
 .category{
+
     width:100%;
-    border:1px solid #e3e5ed;
-    background:#fff;
-    border-radius:16px;
-    padding:17px 8px;
+
+    border-radius:18px;
+
+    padding:
+    19px
+    8px;
+
     text-align:center;
+
     cursor:pointer;
+
     font-family:Tahoma;
+
+    color:#ffffff;
+
+    background:
+    rgba(255,255,255,.055);
+
+    border:
+    1px solid
+    rgba(255,255,255,.15);
+
+    backdrop-filter:
+    blur(18px);
+
+    -webkit-backdrop-filter:
+    blur(18px);
+
+    box-shadow:
+
+    inset 0 1px 0
+    rgba(255,255,255,.10),
+
+    0 10px 25px
+    rgba(0,0,0,.25);
+
+    transition:
+    transform .18s,
+    border-color .18s,
+    box-shadow .18s;
+
 }
+
+
+.category:hover{
+
+    border-color:
+    rgba(190,100,255,.65);
+
+    box-shadow:
+
+    0 0 22px
+    rgba(139,45,255,.22),
+
+    inset 0 1px 0
+    rgba(255,255,255,.15);
+
+}
+
 
 .category:active{
-    transform:scale(.97);
+
+    transform:
+    scale(.95);
+
 }
+
 
 .category .icon{
-    font-size:27px;
+
+    display:block;
+
+    font-size:29px;
+
 }
+
 
 .category .name{
+
     display:block;
-    margin-top:8px;
-    font-size:12px;
+
+    margin-top:9px;
+
+    font-size:11px;
+
     font-weight:bold;
+
 }
+
+
+/* =========================
+   ACTIONS
+========================= */
 
 .actions{
+
     display:grid;
-    grid-template-columns:1fr;
-    gap:10px;
-    margin:20px 0;
+
+    gap:11px;
+
+    margin:
+    22px
+    0;
+
 }
+
 
 .action{
+
     display:block;
+
     width:100%;
-    padding:14px;
-    border-radius:13px;
+
+    padding:15px;
+
+    border-radius:15px;
+
     text-align:center;
+
     text-decoration:none;
+
     font-size:12px;
+
     font-weight:bold;
+
+    color:#ffffff;
+
+    background:
+    rgba(255,255,255,.07);
+
+    border:
+    1px solid
+    rgba(255,255,255,.20);
+
+    backdrop-filter:
+    blur(18px);
+
+    -webkit-backdrop-filter:
+    blur(18px);
+
+    box-shadow:
+
+    inset 0 1px 0
+    rgba(255,255,255,.12),
+
+    0 10px 30px
+    rgba(0,0,0,.30);
+
+    transition:.2s;
+
 }
+
+
+.action:hover{
+
+    border-color:
+    rgba(193,105,255,.75);
+
+    box-shadow:
+
+    0 0 25px
+    rgba(146,47,255,.28),
+
+    inset 0 1px 0
+    rgba(255,255,255,.15);
+
+    transform:
+    translateY(-1px);
+
+}
+
 
 .add-link{
-    background:#172033;
-    color:#fff;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(111,43,180,.24),
+        rgba(255,255,255,.06)
+    );
+
 }
+
 
 .premium-link{
-    background:#ff8a00;
-    color:#fff;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(180,65,255,.30),
+        rgba(255,255,255,.06)
+    );
+
 }
+
+
+/* =========================
+   CARDS
+========================= */
 
 .cards{
+
     display:grid;
-    gap:10px;
+
+    gap:11px;
+
 }
+
 
 .card{
+
     width:100%;
-    background:#fff;
-    border:1px solid #e3e5ed;
-    border-radius:16px;
-    padding:13px;
+
     display:flex;
+
     align-items:center;
-    gap:10px;
+
+    gap:11px;
+
+    padding:14px;
+
+    border-radius:18px;
+
+    background:
+    rgba(255,255,255,.055);
+
+    border:
+    1px solid
+    rgba(255,255,255,.13);
+
+    backdrop-filter:
+    blur(18px);
+
+    -webkit-backdrop-filter:
+    blur(18px);
+
+    box-shadow:
+
+    inset 0 1px 0
+    rgba(255,255,255,.08),
+
+    0 10px 30px
+    rgba(0,0,0,.30);
+
 }
+
 
 .avatar{
-    width:46px;
-    height:46px;
-    min-width:46px;
-    border-radius:12px;
-    background:#eef0ff;
+
+    width:48px;
+
+    height:48px;
+
+    min-width:48px;
+
+    border-radius:14px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    font-size:21px;
+
+    font-size:22px;
+
+    background:
+    rgba(151,65,255,.16);
+
+    border:
+    1px solid
+    rgba(202,133,255,.25);
+
+    box-shadow:
+    0 0 18px
+    rgba(133,46,255,.18);
+
 }
+
 
 .card-info{
+
     flex:1;
+
     min-width:0;
+
 }
+
 
 .card-info h3{
-    margin:0 0 6px;
+
+    margin:
+    0
+    0
+    6px;
+
     font-size:13px;
+
+    color:#ffffff;
+
     overflow:hidden;
+
     text-overflow:ellipsis;
+
     white-space:nowrap;
+
 }
+
 
 .meta{
-    color:#777;
+
+    color:#aaa0b0;
+
     font-size:10px;
+
     line-height:1.8;
+
 }
+
 
 .view{
-    background:#4d5bea;
-    color:#fff;
+
+    color:#ffffff;
+
     text-decoration:none;
-    padding:8px 10px;
-    border-radius:9px;
+
+    padding:
+    9px
+    11px;
+
+    border-radius:10px;
+
     font-size:10px;
+
     white-space:nowrap;
+
+    background:
+    rgba(151,61,255,.20);
+
+    border:
+    1px solid
+    rgba(207,143,255,.30);
+
+    backdrop-filter:
+    blur(12px);
+
+    -webkit-backdrop-filter:
+    blur(12px);
+
 }
+
+
+/* =========================
+   EMPTY
+========================= */
 
 .empty{
+
     width:100%;
-    background:#fff;
-    border-radius:16px;
-    padding:25px 12px;
+
+    padding:
+    28px
+    15px;
+
+    border-radius:18px;
+
     text-align:center;
-    color:#777;
+
+    color:#aaa0b0;
+
     font-size:12px;
+
     line-height:2;
+
+    background:
+    rgba(255,255,255,.045);
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
+    backdrop-filter:
+    blur(18px);
+
+    -webkit-backdrop-filter:
+    blur(18px);
+
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
+
     text-align:center;
-    color:#888;
+
+    color:#827687;
+
     font-size:10px;
-    padding:20px 10px 30px;
+
+    padding:
+    22px
+    10px
+    35px;
+
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:420px){
 
     .top{
+
         flex-direction:column;
+
         align-items:stretch;
+
     }
+
 
     .logo{
+
         text-align:center;
+
+        margin-bottom:3px;
+
     }
+
 
     .top-links{
+
         width:100%;
+
     }
+
 
     .top-links a{
+
         flex:1;
+
         text-align:center;
+
     }
 
+
     .hero h1{
-        font-size:19px;
+
+        font-size:20px;
+
     }
 
 }
 
-</style></head><body><header class="header"><div class="container"><div class="top"><div class="logo">
-🔗 لینک‌دونی روبیکا
-</div><div class="top-links"><a href="admin.html">
-🛠️ مدیریت
-</a><a href="register.html">
-👤 ورود
-</a></div></div><div class="hero"><h1>
-گروه و کانال روبیکای خودت رو پیدا کن
-</h1><p>
-محلی برای پیدا کردن، معرفی و جستجوی گروه‌ها و کانال‌های روبیکا
+
+/* =========================
+   SMALL SCREEN
+========================= */
+
+@media(max-width:350px){
+
+    .categories{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .card{
+
+        padding:11px;
+
+    }
+
+
+    .view{
+
+        padding:
+        8px;
+
+    }
+
+}
+
+</style></head><body><header class="header"><div class="container"><div class="top"><div class="logo">🔗 لینک‌دونی کرمانشاه
+
+</div><div class="top-links"><a href="admin.html">🛠️ مدیریت
+
+</a><a href="register.html">👤 ورود
+
+</a></div></div><div class="hero"><h1>لینک‌دونی کرمانشاه
+
+</h1><p>گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن
+
+<br>معرفی، جستجو و ثبت لینک در یکجا
+
 </p></div><div class="search"><input
 id="searchInput"
 type="search"
@@ -314,12 +951,11 @@ onclick="searchLinks()"
 «»
 
 جستجو
-</button>
 
-</div></div></header><main><div class="section-title"><h2>
-📂 دسته‌بندی‌ها
-</h2><span id="categoryText">
-همه
+</button></div></div></header><main><div class="section-title"><h2>📂 دسته‌بندی‌ها
+
+</h2><span id="categoryText">همه
+
 </span></div><div class="categories"><button
 class="category"
 type="button"
@@ -327,10 +963,10 @@ onclick="showCategory('all')"
 
 «»
 
-<span class="icon">⭐</span>
+<span class="icon">⭐
 
-<span class="name">
-همه لینک‌ها
+</span><span class="name">همه لینک‌ها
+
 </span></button><button
 class="category"
 type="button"
@@ -338,10 +974,10 @@ onclick="showCategory('group')"
 
 «»
 
-<span class="icon">👥</span>
+<span class="icon">👥
 
-<span class="name">
-گروه‌های روبیکا
+</span><span class="name">گروه‌های روبیکا
+
 </span></button><button
 class="category"
 type="button"
@@ -349,10 +985,10 @@ onclick="showCategory('channel')"
 
 «»
 
-<span class="icon">📢</span>
+<span class="icon">📢
 
-<span class="name">
-کانال‌های روبیکا
+</span><span class="name">کانال‌های روبیکا
+
 </span></button><button
 class="category"
 type="button"
@@ -360,10 +996,10 @@ onclick="showCategory('music')"
 
 «»
 
-<span class="icon">🎵</span>
+<span class="icon">🎵
 
-<span class="name">
-موزیک
+</span><span class="name">موزیک
+
 </span></button><button
 class="category"
 type="button"
@@ -371,10 +1007,10 @@ onclick="showCategory('movie')"
 
 «»
 
-<span class="icon">🎬</span>
+<span class="icon">🎬
 
-<span class="name">
-فیلم و سریال
+</span><span class="name">فیلم و سریال
+
 </span></button><button
 class="category"
 type="button"
@@ -382,10 +1018,10 @@ onclick="showCategory('game')"
 
 «»
 
-<span class="icon">🎮</span>
+<span class="icon">🎮
 
-<span class="name">
-بازی و سرگرمی
+</span><span class="name">بازی و سرگرمی
+
 </span></button><button
 class="category"
 type="button"
@@ -393,10 +1029,10 @@ onclick="showCategory('education')"
 
 «»
 
-<span class="icon">📚</span>
+<span class="icon">📚
 
-<span class="name">
-آموزشی
+</span><span class="name">آموزشی
+
 </span></button></div><div class="actions"><a
 href="add-link.html"
 class="action add-link"
@@ -404,37 +1040,37 @@ class="action add-link"
 «»
 
 ➕ ثبت گروه یا کانال روبیکا
-</a>
 
-<a
+</a><a
 href="premium.html"
 class="action premium-link"
 
 «»
 
 ⭐ ثبت لینک ویژه
-</a>
 
-</div><div class="section-title"><h2 id="listTitle">
-⭐ لینک‌های منتخب
-</h2><span id="count">
-۰ مورد
+</a></div><div class="section-title"><h2 id="listTitle">⭐ لینک‌های منتخب
+
+</h2><span id="count">۰ مورد
+
 </span></div><div
 id="userLinks"
 class="cards"
 >
-</div></main><footer>© 2026 لینک‌دونی روبیکا
+</div></main><footer>© 2026 لینک‌دونی کرمانشاه
 
 </footer><script>
 
+
 let savedLinks = [];
+
 
 try{
 
     savedLinks =
-        JSON.parse(
-            localStorage.getItem("rubikaLinks")
-        ) || [];
+    JSON.parse(
+        localStorage.getItem("rubikaLinks")
+    ) || [];
 
 }catch(error){
 
@@ -447,8 +1083,21 @@ try{
 function clean(value){
 
     return String(value || "")
-        .trim()
-        .toLowerCase();
+    .trim()
+    .toLowerCase();
+
+}
+
+
+
+function escapeText(value){
+
+    return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
@@ -457,16 +1106,16 @@ function clean(value){
 function renderLinks(list){
 
     const box =
-        document.getElementById("userLinks");
+    document.getElementById("userLinks");
 
     const count =
-        document.getElementById("count");
+    document.getElementById("count");
 
 
     box.innerHTML = "";
 
     count.innerText =
-        list.length + " مورد";
+    list.length + " مورد";
 
 
     if(list.length === 0){
@@ -479,11 +1128,11 @@ function renderLinks(list){
 
         <br>
 
-        لینکی برای نمایش وجود ندارد.
+        هنوز لینکی برای نمایش وجود ندارد.
 
         <br>
 
-        می‌توانی از گزینه «ثبت گروه یا کانال» استفاده کنی.
+        از گزینه «ثبت گروه یا کانال» استفاده کن.
 
         </div>
 
@@ -497,69 +1146,88 @@ function renderLinks(list){
     list.forEach(function(item){
 
         const card =
-            document.createElement("div");
+        document.createElement("div");
 
-        card.className = "card";
+        card.className =
+        "card";
 
 
         const type =
-            clean(item.type);
+        clean(item.type);
 
 
         const icon =
-            type === "channel"
-            ? "📢"
-            : "👥";
+        type === "channel"
+        ? "📢"
+        : "👥";
 
 
         const typeName =
-            type === "channel"
-            ? "کانال"
-            : "گروه";
+        type === "channel"
+        ? "کانال"
+        : "گروه";
 
 
         const title =
-            item.title ||
-            "بدون نام";
+        item.title ||
+        "بدون نام";
 
 
         const category =
-            item.category ||
-            "سایر";
+        item.category ||
+        "سایر";
 
 
         const link =
-            item.link ||
-            "#";
+        item.link ||
+        "#";
 
 
         card.innerHTML = `
 
         <div class="avatar">
+
         ${icon}
+
         </div>
+
 
         <div class="card-info">
 
         <h3>
+
         ${escapeText(title)}
+
         </h3>
 
+
         <div class="meta">
+
         ${icon} ${typeName}
+
         <br>
+
         📂 ${escapeText(category)}
+
         </div>
 
         </div>
+
 
         <a
+
         class="view"
-        href="${escapeAttribute(link)}"
+
+        href="${escapeText(link)}"
+
         target="_blank"
-        rel="noopener"
+
+        rel="noopener noreferrer"
+
         >
+
         ورود
+
         </a>
 
         `;
@@ -581,17 +1249,19 @@ function showCategory(type){
     if(type === "all"){
 
         results =
-            savedLinks;
+        savedLinks;
+
 
         document
         .getElementById("categoryText")
         .innerText =
-            "همه";
+        "همه";
+
 
         document
         .getElementById("listTitle")
         .innerText =
-            "⭐ لینک‌های منتخب";
+        "⭐ لینک‌های منتخب";
 
     }
 
@@ -602,27 +1272,28 @@ function showCategory(type){
     ){
 
         results =
-            savedLinks.filter(function(item){
+        savedLinks.filter(function(item){
 
-                return clean(item.type) === type;
+            return clean(item.type) ===
+            type;
 
-            });
+        });
 
 
         document
         .getElementById("categoryText")
         .innerText =
-            type === "group"
-            ? "گروه‌ها"
-            : "کانال‌ها";
+        type === "group"
+        ? "گروه‌ها"
+        : "کانال‌ها";
 
 
         document
         .getElementById("listTitle")
         .innerText =
-            type === "group"
-            ? "👥 گروه‌های روبیکا"
-            : "📢 کانال‌های روبیکا";
+        type === "group"
+        ? "👥 گروه‌های روبیکا"
+        : "📢 کانال‌های روبیکا";
 
     }
 
@@ -630,12 +1301,12 @@ function showCategory(type){
     else{
 
         results =
-            savedLinks.filter(function(item){
+        savedLinks.filter(function(item){
 
-                return clean(item.category) ===
-                       type;
+            return clean(item.category) ===
+            type;
 
-            });
+        });
 
 
         const names = {
@@ -654,13 +1325,13 @@ function showCategory(type){
         document
         .getElementById("categoryText")
         .innerText =
-            names[type] || "دسته";
+        names[type] || "دسته";
 
 
         document
         .getElementById("listTitle")
         .innerText =
-            names[type] || "📂 دسته‌بندی";
+        names[type] || "📂 دسته‌بندی";
 
     }
 
@@ -674,10 +1345,11 @@ function showCategory(type){
 function searchLinks(){
 
     const input =
-        document.getElementById("searchInput");
+    document.getElementById("searchInput");
+
 
     const keyword =
-        clean(input.value);
+    clean(input.value);
 
 
     if(keyword === ""){
@@ -690,36 +1362,43 @@ function searchLinks(){
 
 
     const results =
-        savedLinks.filter(function(item){
+    savedLinks.filter(function(item){
 
-            const text = (
+        const text =
 
-                item.title || "" +
-                " " +
-                item.description || "" +
-                " " +
-                item.category || "" +
-                " " +
-                item.type || ""
+        String(
+            item.title || ""
+        ) + " " +
 
-            ).toLowerCase();
+        String(
+            item.description || ""
+        ) + " " +
+
+        String(
+            item.category || ""
+        ) + " " +
+
+        String(
+            item.type || ""
+        );
 
 
-            return text.includes(keyword);
+        return clean(text)
+        .includes(keyword);
 
-        });
+    });
 
 
     document
     .getElementById("categoryText")
     .innerText =
-        "جستجو";
+    "جستجو";
 
 
     document
     .getElementById("listTitle")
     .innerText =
-        "🔎 نتایج جستجو";
+    "🔎 نتایج جستجو";
 
 
     renderLinks(results);
@@ -742,27 +1421,6 @@ document
 
     }
 );
-
-
-
-function escapeText(value){
-
-    return String(value)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-
-function escapeAttribute(value){
-
-    return escapeText(value);
-
-}
 
 
 

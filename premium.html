@@ -1,319 +1,331 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
-<head>
+<!DOCTYPE html><html lang="fa" dir="rtl"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ثبت و تمدید لینک ویژه | لینک‌دونی کرمانشاه</title><style>
+
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html{
-  background:#030305;
+background:#030305;
 }
 
 body{
-  min-height:100vh;
-  font-family:Tahoma,Arial,sans-serif;
-  color:#fff;
-  padding:20px 14px 40px;
-  background:
-    radial-gradient(circle at 15% 5%,rgba(150,45,255,.30),transparent 30%),
-    radial-gradient(circle at 90% 25%,rgba(90,20,180,.25),transparent 32%),
-    linear-gradient(145deg,#020203,#09040f 50%,#030305);
+min-height:100vh;
+font-family:Tahoma,Arial,sans-serif;
+color:#fff;
+padding:20px 14px 40px;
+
+background:
+radial-gradient(circle at 15% 5%,rgba(150,45,255,.30),transparent 30%),
+radial-gradient(circle at 90% 25%,rgba(90,20,180,.25),transparent 32%),
+linear-gradient(145deg,#020203,#09040f 50%,#030305);
 }
 
 .box{
-  width:100%;
-  max-width:500px;
-  margin:15px auto;
-  padding:22px;
-  border-radius:28px;
+width:100%;
+max-width:500px;
+margin:15px auto;
+padding:22px;
+border-radius:28px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.17),
-      rgba(255,255,255,.045) 45%,
-      rgba(117,35,190,.12)
-    );
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.17),
+rgba(255,255,255,.045) 45%,
+rgba(117,35,190,.12)
+);
 
-  border:1px solid rgba(255,255,255,.32);
+border:1px solid rgba(255,255,255,.32);
 
-  box-shadow:
-    inset 2px 2px 4px rgba(255,255,255,.35),
-    inset -3px -3px 6px rgba(0,0,0,.5),
-    0 20px 55px rgba(0,0,0,.55),
-    0 0 35px rgba(140,40,255,.22);
+box-shadow:
+inset 2px 2px 4px rgba(255,255,255,.35),
+inset -3px -3px 6px rgba(0,0,0,.5),
+0 20px 55px rgba(0,0,0,.55),
+0 0 35px rgba(140,40,255,.22);
 
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
 }
 
 .logo{
-  text-align:center;
-  font-size:22px;
-  font-weight:bold;
-  margin-bottom:7px;
-  text-shadow:
-    0 0 12px rgba(224,177,255,.8),
-    0 0 30px rgba(141,43,255,.55);
+text-align:center;
+font-size:22px;
+font-weight:bold;
+margin-bottom:7px;
+
+text-shadow:
+0 0 12px rgba(224,177,255,.8),
+0 0 30px rgba(141,43,255,.55);
 }
 
 .subtitle{
-  text-align:center;
-  font-size:11px;
-  color:#cfc2d8;
-  line-height:2;
-  margin-bottom:18px;
+text-align:center;
+font-size:11px;
+color:#cfc2d8;
+line-height:2;
+margin-bottom:18px;
 }
 
 .mode{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-  margin-bottom:16px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:9px;
+margin-bottom:16px;
 }
 
 .mode button{
-  border:1px solid rgba(255,255,255,.3);
-  border-radius:13px;
-  padding:13px 8px;
-  font-family:Tahoma;
-  font-weight:bold;
-  font-size:12px;
-  color:#fff;
-  cursor:pointer;
+border:1px solid rgba(255,255,255,.3);
+border-radius:13px;
+padding:13px 8px;
+font-family:Tahoma;
+font-weight:bold;
+font-size:12px;
+color:#fff;
+cursor:pointer;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.16),
-      rgba(255,255,255,.04)
-    );
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.16),
+rgba(255,255,255,.04)
+);
 
-  box-shadow:
-    inset 1px 1px 2px rgba(255,255,255,.35),
-    inset -2px -2px 3px rgba(0,0,0,.4);
+box-shadow:
+inset 1px 1px 2px rgba(255,255,255,.35),
+inset -2px -2px 3px rgba(0,0,0,.4);
 }
 
 .mode button.active{
-  background:linear-gradient(135deg,#a848f5,#5b179c);
-  border-color:#e1b4ff;
-  box-shadow:
-    0 0 22px rgba(164,62,255,.4),
-    inset 1px 1px 3px rgba(255,255,255,.45);
+background:linear-gradient(135deg,#a848f5,#5b179c);
+border-color:#e1b4ff;
+
+box-shadow:
+0 0 22px rgba(164,62,255,.4),
+inset 1px 1px 3px rgba(255,255,255,.45);
 }
 
 .info{
-  padding:14px;
-  border-radius:16px;
-  margin-bottom:18px;
-  font-size:11px;
-  line-height:2;
+padding:14px;
+border-radius:16px;
+margin-bottom:18px;
+font-size:11px;
+line-height:2;
 
-  background:rgba(124,42,190,.12);
-  border:1px solid rgba(207,155,255,.25);
+background:rgba(124,42,190,.12);
+border:1px solid rgba(207,155,255,.25);
 }
 
 label{
-  display:block;
-  font-size:12px;
-  font-weight:bold;
-  margin:14px 0 7px;
+display:block;
+font-size:12px;
+font-weight:bold;
+margin:14px 0 7px;
 }
 
 input,
 textarea,
 select{
-  width:100%;
-  padding:13px;
-  border-radius:13px;
-  border:1px solid rgba(255,255,255,.25);
-  outline:none;
-  color:#fff;
-  background:rgba(0,0,0,.30);
-  font-family:Tahoma;
-  font-size:12px;
+width:100%;
+padding:13px;
+border-radius:13px;
+border:1px solid rgba(255,255,255,.25);
+outline:none;
+color:#fff;
+background:rgba(0,0,0,.30);
+font-family:Tahoma;
+font-size:12px;
 }
 
 input:focus,
 textarea:focus,
 select:focus{
-  border-color:#bd70ff;
-  box-shadow:0 0 15px rgba(157,54,255,.2);
+border-color:#bd70ff;
+box-shadow:0 0 15px rgba(157,54,255,.2);
 }
 
 select option{
-  color:#111;
-  background:#fff;
+color:#111;
+background:#fff;
 }
 
 textarea{
-  min-height:80px;
-  resize:vertical;
+min-height:80px;
+resize:vertical;
 }
 
 .date-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
 }
 
 .duration{
-  margin-top:15px;
-  padding:14px;
-  border-radius:16px;
+margin-top:15px;
+padding:14px;
+border-radius:16px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.12),
-      rgba(255,255,255,.035)
-    );
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.12),
+rgba(255,255,255,.035)
+);
 
-  border:1px solid rgba(255,255,255,.22);
+border:1px solid rgba(255,255,255,.22);
 }
 
 .duration-title{
-  font-size:11px;
-  color:#cfc0d9;
-  margin-bottom:10px;
+font-size:11px;
+color:#cfc0d9;
+margin-bottom:10px;
 }
 
 .result{
-  margin-top:14px;
-  padding:17px;
-  text-align:center;
-  border-radius:17px;
+margin-top:14px;
+padding:17px;
+text-align:center;
+border-radius:17px;
 
-  background:
-    linear-gradient(135deg,#8d35dc,#431074);
+background:
+linear-gradient(135deg,#8d35dc,#431074);
 
-  border:1px solid rgba(235,200,255,.55);
+border:1px solid rgba(235,200,255,.55);
 
-  box-shadow:
-    inset 1px 1px 3px rgba(255,255,255,.4),
-    0 0 25px rgba(145,43,255,.3);
+box-shadow:
+inset 1px 1px 3px rgba(255,255,255,.4),
+0 0 25px rgba(145,43,255,.3);
 }
 
 .result small{
-  display:block;
-  font-size:10px;
-  opacity:.8;
-  margin-bottom:6px;
+display:block;
+font-size:10px;
+opacity:.8;
+margin-bottom:6px;
 }
 
 .result strong{
-  display:block;
-  font-size:23px;
-  margin-bottom:5px;
+display:block;
+font-size:23px;
+margin-bottom:5px;
 }
 
 .result span{
-  font-size:10px;
-  color:#eadcf3;
+font-size:10px;
+color:#eadcf3;
 }
 
 .card-box{
-  margin-top:18px;
-  padding:16px;
-  text-align:center;
-  border-radius:17px;
+margin-top:18px;
+padding:16px;
+text-align:center;
+border-radius:17px;
 
-  background:rgba(0,0,0,.25);
-  border:1px dashed rgba(212,145,255,.5);
+background:rgba(0,0,0,.25);
+border:1px dashed rgba(212,145,255,.5);
 }
 
 .card-box small{
-  display:block;
-  color:#bfb2c8;
-  font-size:10px;
-  margin-bottom:9px;
+display:block;
+color:#bfb2c8;
+font-size:10px;
+margin-bottom:9px;
 }
 
 .card-number{
-  direction:ltr;
-  font-size:17px;
-  font-weight:bold;
-  letter-spacing:1px;
-  margin-bottom:11px;
+direction:ltr;
+font-size:17px;
+font-weight:bold;
+letter-spacing:1px;
+margin-bottom:11px;
 }
 
 .copy{
-  border:1px solid rgba(255,255,255,.3);
-  background:linear-gradient(135deg,#8d35dc,#551494);
-  color:#fff;
-  padding:9px 14px;
-  border-radius:10px;
-  font-family:Tahoma;
-  font-size:10px;
+border:1px solid rgba(255,255,255,.3);
+background:linear-gradient(135deg,#8d35dc,#551494);
+color:#fff;
+padding:9px 14px;
+border-radius:10px;
+font-family:Tahoma;
+font-size:10px;
+cursor:pointer;
 }
 
 .notice{
-  margin-top:10px;
-  color:#bdb0c6;
-  font-size:10px;
-  line-height:2;
+margin-top:10px;
+color:#bdb0c6;
+font-size:10px;
+line-height:2;
 }
 
 .submit{
-  width:100%;
-  padding:15px;
-  margin-top:21px;
-  border:1px solid rgba(241,211,255,.55);
-  border-radius:15px;
-  color:#fff;
-  font-family:Tahoma;
-  font-size:13px;
-  font-weight:bold;
-  cursor:pointer;
+width:100%;
+padding:15px;
+margin-top:21px;
+border:1px solid rgba(241,211,255,.55);
+border-radius:15px;
+color:#fff;
+font-family:Tahoma;
+font-size:13px;
+font-weight:bold;
+cursor:pointer;
 
-  background:
-    linear-gradient(135deg,#b24fff,#63179d);
+background:
+linear-gradient(135deg,#b24fff,#63179d);
 
-  box-shadow:
-    inset 2px 2px 3px rgba(255,255,255,.4),
-    inset -2px -2px 4px rgba(0,0,0,.35),
-    0 0 25px rgba(157,47,255,.35);
+box-shadow:
+inset 2px 2px 3px rgba(255,255,255,.4),
+inset -2px -2px 4px rgba(0,0,0,.35),
+0 0 25px rgba(157,47,255,.35);
 }
 
 .submit:active{
-  transform:scale(.97);
+transform:scale(.97);
 }
 
 .back{
-  display:block;
-  text-align:center;
-  margin-top:17px;
-  color:#c58bff;
-  text-decoration:none;
-  font-size:11px;
-}
-
-.hidden{
-  display:none;
+display:block;
+text-align:center;
+margin-top:17px;
+color:#c58bff;
+text-decoration:none;
+font-size:11px;
 }
 
 @media(max-width:390px){
-  .date-grid{
-    grid-template-columns:1fr;
-  }
 
-  .box{
-    padding:17px;
-  }
+.date-grid{
+grid-template-columns:1fr;
 }
+
+.box{
+padding:17px;
+}
+
+}
+
 </style></head><body><div class="box"><div class="logo">
 💎 لینک‌دونی کرمانشاه
 </div><div class="subtitle">
 ثبت یا تمدید لینک ویژه با تاریخ دلخواه
-</div><div class="mode">
-<button id="newMode" class="active" onclick="setMode('new')">
+</div><div class="mode"><button
+id="newMode"
+type="button"
+class="active"
+onclick="setMode('new')">
 💎 ثبت لینک ویژه
-</button><button id="renewMode" onclick="setMode('renew')">
+</button>
+
+<button
+id="renewMode"
+type="button"
+onclick="setMode('renew')">
 🔄 تمدید لینک ویژه
 </button>
+
 </div><div class="info" id="infoText">
 📌 تاریخ شروع و پایان موردنظر خودت را انتخاب کن.
 مبلغ براساس مدت انتخابی به‌صورت خودکار محاسبه می‌شود.
@@ -322,9 +334,7 @@ textarea{
 </label><input
 id="ownerName"
 type="text"
-placeholder="نام و نام خانوادگی"
-
-«»
+placeholder="نام و نام خانوادگی">
 
 <label>
 شماره تماس
@@ -332,46 +342,37 @@ placeholder="نام و نام خانوادگی"
 id="ownerPhone"
 type="tel"
 inputmode="tel"
-placeholder="مثلاً 0912..."
-
-«»
+placeholder="مثلاً 0912...">
 
 <label>
 نوع لینک
-</label><select id="linkType">
-<option value="channel">📢 کانال روبیکا</option>
-<option value="group">👥 گروه روبیکا</option>
-</select><label>
+</label><select id="linkType"><option value="channel">
+📢 کانال روبیکا
+</option><option value="group">
+👥 گروه روبیکا
+</option></select><label>
 نام گروه یا کانال
 </label><input
 id="title"
 type="text"
-placeholder="مثلاً کانال موزیک کردی"
-
-«»
+placeholder="مثلاً کانال موزیک کردی">
 
 <label>
 لینک روبیکا
 </label><input
 id="link"
 type="url"
-placeholder="https://rubika.ir/..."
-
-«»
+placeholder="https://rubika.ir/...">
 
 <label>
 تاریخ شروع
 </label><div class="date-grid"><input
 id="startDate"
-type="date"
-
-«»
+type="date">
 
 <input
 id="endDate"
-type="date"
-
-«»
+type="date">
 
 </div><div class="duration"><div class="duration-title">
 📅 مدت انتخاب‌شده
@@ -387,14 +388,20 @@ type="date"
 توضیحات
 </label><textarea
 id="description"
-placeholder="توضیح کوتاهی درباره گروه یا کانال..."
-></textarea><div class="card-box"><small>
+placeholder="توضیح کوتاهی درباره گروه یا کانال..."></textarea><div class="card-box"><small>
 💳 پس از مشخص شدن مبلغ، آن را به شماره کارت زیر واریز کنید
-</small><div class="card-number" id="cardNumber">
+</small><div
+class="card-number"
+id="cardNumber">
 0000-0000-0000-0000
-</div><button class="copy" onclick="copyCard()">
+</div><button
+type="button"
+class="copy"
+onclick="copyCard()">
 📋 کپی شماره کارت
-</button><div class="notice">
+</button>
+
+<div class="notice">
 ⚠️ پس از واریز، شماره پیگیری تراکنش را در فرم زیر وارد کنید.
 </div></div><label>
 شماره پیگیری پرداخت
@@ -402,17 +409,23 @@ placeholder="توضیح کوتاهی درباره گروه یا کانال..."
 id="tracking"
 type="text"
 inputmode="numeric"
-placeholder="شماره پیگیری واریز"
+placeholder="شماره پیگیری واریز">
+
 <button
+id="submitButton"
 class="submit"
 type="button"
-onclick="alert('دکمه ثبت درخواست فعال است ✅')">
+onclick="submitPayment()">
 ✅ ثبت درخواست
 </button>
-</button>
-<a href="index.html" class="back">
+
+<a
+href="index.html"
+class="back">
 ⬅️ بازگشت به صفحه اصلی
-</a></div><script>
+</a>
+
+</div><script>
 
 const DAILY_PRICE = 500000;
 const WEEKLY_PRICE = 1000000;
@@ -421,564 +434,467 @@ const TWO_MONTH_PRICE = 4000000;
 
 let currentMode = "new";
 
-const startDate = document.getElementById("startDate");
-const endDate = document.getElementById("endDate");
+const startDate =
+document.getElementById("startDate");
+
+const endDate =
+document.getElementById("endDate");
+
 
 function toDate(value){
 
-  const parts = value.split("-");
+const parts = value.split("-");
 
-  return new Date(
-    Number(parts[0]),
-    Number(parts[1])-1,
-    Number(parts[2])
-  );
+return new Date(
+Number(parts[0]),
+Number(parts[1]) - 1,
+Number(parts[2])
+);
 
 }
+
 
 function formatPrice(number){
 
-  return Number(number).toLocaleString("fa-IR") + " تومان";
+return Number(number)
+.toLocaleString("fa-IR") +
+" تومان";
 
 }
 
-function formatDate(date){
-
-  return date.toLocaleDateString("fa-IR");
-
-}
 
 function calculatePrice(){
 
-  if(!startDate.value || !endDate.value){
+if(!startDate.value ||
+!endDate.value){
 
-    document.getElementById("durationText").innerText =
-      "تاریخ شروع و پایان را انتخاب کنید.";
+document.getElementById(
+"durationText"
+).innerText =
+"تاریخ شروع و پایان را انتخاب کنید.";
 
-    document.getElementById("priceText").innerText =
-      "۰ تومان";
+document.getElementById(
+"priceText"
+).innerText =
+"۰ تومان";
 
-    document.getElementById("priceDescription").innerText =
-      "هنوز بازه زمانی انتخاب نشده است";
+document.getElementById(
+"priceDescription"
+).innerText =
+"هنوز بازه زمانی انتخاب نشده است";
 
-    return null;
-  }
-
-  const start = toDate(startDate.value);
-  const end = toDate(endDate.value);
-
-  if(end < start){
-
-    document.getElementById("durationText").innerText =
-      "❌ تاریخ پایان نمی‌تواند قبل از تاریخ شروع باشد.";
-
-    document.getElementById("priceText").innerText =
-      "۰ تومان";
-
-    document.getElementById("priceDescription").innerText =
-      "تاریخ را اصلاح کنید.";
-
-    return null;
-  }
-
-  const diff =
-    end.getTime() - start.getTime();
-
-  const days =
-    Math.floor(diff / 86400000) + 1;
-
-  let price;
-  let description;
-
-  if(days === 7){
-
-    price = WEEKLY_PRICE;
-    description = "تعرفه هفتگی";
-
-  }else if(days === 30){
-
-    price = MONTHLY_PRICE;
-    description = "تعرفه یک‌ماهه";
-
-  }else if(days === 60){
-
-    price = TWO_MONTH_PRICE;
-    description = "تعرفه دوماهه";
-
-  }else{
-
-    price = days * DAILY_PRICE;
-    description =
-      "محاسبه بر اساس تعرفه روزانه";
-
-  }
-
-  document.getElementById("durationText").innerText =
-    "📅 " + days.toLocaleString("fa-IR") + " روز";
-
-  document.getElementById("priceText").innerText =
-    formatPrice(price);
-
-  document.getElementById("priceDescription").innerText =
-    description;
-
-  return {
-    start:start,
-    end:end,
-    days:days,
-    price:price,
-    description:description
-  };
+return null;
 
 }
 
-startDate.addEventListener("change", calculatePrice);
-endDate.addEventListener("change", calculatePrice);
+
+const start =
+toDate(startDate.value);
+
+const end =
+toDate(endDate.value);
+
+
+if(end < start){
+
+alert(
+"❌ تاریخ پایان نمی‌تواند قبل از تاریخ شروع باشد."
+);
+
+return null;
+
+}
+
+
+const diff =
+end.getTime() -
+start.getTime();
+
+
+const days =
+Math.floor(
+diff / 86400000
+) + 1;
+
+
+let price;
+let description;
+
+
+if(days === 7){
+
+price = WEEKLY_PRICE;
+description = "تعرفه هفتگی";
+
+}
+else if(days === 30){
+
+price = MONTHLY_PRICE;
+description = "تعرفه یک‌ماهه";
+
+}
+else if(days === 60){
+
+price = TWO_MONTH_PRICE;
+description = "تعرفه دوماهه";
+
+}
+else{
+
+price =
+days * DAILY_PRICE;
+
+description =
+"محاسبه بر اساس تعرفه روزانه";
+
+}
+
+
+document.getElementById(
+"durationText"
+).innerText =
+"📅 " +
+days.toLocaleString("fa-IR") +
+" روز";
+
+
+document.getElementById(
+"priceText"
+).innerText =
+formatPrice(price);
+
+
+document.getElementById(
+"priceDescription"
+).innerText =
+description;
+
+
+return {
+
+days:days,
+price:price
+
+};
+
+}
+
+
+startDate.addEventListener(
+"change",
+calculatePrice
+);
+
+endDate.addEventListener(
+"change",
+calculatePrice
+);
+
 
 function setMode(mode){
 
-  currentMode = mode;
+currentMode = mode;
 
-  document
-    .getElementById("newMode")
-    .classList.toggle("active",mode==="new");
+document
+.getElementById("newMode")
+.classList.toggle(
+"active",
+mode === "new"
+);
 
-  document
-    .getElementById("renewMode")
-    .classList.toggle("active",mode==="renew");
+document
+.getElementById("renewMode")
+.classList.toggle(
+"active",
+mode === "renew"
+);
 
-  if(mode==="renew"){
 
-    document.getElementById("infoText").innerText =
-      "🔄 تاریخ دلخواه تمدید را انتخاب کن. مبلغ دقیق براساس مدت انتخابی محاسبه می‌شود.";
+if(mode === "renew"){
 
-  }else{
-
-    document.getElementById("infoText").innerText =
-      "📌 تاریخ شروع و پایان موردنظر خودت را انتخاب کن. مبلغ براساس مدت انتخابی به‌صورت خودکار محاسبه می‌شود.";
-
-  }
+document.getElementById(
+"infoText"
+).innerText =
+"🔄 تاریخ دلخواه تمدید را انتخاب کن. مبلغ دقیق براساس مدت انتخابی محاسبه می‌شود.";
 
 }
+else{
+
+document.getElementById(
+"infoText"
+).innerText =
+"📌 تاریخ شروع و پایان موردنظر خودت را انتخاب کن. مبلغ براساس مدت انتخابی به‌صورت خودکار محاسبه می‌شود.";
+
+}
+
+}
+
 
 function copyCard(){
 
-  const card =
-    document
-      .getElementById("cardNumber")
-      .innerText
-      .replace(/-/g,"");
+const element =
+document.getElementById(
+"cardNumber"
+);
 
-  if(navigator.clipboard){
+if(!element){
 
-    navigator.clipboard.writeText(card);
-
-  }
-
-  alert("✅ شماره کارت کپی شد.");
+return;
 
 }
+
+
+const card =
+element.innerText
+.replace(/-/g,"");
+
+
+if(navigator.clipboard){
+
+navigator.clipboard
+.writeText(card);
+
+}
+
+alert(
+"✅ شماره کارت کپی شد."
+);
+
+}
+
 
 function submitPayment(){
 
-  const ownerName =
-    document.getElementById("ownerName").value.trim();
+const ownerName =
+document.getElementById(
+"ownerName"
+).value.trim();
 
-  const ownerPhone =
-    document.getElementById("ownerPhone").value.trim();
 
-  const title =
-    document.getElementById("title").value.trim();
+const ownerPhone =
+document.getElementById(
+"ownerPhone"
+).value.trim();
 
-  const link =
-    document.getElementById("link").value.trim();
 
-  const description =
-    document.getElementById("description").value.trim();
+const title =
+document.getElementById(
+"title"
+).value.trim();
 
-  const tracking =
-    document.getElementById("tracking").value.trim();
 
-  if(ownerName===""){
+const link =
+document.getElementById(
+"link"
+).value.trim();
 
-    alert("لطفاً نام صاحب لینک را وارد کنید.");
-    return;
 
-  }
+const description =
+document.getElementById(
+"description"
+).value.trim();
 
-  if(ownerPhone===""){
 
-    alert("لطفاً شماره تماس را وارد کنید.");
-    return;
+const tracking =
+document.getElementById(
+"tracking"
+).value.trim();
 
-  }
 
-  if(title===""){
+if(ownerName === ""){
 
-    alert("لطفاً نام گروه یا کانال را وارد کنید.");
-    return;
+alert(
+"لطفاً نام صاحب لینک را وارد کنید."
+);
 
-  }
-
-  if(link===""){
-
-    alert("لطفاً لینک روبیکا را وارد کنید.");
-    return;
-
-  }
-
-  const calculation = calculatePrice();
-
-  if(!calculation){
-
-    return;
-
-  }
-
-  if(tracking===""){
-
-    alert("لطفاً شماره پیگیری پرداخت را وارد کنید.");
-    return;
-
-  }
-
-  const order = {
-
-    id:"ORD-"+Date.now(),
-
-    requestType:
-      currentMode==="renew"
-      ?"renewal"
-      :"new_premium",
-
-    ownerName:ownerName,
-
-    ownerPhone:ownerPhone,
-
-    title:title,
-
-    link:link,
-
-    type:
-      document.getElementById("linkType").value,
-
-    description:description,
-
-    startDate:startDate.value,
-
-    endDate:endDate.value,
-
-    days:calculation.days,
-
-    amount:calculation.price,
-
-    tracking:tracking,
-
-    status:"waiting_review",
-
-    date:new Date().toLocaleString("fa-IR")
-
-  };
-
-  const orders =
-    JSON.parse(
-      localStorage.getItem("premiumOrders")
-    ) || [];
-
-  orders.push(order);
-
-  localStorage.setItem(
-    "premiumOrders",
-    JSON.stringify(orders)
-  );
-
-  alert(
-    "✅ درخواست شما ثبت شد.\n\n"+
-    "مدت: "+calculation.days+" روز\n"+
-    "مبلغ: "+formatPrice(calculation.price)+
-    "\n\nپس از بررسی پرداخت، درخواست شما بررسی می‌شود."
-  );
-
-  document.getElementById("ownerName").value="";
-  document.getElementById("ownerPhone").value="";
-  document.getElementById("title").value="";
-  document.getElementById("link").value="";
-  document.getElementById("description").value="";
-  document.getElementById("tracking").value="";
-  startDate.value="";
-  endDate.value="";
-
-  calculatePrice();
+return;
 
 }
 
-<script>
 
-const DAILY_PRICE = 500000;
-const WEEKLY_PRICE = 1000000;
-const MONTHLY_PRICE = 2000000;
-const TWO_MONTH_PRICE = 4000000;
+if(ownerPhone === ""){
 
-let currentMode = "new";
+alert(
+"لطفاً شماره تماس را وارد کنید."
+);
 
-const startDate = document.getElementById("startDate");
-const endDate = document.getElementById("endDate");
-
-function toDate(value){
-  const parts = value.split("-");
-  return new Date(
-    Number(parts[0]),
-    Number(parts[1]) - 1,
-    Number(parts[2])
-  );
-}
-
-function formatPrice(number){
-  return Number(number).toLocaleString("fa-IR") + " تومان";
-}
-
-function calculatePrice(){
-
-  if(!startDate.value || !endDate.value){
-    return null;
-  }
-
-  const start = toDate(startDate.value);
-  const end = toDate(endDate.value);
-
-  if(end < start){
-    alert("❌ تاریخ پایان نمی‌تواند قبل از تاریخ شروع باشد.");
-    return null;
-  }
-
-  const diff = end.getTime() - start.getTime();
-
-  const days = Math.floor(diff / 86400000) + 1;
-
-  let price;
-
-  if(days === 7){
-    price = WEEKLY_PRICE;
-  }
-  else if(days === 30){
-    price = MONTHLY_PRICE;
-  }
-  else if(days === 60){
-    price = TWO_MONTH_PRICE;
-  }
-  else{
-    price = days * DAILY_PRICE;
-  }
-
-  const priceText = document.getElementById("priceText");
-  const durationText = document.getElementById("durationText");
-  const priceDescription = document.getElementById("priceDescription");
-
-  if(priceText){
-    priceText.innerText = formatPrice(price);
-  }
-
-  if(durationText){
-    durationText.innerText =
-      "📅 " + days.toLocaleString("fa-IR") + " روز";
-  }
-
-  if(priceDescription){
-    priceDescription.innerText =
-      days === 7 ? "تعرفه هفتگی" :
-      days === 30 ? "تعرفه یک‌ماهه" :
-      days === 60 ? "تعرفه دوماهه" :
-      "محاسبه بر اساس تعرفه روزانه";
-  }
-
-  return {
-    days: days,
-    price: price
-  };
-}
-
-if(startDate){
-  startDate.addEventListener("change", calculatePrice);
-}
-
-if(endDate){
-  endDate.addEventListener("change", calculatePrice);
-}
-
-function setMode(mode){
-
-  currentMode = mode;
-
-  const newMode =
-    document.getElementById("newMode");
-
-  const renewMode =
-    document.getElementById("renewMode");
-
-  if(newMode){
-    newMode.classList.toggle(
-      "active",
-      mode === "new"
-    );
-  }
-
-  if(renewMode){
-    renewMode.classList.toggle(
-      "active",
-      mode === "renew"
-    );
-  }
+return;
 
 }
 
-function copyCard(){
 
-  const element =
-    document.getElementById("cardNumber");
+if(title === ""){
 
-  if(!element){
-    return;
-  }
+alert(
+"لطفاً نام گروه یا کانال را وارد کنید."
+);
 
-  const card =
-    element.innerText.replace(/-/g,"");
-
-  if(navigator.clipboard){
-
-    navigator.clipboard.writeText(card);
-
-  }
-
-  alert("✅ شماره کارت کپی شد.");
+return;
 
 }
 
-function submitPayment(){
 
-  const ownerName =
-    document.getElementById("ownerName").value.trim();
+if(link === ""){
 
-  const ownerPhone =
-    document.getElementById("ownerPhone").value.trim();
+alert(
+"لطفاً لینک روبیکا را وارد کنید."
+);
 
-  const title =
-    document.getElementById("title").value.trim();
+return;
 
-  const link =
-    document.getElementById("link").value.trim();
+}
 
-  const description =
-    document.getElementById("description").value.trim();
 
-  const tracking =
-    document.getElementById("tracking").value.trim();
+const calculation =
+calculatePrice();
 
-  if(ownerName === ""){
-    alert("لطفاً نام صاحب لینک را وارد کنید.");
-    return;
-  }
 
-  if(ownerPhone === ""){
-    alert("لطفاً شماره تماس را وارد کنید.");
-    return;
-  }
+if(!calculation){
 
-  if(title === ""){
-    alert("لطفاً نام گروه یا کانال را وارد کنید.");
-    return;
-  }
+return;
 
-  if(link === ""){
-    alert("لطفاً لینک روبیکا را وارد کنید.");
-    return;
-  }
+}
 
-  const calculation = calculatePrice();
 
-  if(!calculation){
-    alert("لطفاً تاریخ شروع و پایان را انتخاب کنید.");
-    return;
-  }
+if(tracking === ""){
 
-  if(tracking === ""){
-    alert("لطفاً شماره پیگیری پرداخت را وارد کنید.");
-    return;
-  }
+alert(
+"لطفاً شماره پیگیری پرداخت را وارد کنید."
+);
 
-  const order = {
+return;
 
-    id: "ORD-" + Date.now(),
+}
 
-    requestType:
-      currentMode === "renew"
-      ? "renewal"
-      : "new_premium",
 
-    ownerName: ownerName,
+const order = {
 
-    ownerPhone: ownerPhone,
+id:
+"ORD-" +
+Date.now(),
 
-    title: title,
+requestType:
+currentMode === "renew"
+? "renewal"
+: "new_premium",
 
-    link: link,
+ownerName:
+ownerName,
 
-    type:
-      document.getElementById("linkType").value,
+ownerPhone:
+ownerPhone,
 
-    description: description,
+title:
+title,
 
-    startDate: startDate.value,
+link:
+link,
 
-    endDate: endDate.value,
+type:
+document.getElementById(
+"linkType"
+).value,
 
-    days: calculation.days,
+description:
+description,
 
-    amount: calculation.price,
+startDate:
+startDate.value,
 
-    tracking: tracking,
+endDate:
+endDate.value,
 
-    status: "waiting_review",
+days:
+calculation.days,
 
-    date:
-      new Date().toLocaleString("fa-IR")
+amount:
+calculation.price,
 
-  };
+tracking:
+tracking,
 
-  let orders = [];
+status:
+"waiting_review",
 
-  try{
+date:
+new Date()
+.toLocaleString("fa-IR")
 
-    orders =
-      JSON.parse(
-        localStorage.getItem("premiumOrders")
-      ) || [];
+};
 
-  }
-  catch(error){
 
-    orders = [];
+let orders = [];
 
-  }
+try{
 
-  orders.push(order);
+orders =
+JSON.parse(
+localStorage.getItem(
+"premiumOrders"
+)
+) || [];
 
-  localStorage.setItem(
-    "premiumOrders",
-    JSON.stringify(orders)
-  );
+}
+catch(error){
 
-  alert(
-    "✅ درخواست شما با موفقیت ثبت شد.\n\n" +
-    "مدت: " +
-    calculation.days +
-    " روز\n" +
-    "مبلغ: " +
-    formatPrice(calculation.price) +
-    "\n\n" +
-    "وضعیت: در انتظار بررسی"
-  );
+orders = [];
+
+}
+
+
+orders.push(order);
+
+
+localStorage.setItem(
+"premiumOrders",
+JSON.stringify(orders)
+);
+
+
+alert(
+"✅ درخواست شما با موفقیت ثبت شد.\n\n" +
+"مدت: " +
+calculation.days +
+" روز\n" +
+"مبلغ: " +
+formatPrice(
+calculation.price
+) +
+"\n\n" +
+"وضعیت: در انتظار بررسی"
+);
+
+
+document.getElementById(
+"ownerName"
+).value = "";
+
+document.getElementById(
+"ownerPhone"
+).value = "";
+
+document.getElementById(
+"title"
+).value = "";
+
+document.getElementById(
+"link"
+).value = "";
+
+document.getElementById(
+"description"
+).value = "";
+
+document.getElementById(
+"tracking"
+).value = "";
+
+startDate.value = "";
+endDate.value = "";
+
+calculatePrice();
 
 }
 
 </script></body>
-</html>
+  </html>

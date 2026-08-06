@@ -711,5 +711,273 @@ function submitPayment(){
 
 }
 
+<script>
+
+const DAILY_PRICE = 500000;
+const WEEKLY_PRICE = 1000000;
+const MONTHLY_PRICE = 2000000;
+const TWO_MONTH_PRICE = 4000000;
+
+let currentMode = "new";
+
+const startDate = document.getElementById("startDate");
+const endDate = document.getElementById("endDate");
+
+function toDate(value){
+  const parts = value.split("-");
+  return new Date(
+    Number(parts[0]),
+    Number(parts[1]) - 1,
+    Number(parts[2])
+  );
+}
+
+function formatPrice(number){
+  return Number(number).toLocaleString("fa-IR") + " تومان";
+}
+
+function calculatePrice(){
+
+  if(!startDate.value || !endDate.value){
+    return null;
+  }
+
+  const start = toDate(startDate.value);
+  const end = toDate(endDate.value);
+
+  if(end < start){
+    alert("❌ تاریخ پایان نمی‌تواند قبل از تاریخ شروع باشد.");
+    return null;
+  }
+
+  const diff = end.getTime() - start.getTime();
+
+  const days = Math.floor(diff / 86400000) + 1;
+
+  let price;
+
+  if(days === 7){
+    price = WEEKLY_PRICE;
+  }
+  else if(days === 30){
+    price = MONTHLY_PRICE;
+  }
+  else if(days === 60){
+    price = TWO_MONTH_PRICE;
+  }
+  else{
+    price = days * DAILY_PRICE;
+  }
+
+  const priceText = document.getElementById("priceText");
+  const durationText = document.getElementById("durationText");
+  const priceDescription = document.getElementById("priceDescription");
+
+  if(priceText){
+    priceText.innerText = formatPrice(price);
+  }
+
+  if(durationText){
+    durationText.innerText =
+      "📅 " + days.toLocaleString("fa-IR") + " روز";
+  }
+
+  if(priceDescription){
+    priceDescription.innerText =
+      days === 7 ? "تعرفه هفتگی" :
+      days === 30 ? "تعرفه یک‌ماهه" :
+      days === 60 ? "تعرفه دوماهه" :
+      "محاسبه بر اساس تعرفه روزانه";
+  }
+
+  return {
+    days: days,
+    price: price
+  };
+}
+
+if(startDate){
+  startDate.addEventListener("change", calculatePrice);
+}
+
+if(endDate){
+  endDate.addEventListener("change", calculatePrice);
+}
+
+function setMode(mode){
+
+  currentMode = mode;
+
+  const newMode =
+    document.getElementById("newMode");
+
+  const renewMode =
+    document.getElementById("renewMode");
+
+  if(newMode){
+    newMode.classList.toggle(
+      "active",
+      mode === "new"
+    );
+  }
+
+  if(renewMode){
+    renewMode.classList.toggle(
+      "active",
+      mode === "renew"
+    );
+  }
+
+}
+
+function copyCard(){
+
+  const element =
+    document.getElementById("cardNumber");
+
+  if(!element){
+    return;
+  }
+
+  const card =
+    element.innerText.replace(/-/g,"");
+
+  if(navigator.clipboard){
+
+    navigator.clipboard.writeText(card);
+
+  }
+
+  alert("✅ شماره کارت کپی شد.");
+
+}
+
+function submitPayment(){
+
+  const ownerName =
+    document.getElementById("ownerName").value.trim();
+
+  const ownerPhone =
+    document.getElementById("ownerPhone").value.trim();
+
+  const title =
+    document.getElementById("title").value.trim();
+
+  const link =
+    document.getElementById("link").value.trim();
+
+  const description =
+    document.getElementById("description").value.trim();
+
+  const tracking =
+    document.getElementById("tracking").value.trim();
+
+  if(ownerName === ""){
+    alert("لطفاً نام صاحب لینک را وارد کنید.");
+    return;
+  }
+
+  if(ownerPhone === ""){
+    alert("لطفاً شماره تماس را وارد کنید.");
+    return;
+  }
+
+  if(title === ""){
+    alert("لطفاً نام گروه یا کانال را وارد کنید.");
+    return;
+  }
+
+  if(link === ""){
+    alert("لطفاً لینک روبیکا را وارد کنید.");
+    return;
+  }
+
+  const calculation = calculatePrice();
+
+  if(!calculation){
+    alert("لطفاً تاریخ شروع و پایان را انتخاب کنید.");
+    return;
+  }
+
+  if(tracking === ""){
+    alert("لطفاً شماره پیگیری پرداخت را وارد کنید.");
+    return;
+  }
+
+  const order = {
+
+    id: "ORD-" + Date.now(),
+
+    requestType:
+      currentMode === "renew"
+      ? "renewal"
+      : "new_premium",
+
+    ownerName: ownerName,
+
+    ownerPhone: ownerPhone,
+
+    title: title,
+
+    link: link,
+
+    type:
+      document.getElementById("linkType").value,
+
+    description: description,
+
+    startDate: startDate.value,
+
+    endDate: endDate.value,
+
+    days: calculation.days,
+
+    amount: calculation.price,
+
+    tracking: tracking,
+
+    status: "waiting_review",
+
+    date:
+      new Date().toLocaleString("fa-IR")
+
+  };
+
+  let orders = [];
+
+  try{
+
+    orders =
+      JSON.parse(
+        localStorage.getItem("premiumOrders")
+      ) || [];
+
+  }
+  catch(error){
+
+    orders = [];
+
+  }
+
+  orders.push(order);
+
+  localStorage.setItem(
+    "premiumOrders",
+    JSON.stringify(orders)
+  );
+
+  alert(
+    "✅ درخواست شما با موفقیت ثبت شد.\n\n" +
+    "مدت: " +
+    calculation.days +
+    " روز\n" +
+    "مبلغ: " +
+    formatPrice(calculation.price) +
+    "\n\n" +
+    "وضعیت: در انتظار بررسی"
+  );
+
+}
+
 </script></body>
 </html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>ثبت لینک | لینک‌دونی روبیکا</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+
+margin:0;
+
+font-family:
+Tahoma,
+Arial,
+sans-serif;
+
+background:#f4f6fb;
+
+padding:20px;
+
+}
+
+.box{
+
+max-width:430px;
+
+margin:25px auto;
+
+background:white;
+
+padding:25px;
+
+border-radius:22px;
+
+box-shadow:
+0 5px 25px #ddd;
+
+}
+
+.logo{
+
+text-align:center;
+
+font-size:23px;
+
+font-weight:bold;
+
+color:#4d55e8;
+
+margin-bottom:8px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+font-size:12px;
+
+color:#777;
+
+margin-bottom:25px;
+
+}
+
+label{
+
+display:block;
+
+font-size:13px;
+
+font-weight:bold;
+
+margin-top:15px;
+
+margin-bottom:7px;
+
+}
+
+input,
+textarea,
+select{
+
+width:100%;
+
+padding:13px;
+
+border:1px solid #ddd;
+
+border-radius:12px;
+
+font-family:Tahoma;
+
+font-size:13px;
+
+outline:none;
+
+background:white;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+border-color:#4d55e8;
+
+}
+
+textarea{
+
+height:100px;
+
+resize:none;
+
+}
+
+button{
+
+width:100%;
+
+padding:14px;
+
+margin-top:22px;
+
+border:0;
+
+border-radius:13px;
+
+background:
+linear-gradient(
+135deg,
+#4d5bea,
+#7138d8
+);
+
+color:white;
+
+font-size:14px;
+
+font-weight:bold;
+
+}
+
+.back{
+
+display:block;
+
+text-align:center;
+
+margin-top:18px;
+
+text-decoration:none;
+
+color:#4d55e8;
+
+font-size:12px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="box">
+
+
+<div class="logo">
+
+🔗 لینک‌دونی روبیکا
+
+</div>
+
+
+<div class="subtitle">
+
+ثبت گروه یا کانال جدید
+
+</div>
+
+
+
+<label>
+
+نوع لینک
+
+</label>
+
+<select id="type">
+
+<option value="channel">
+📢 کانال روبیکا
+</option>
+
+<option value="group">
+👥 گروه روبیکا
+</option>
+
+</select>
+
+
+
+<label>
+
+نام گروه یا کانال
+
+</label>
+
+<input
+
+id="title"
+
+type="text"
+
+placeholder="مثلاً کانال موزیک کردی"
+
+
+
+>
+
+
+
+<label>
+
+لینک روبیکا
+
+</label>
+
+<input
+
+id="link"
+
+type="text"
+
+placeholder="لینک گروه یا کانال را وارد کنید"
+
+
+
+>
+
+
+
+<label>
+
+دسته‌بندی
+
+</label>
+
+<select id="category">
+
+<option value="music">
+🎵 موزیک
+</option>
+
+<option value="movie">
+🎬 فیلم و سریال
+</option>
+
+<option value="game">
+🎮 بازی و سرگرمی
+</option>
+
+<option value="education">
+📚 آموزشی
+</option>
+
+<option value="news">
+📰 اخبار
+</option>
+
+<option value="other">
+📂 سایر
+</option>
+
+</select>
+
+
+
+<label>
+
+توضیحات
+
+</label>
+
+<textarea
+
+id="description"
+
+placeholder="توضیح کوتاهی درباره گروه یا کانال بنویسید..."
+
+></textarea>
+
+
+
+<button onclick="saveLink()">
+
+➕ ثبت لینک
+
+</button>
+
+
+
+<a
+href="profile.html"
+class="back"
+>
+
+⬅️ بازگشت به پروفایل
+
+</a>
+
+
+</div>
+
+
+
+<script>
+
+
+function saveLink(){
+
+
+let type =
+document.getElementById("type").value;
+
+
+let title =
+document.getElementById("title").value.trim();
+
+
+let link =
+document.getElementById("link").value.trim();
+
+
+let category =
+document.getElementById("category").value;
+
+
+let description =
+document.getElementById("description").value.trim();
+
+
+
+if(title === ""){
+
+alert(
+"لطفاً نام گروه یا کانال را وارد کنید."
+);
+
+return;
+
+}
+
+
+
+if(link === ""){
+
+alert(
+"لطفاً لینک روبیکا را وارد کنید."
+);
+
+return;
+
+}
+
+
+
+let newLink = {
+
+type:type,
+
+title:title,
+
+link:link,
+
+category:category,
+
+description:description,
+
+date:new Date().toLocaleString("fa-IR")
+
+};
+
+
+
+let links =
+JSON.parse(
+localStorage.getItem("rubikaLinks")
+) || [];
+
+
+
+links.push(newLink);
+
+
+
+localStorage.setItem(
+"rubikaLinks",
+JSON.stringify(links)
+);
+
+
+
+alert(
+"✅ لینک با موفقیت ثبت شد!"
+);
+window.location.href = "index.html";
+
+
+document.getElementById("title").value="";
+
+document.getElementById("link").value="";
+
+document.getElementById("description").value="";
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>

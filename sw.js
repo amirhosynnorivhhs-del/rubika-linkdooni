@@ -1,0 +1,43 @@
+const CACHE_NAME = "linkdooni-v1";
+
+const FILES_TO_CACHE = [
+  "./",
+  "./index.html",
+  "./manifest.json"
+];
+
+self.addEventListener("install", function(event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function(cache) {
+      return cache.addAll(FILES_TO_CACHE);
+    })
+  );
+
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", function(event) {
+  event.waitUntil(
+    self.clients.claim()
+  );
+});
+
+self.addEventListener("fetch", function(event) {
+
+  if (event.request.method !== "GET") {
+    return;
+  }
+
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+
+      if (response) {
+        return response;
+      }
+
+      return fetch(event.request);
+
+    })
+  );
+
+});

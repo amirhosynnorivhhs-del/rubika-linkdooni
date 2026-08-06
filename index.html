@@ -1,374 +1,356 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-
+<!DOCTYPE html><html lang="fa" dir="rtl"><head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>لینک‌دونی روبیکا</title>
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>لینک‌دونی روبیکا</title><style>
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-font-family:Tahoma,Arial,sans-serif;
-background:#f4f6fb;
-color:#172033;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f4f6fb;
+    color:#172033;
 }
 
 .header{
-background:linear-gradient(135deg,#4d5bea,#7138d8);
-color:white;
-padding:22px 16px 35px;
-border-radius:0 0 30px 30px;
+    background:linear-gradient(135deg,#4d5bea,#7138d8);
+    color:white;
+    padding:22px 16px 35px;
+    border-radius:0 0 30px 30px;
 }
 
 .container{
-max-width:700px;
-margin:auto;
+    max-width:700px;
+    margin:auto;
 }
 
 .top{
-display:flex;
-justify-content:space-between;
-align-items:center;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
 .logo{
-font-size:20px;
-font-weight:bold;
+    font-size:20px;
+    font-weight:bold;
 }
 
 .login{
-background:white;
-color:#4d4fd8;
-border:0;
-border-radius:12px;
-padding:10px 13px;
-font-weight:bold;
-text-decoration:none;
+    background:white;
+    color:#4d4fd8;
+    border:0;
+    border-radius:12px;
+    padding:10px 13px;
+    font-weight:bold;
+    text-decoration:none;
+    font-size:12px;
 }
 
 .hero{
-text-align:center;
-margin-top:35px;
+    text-align:center;
+    margin-top:35px;
 }
 
 .hero h1{
-font-size:25px;
-margin-bottom:12px;
+    font-size:25px;
+    margin-bottom:12px;
 }
 
 .hero p{
-font-size:13px;
-line-height:2;
-opacity:.9;
+    font-size:13px;
+    line-height:2;
+    opacity:.9;
 }
 
 .search{
-margin-top:22px;
-background:white;
-padding:6px;
-border-radius:16px;
-display:flex;
+    margin-top:22px;
+    background:white;
+    padding:6px;
+    border-radius:16px;
+    display:flex;
 }
 
 .search input{
-flex:1;
-border:0;
-outline:none;
-padding:13px;
-font-size:13px;
+    flex:1;
+    border:0;
+    outline:none;
+    padding:13px;
+    font-size:13px;
+    min-width:0;
 }
 
 .search button{
-border:0;
-background:#4d5bea;
-color:white;
-border-radius:11px;
-padding:0 16px;
-font-weight:bold;
+    border:0;
+    background:#4d5bea;
+    color:white;
+    border-radius:11px;
+    padding:0 16px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 main{
-padding:22px 15px;
+    padding:22px 15px;
 }
 
 .title{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:14px;
 }
 
 .title h2{
-font-size:18px;
+    font-size:18px;
 }
 
 .title span{
-font-size:11px;
-color:#777;
+    font-size:11px;
+    color:#777;
 }
 
 .categories{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:11px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:11px;
 }
 
 .category{
-background:white;
-border:1px solid #e7e9f0;
-border-radius:17px;
-padding:18px 10px;
-text-align:center;
-cursor:pointer;
+    background:white;
+    border:1px solid #e7e9f0;
+    border-radius:17px;
+    padding:18px 10px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.category:hover{
+    border-color:#4d5bea;
 }
 
 .category:active{
-transform:scale(.96);
+    transform:scale(.96);
 }
 
 .category .icon{
-font-size:28px;
+    font-size:28px;
 }
 
 .category b{
-display:block;
-margin-top:9px;
-font-size:13px;
+    display:block;
+    margin-top:9px;
+    font-size:13px;
 }
 
 .add{
-display:block;
-text-decoration:none;
-text-align:center;
-background:#172033;
-color:white;
-padding:15px;
-border-radius:15px;
-margin:22px 0;
-font-weight:bold;
+    display:block;
+    text-decoration:none;
+    text-align:center;
+    background:#172033;
+    color:white;
+    padding:15px;
+    border-radius:15px;
+    margin:22px 0;
+    font-weight:bold;
 }
 
 .cards{
-display:grid;
-gap:11px;
+    display:grid;
+    gap:11px;
 }
 
 .card{
-background:white;
-border:1px solid #e7e9f0;
-border-radius:17px;
-padding:15px;
-display:flex;
-align-items:center;
-gap:12px;
+    background:white;
+    border:1px solid #e7e9f0;
+    border-radius:17px;
+    padding:15px;
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .avatar{
-width:50px;
-height:50px;
-background:#eef0ff;
-border-radius:14px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:23px;
+    width:50px;
+    height:50px;
+    min-width:50px;
+    background:#eef0ff;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
 }
 
 .card-info{
-flex:1;
+    flex:1;
+    min-width:0;
 }
 
 .card-info h3{
-font-size:14px;
-margin-bottom:7px;
+    font-size:14px;
+    margin-bottom:7px;
 }
 
 .meta{
-color:#777;
-font-size:11px;
+    color:#777;
+    font-size:11px;
 }
 
 .view{
-background:#4d5bea;
-color:white;
-text-decoration:none;
-padding:9px 11px;
-border-radius:10px;
-font-size:11px;
+    background:#4d5bea;
+    color:white;
+    text-decoration:none;
+    padding:9px 11px;
+    border-radius:10px;
+    font-size:11px;
+    white-space:nowrap;
 }
 
 .empty{
-background:white;
-padding:25px;
-text-align:center;
-border-radius:17px;
-color:#777;
-font-size:13px;
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:17px;
+    color:#777;
+    font-size:13px;
 }
 
 footer{
-text-align:center;
-color:#888;
-font-size:11px;
-padding:25px;
+    text-align:center;
+    color:#888;
+    font-size:11px;
+    padding:25px;
 }
 
-</style>
+@media(max-width:480px){
 
-</head>
+    .hero h1{
+        font-size:21px;
+    }
 
-<body>
+    .top{
+        justify-content:center;
+    }
 
+    .logo{
+        width:100%;
+        text-align:center;
+        margin-bottom:5px;
+    }
 
-<header class="header">
+    .card{
+        padding:12px;
+    }
 
-<div class="container">
+}
 
-<div class="top">
-
-<div class="logo">
+</style></head><body><header class="header"><div class="container"><div class="top"><div class="logo">
 🔗 لینک‌دونی روبیکا
-</div>
-
-<a href="register.html" class="login">
+</div><a href="register.html" class="login">
 👤 ورود / ثبت‌نام
-</a>
-<a
+</a><a
 href="admin.html"
 class="login"
-style="margin-right:6px;"
->
+
+«»
+
 🛠️ مدیریت
 </a>
-</div>
 
-
-<div class="hero">
-
-<h1>
+</div><div class="hero"><h1>
 گروه و کانال روبیکای خودت رو پیدا کن
-</h1>
-
-<p>
+</h1><p>
 محلی برای پیدا کردن، معرفی و جستجوی گروه‌ها و کانال‌های روبیکا
-</p>
-
-</div>
-
-
-<div class="search">
-
-<input
+</p></div><div class="search"><input
 id="searchInput"
 type="text"
 placeholder="نام گروه، کانال یا موضوع..."
->
 
-<button onclick="searchLinks()">
+«»
+
+<button
+type="button"
+onclick="searchLinks()"
+
+«»
+
 جستجو
 </button>
 
-</div>
-
-</div>
-
-</header>
-
-
-<main class="container">
-
-
-<div class="title">
-
-<h2>
+</div></div></header><main class="container"><div class="title"><h2>
 📂 دسته‌بندی‌ها
-</h2>
-
-<span>
+</h2><span>
 انتخاب دسته
-</span>
+</span></div><div class="categories"><div
+class="category"
+onclick="showCategory('group')"
+><div class="icon">
+👥
+</div><b>
+گروه‌های روبیکا
+</b></div><div
+class="category"
+onclick="showCategory('channel')"
+><div class="icon">
+📢
+</div><b>
+کانال‌های روبیکا
+</b></div><div
+class="category"
+onclick="showCategory('music')"
+><div class="icon">
+🎵
+</div><b>
+موزیک
+</b></div><div
+class="category"
+onclick="showCategory('movie')"
+><div class="icon">
+🎬
+</div><b>
+فیلم و سریال
+</b></div><div
+class="category"
+onclick="showCategory('game')"
+><div class="icon">
+🎮
+</div><b>
+بازی و سرگرمی
+</b></div><div
+class="category"
+onclick="showCategory('education')"
+><div class="icon">
+📚
+</div><b>
+آموزشی
+</b></div></div><a
+href="add-link.html"
+class="add"
 
-</div>
+«»
 
-
-<div class="categories">
-
-<div class="category" onclick="showCategory('group')">
-<div class="icon">👥</div>
-<b>گروه‌های روبیکا</b>
-</div>
-
-<div class="category" onclick="showCategory('channel')">
-<div class="icon">📢</div>
-<b>کانال‌های روبیکا</b>
-</div>
-
-<div class="category" onclick="showCategory('music')">
-<div class="icon">🎵</div>
-<b>موزیک</b>
-</div>
-
-<div class="category" onclick="showCategory('movie')">
-<div class="icon">🎬</div>
-<b>فیلم و سریال</b>
-</div>
-
-<div class="category" onclick="showCategory('game')">
-<div class="icon">🎮</div>
-<b>بازی و سرگرمی</b>
-</div>
-
-<div class="category" onclick="showCategory('education')">
-<div class="icon">📚</div>
-<b>آموزشی</b>
-</div>
-
-</div>
-
-
-<a href="add-link.html" class="add">
 ➕ ثبت گروه یا کانال روبیکا
 </a>
 
-
-<div class="title">
-
-<h2 id="listTitle">
+<div class="title"><h2 id="listTitle">
 ⭐ لینک‌های منتخب
-</h2>
-
-<span id="count">
+</h2><span id="count">
 ۰ مورد
-</span>
+</span></div><div
+class="cards"
+id="userLinks"
+>
+</div></main><footer>© 2026 لینک‌دونی روبیکا
 
-</div>
-
-
-<div class="cards" id="userLinks">
-</div>
-
-
-</main>
+</footer><script>
 
 
-<footer>
-
-© 2026 لینک‌دونی روبیکا
-
-</footer>
-
-
-
-<script>
-
+/* دریافت لینک‌های ذخیره‌شده */
 
 let savedLinks =
 JSON.parse(
@@ -376,180 +358,266 @@ localStorage.getItem("rubikaLinks")
 ) || [];
 
 
+
+/* یکسان‌سازی متن دسته‌بندی */
+
+function normalize(value){
+
+    return String(value || "")
+        .trim()
+        .toLowerCase()
+        .replace("🎵","")
+        .replace("🎬","")
+        .replace("🎮","")
+        .replace("📚","")
+        .replace("📰","")
+        .replace("📂","")
+        .trim();
+
+}
+
+
+
+/* نمایش لینک‌ها */
+
 function renderLinks(list){
 
-let container =
-document.getElementById("userLinks");
+    const container =
+        document.getElementById("userLinks");
 
-container.innerHTML = "";
+    const count =
+        document.getElementById("count");
+
+    container.innerHTML = "";
+
+    count.innerText =
+        list.length + " مورد";
 
 
-if(list.length === 0){
+    if(list.length === 0){
 
-container.innerHTML = `
-<div class="empty">
-😕 موردی پیدا نشد
-</div>
-`;
+        container.innerHTML = `
 
-return;
+        <div class="empty">
+
+        😕 موردی پیدا نشد
+
+        <br><br>
+
+        هنوز لینکی در این بخش ثبت نشده است.
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    list.forEach(function(item){
+
+        const card =
+            document.createElement("div");
+
+        card.className = "card";
+
+
+        const icon =
+            normalize(item.type) === "channel"
+            ? "📢"
+            : "👥";
+
+
+        const typeText =
+            normalize(item.type) === "channel"
+            ? "کانال"
+            : "گروه";
+
+
+        card.innerHTML = `
+
+        <div class="avatar">
+            ${icon}
+        </div>
+
+        <div class="card-info">
+
+            <h3>
+                ${item.title || "بدون نام"}
+            </h3>
+
+            <div class="meta">
+                ${icon} ${typeText}
+                ·
+                ${item.category || "سایر"}
+            </div>
+
+        </div>
+
+        <a
+            href="${item.link || "#"}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="view"
+        >
+            ورود
+        </a>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
 
 }
 
 
-list.forEach(function(item){
 
-let card =
-document.createElement("div");
-
-card.className = "card";
-
-
-let icon =
-item.type === "channel"
-? "📢"
-: "👥";
-
-
-let typeText =
-item.type === "channel"
-? "کانال"
-: "گروه";
-
-
-card.innerHTML = `
-
-<div class="avatar">
-${icon}
-</div>
-
-<div class="card-info">
-
-<h3>
-${item.title}
-</h3>
-
-<div class="meta">
-${icon} ${typeText} · ${item.category}
-</div>
-
-</div>
-
-<a
-href="${item.link}"
-target="_blank"
-class="view"
->
-ورود
-</a>
-
-`;
-
-
-container.appendChild(card);
-
-});
-
-
-document.getElementById("count").innerText =
-list.length + " مورد";
-
-}
-
+/* جستجو */
 
 function searchLinks(){
 
-let keyword =
-document
-.getElementById("searchInput")
-.value
-.trim()
-.toLowerCase();
+    const input =
+        document.getElementById("searchInput");
+
+    const keyword =
+        input.value
+        .trim()
+        .toLowerCase();
 
 
-if(keyword === ""){
+    if(keyword === ""){
 
-document.getElementById("listTitle").innerText =
-"⭐ لینک‌های منتخب";
+        document.getElementById("listTitle").innerText =
+            "⭐ لینک‌های منتخب";
 
-renderLinks(savedLinks);
+        renderLinks(savedLinks);
 
-return;
+        return;
+
+    }
+
+
+    const results =
+        savedLinks.filter(function(item){
+
+            const text = (
+
+                (item.title || "") + " " +
+                (item.description || "") + " " +
+                (item.category || "") + " " +
+                (item.type || "")
+
+            ).toLowerCase();
+
+
+            return text.includes(keyword);
+
+        });
+
+
+    document.getElementById("listTitle").innerText =
+        "🔎 نتایج جستجو";
+
+
+    renderLinks(results);
 
 }
 
 
-let results =
-savedLinks.filter(function(item){
 
-let text = (
-
-(item.title || "") + " " +
-(item.description || "") + " " +
-(item.category || "") + " " +
-(item.type || "")
-
-).toLowerCase();
-
-
-return text.includes(keyword);
-
-});
-
-
-document.getElementById("listTitle").innerText =
-"🔎 نتایج جستجو";
-
-
-renderLinks(results);
-
-}
-
+/* دسته‌بندی */
 
 function showCategory(type){
 
-let results;
+    let results;
 
 
-if(
-type === "group" ||
-type === "channel"
-){
+    if(
+        type === "group" ||
+        type === "channel"
+    ){
 
-results =
-savedLinks.filter(function(item){
+        results =
+            savedLinks.filter(function(item){
 
-return item.type === type;
+                return normalize(item.type) ===
+                       normalize(type);
 
-});
+            });
 
-}else{
+    }
 
-results =
-savedLinks.filter(function(item){
+    else{
 
-return item.category === type;
+        results =
+            savedLinks.filter(function(item){
 
-});
+                return normalize(item.category) ===
+                       normalize(type);
+
+            });
+
+    }
+
+
+    const titles = {
+
+        group:
+            "👥 گروه‌های روبیکا",
+
+        channel:
+            "📢 کانال‌های روبیکا",
+
+        music:
+            "🎵 موزیک",
+
+        movie:
+            "🎬 فیلم و سریال",
+
+        game:
+            "🎮 بازی و سرگرمی",
+
+        education:
+            "📚 آموزشی"
+
+    };
+
+
+    document.getElementById("listTitle").innerText =
+        titles[type] || "📂 نتایج دسته‌بندی";
+
+
+    renderLinks(results);
 
 }
 
 
-document.getElementById("listTitle").innerText =
-"📂 نتایج دسته‌بندی";
+
+/* جستجو با Enter */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            searchLinks();
+
+        }
+
+    }
+);
 
 
-renderLinks(results);
 
-}
+/* نمایش اولیه */
 
-console.log(savedLinks);
 renderLinks(savedLinks);
 
 
-</script>
-
-
-</body>
-
-</html>
+</script></body></html>

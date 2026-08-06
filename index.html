@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
-<head>
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<!-- PWA -->
-<link rel="manifest" href="./manifest.json">
-
+<!DOCTYPE html><html lang="fa" dir="rtl">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>لینک‌دونی کرمانشاه</title><!-- PWA --><link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#6d20a8">
-
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent">
-
-<title>لینک‌دونی کرمانشاه</title>
-
-<style>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><style>
 
 *{
   box-sizing:border-box;
@@ -37,31 +22,16 @@ body{
   color:#fff;
 
   background:
-    radial-gradient(
-      circle at 15% 5%,
-      rgba(150,45,255,.30),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 25%,
-      rgba(90,20,180,.25),
-      transparent 30%
-    ),
-    linear-gradient(
-      145deg,
-      #020203,
-      #09040f 50%,
-      #030305
-    );
+    radial-gradient(circle at 15% 5%,rgba(150,45,255,.30),transparent 28%),
+    radial-gradient(circle at 90% 25%,rgba(90,20,180,.25),transparent 30%),
+    linear-gradient(145deg,#020203,#09040f 50%,#030305);
 }
 
 /* HEADER */
 
 .header{
   padding:20px 15px 35px;
-
-  border-radius:
-    0 0 35px 35px;
+  border-radius:0 0 35px 35px;
 
   background:
     linear-gradient(
@@ -70,13 +40,10 @@ body{
       rgba(64,17,105,.92)
     );
 
-  border-bottom:
-    1px solid
-    rgba(210,140,255,.45);
+  border-bottom:1px solid rgba(210,140,255,.45);
 
   box-shadow:
-    0 20px 70px
-    rgba(112,30,255,.25);
+    0 20px 70px rgba(112,30,255,.25);
 }
 
 .container{
@@ -109,11 +76,8 @@ body{
 .top-links a{
   text-decoration:none;
   color:#fff;
-
   padding:10px 12px;
-
   border-radius:12px;
-
   font-size:10px;
   font-weight:bold;
 
@@ -124,22 +88,53 @@ body{
       rgba(255,255,255,.05)
     );
 
-  border:
-    1px solid
-    rgba(255,255,255,.35);
+  border:1px solid rgba(255,255,255,.35);
 
   box-shadow:
-    inset 1px 1px 2px
-    rgba(255,255,255,.5),
-
-    inset -1px -1px 2px
-    rgba(0,0,0,.3),
-
-    0 0 18px
-    rgba(148,48,255,.25);
+    inset 1px 1px 2px rgba(255,255,255,.5),
+    inset -1px -1px 2px rgba(0,0,0,.3),
+    0 0 18px rgba(148,48,255,.25);
 
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
+}
+
+/* INSTALL BUTTON */
+
+.install-btn{
+  display:none;
+
+  margin:15px auto 0;
+
+  padding:8px 13px;
+
+  border:1px solid rgba(235,206,255,.45);
+  border-radius:11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(174,83,255,.65),
+      rgba(83,24,150,.75)
+    );
+
+  color:#fff;
+
+  font-family:Tahoma;
+  font-size:10px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 0 15px rgba(148,48,255,.22),
+    inset 1px 1px 2px rgba(255,255,255,.35);
+
+  transition:.2s;
+}
+
+.install-btn:active{
+  transform:scale(.95);
 }
 
 /* HERO */
@@ -165,50 +160,6 @@ body{
   color:#d8cce0;
 }
 
-/* INSTALL BUTTON */
-
-.install-btn{
-  display:none;
-
-  width:auto;
-  margin:14px auto 0;
-
-  padding:8px 14px;
-
-  border:
-    1px solid
-    rgba(235,206,255,.35);
-
-  border-radius:11px;
-
-  color:#fff;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(178,82,255,.75),
-      rgba(72,19,130,.85)
-    );
-
-  font-family:Tahoma,Arial,sans-serif;
-
-  font-size:10px;
-  font-weight:bold;
-
-  box-shadow:
-    0 4px 15px
-    rgba(130,40,255,.18),
-
-    inset 1px 1px 2px
-    rgba(255,255,255,.25);
-
-  cursor:pointer;
-}
-
-.install-btn:active{
-  transform:scale(.96);
-}
-
 /* SEARCH */
 
 .search{
@@ -226,19 +177,12 @@ body{
       rgba(255,255,255,.035)
     );
 
-  border:
-    1px solid
-    rgba(255,255,255,.30);
+  border:1px solid rgba(255,255,255,.30);
 
   box-shadow:
-    inset 1px 1px 2px
-    rgba(255,255,255,.4),
-
-    inset -2px -2px 4px
-    rgba(0,0,0,.5),
-
-    0 0 25px
-    rgba(131,38,255,.22);
+    inset 1px 1px 2px rgba(255,255,255,.4),
+    inset -2px -2px 4px rgba(0,0,0,.5),
+    0 0 25px rgba(131,38,255,.22);
 
   backdrop-filter:blur(15px);
   -webkit-backdrop-filter:blur(15px);
@@ -247,15 +191,11 @@ body{
 .search input{
   width:100%;
   min-width:0;
-
   border:0;
   outline:0;
-
   background:transparent;
   color:#fff;
-
   padding:13px;
-
   font-family:Tahoma;
   font-size:12px;
 }
@@ -265,19 +205,12 @@ body{
 }
 
 .search button{
-  border:
-    1px solid
-    rgba(235,206,255,.5);
-
+  border:1px solid rgba(235,206,255,.5);
   color:#fff;
-
   font-family:Tahoma;
   font-weight:bold;
-
   padding:0 17px;
-
   border-radius:12px;
-
   cursor:pointer;
 
   background:
@@ -293,7 +226,6 @@ body{
 main{
   width:100%;
   max-width:720px;
-
   margin:auto;
   padding:23px 15px;
 }
@@ -302,7 +234,6 @@ main{
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   margin-bottom:14px;
 }
 
@@ -319,10 +250,7 @@ main{
 
 .categories{
   display:grid;
-
-  grid-template-columns:
-    repeat(2,minmax(0,1fr));
-
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:12px;
 }
 
@@ -346,28 +274,18 @@ main{
       rgba(124,40,190,.16)
     );
 
-  border:
-    1px solid
-    rgba(255,255,255,.34);
+  border:1px solid rgba(255,255,255,.34);
 
   box-shadow:
-    inset 2px 2px 3px
-    rgba(255,255,255,.42),
-
-    inset -3px -3px 5px
-    rgba(0,0,0,.45),
-
-    0 10px 25px
-    rgba(0,0,0,.4),
-
-    0 0 20px
-    rgba(132,42,255,.18);
+    inset 2px 2px 3px rgba(255,255,255,.42),
+    inset -3px -3px 5px rgba(0,0,0,.45),
+    0 10px 25px rgba(0,0,0,.4),
+    0 0 20px rgba(132,42,255,.18);
 
   backdrop-filter:blur(15px);
   -webkit-backdrop-filter:blur(15px);
 
   cursor:pointer;
-
   transition:.2s;
 }
 
@@ -384,7 +302,6 @@ main{
 .category .name{
   display:block;
   margin-top:9px;
-
   font-size:11px;
   font-weight:bold;
 }
@@ -394,27 +311,21 @@ main{
 .actions{
   display:grid;
   gap:12px;
-
   margin:23px 0;
 }
 
 .action{
   display:block;
-
   width:100%;
-
   padding:16px;
-
   border-radius:17px;
 
   text-align:center;
   text-decoration:none;
 
   font-family:Tahoma;
-
   font-size:13px;
   font-weight:bold;
-
   color:#fff;
 
   background:
@@ -424,40 +335,21 @@ main{
       rgba(72,19,130,.92)
     );
 
-  border:
-    1px solid
-    rgba(239,211,255,.65);
+  border:1px solid rgba(239,211,255,.65);
 
   box-shadow:
-    inset 2px 2px 4px
-    rgba(255,255,255,.48),
-
-    inset -3px -3px 5px
-    rgba(0,0,0,.38),
-
-    0 10px 28px
-    rgba(0,0,0,.45),
-
-    0 0 25px
-    rgba(151,45,255,.35);
+    inset 2px 2px 4px rgba(255,255,255,.48),
+    inset -3px -3px 5px rgba(0,0,0,.38),
+    0 10px 28px rgba(0,0,0,.45),
+    0 0 25px rgba(151,45,255,.35);
 }
 
 .add-link{
-  background:
-    linear-gradient(
-      135deg,
-      #9b42ec,
-      #55149a
-    );
+  background:linear-gradient(135deg,#9b42ec,#55149a);
 }
 
 .premium-link{
-  background:
-    linear-gradient(
-      135deg,
-      #c35cff,
-      #7019ad
-    );
+  background:linear-gradient(135deg,#c35cff,#7019ad);
 }
 
 /* CARDS */
@@ -470,13 +362,10 @@ main{
 .card{
   display:flex;
   align-items:center;
-
   gap:11px;
 
   width:100%;
-
   padding:14px;
-
   border-radius:18px;
 
   background:
@@ -486,19 +375,12 @@ main{
       rgba(255,255,255,.045)
     );
 
-  border:
-    1px solid
-    rgba(255,255,255,.27);
+  border:1px solid rgba(255,255,255,.27);
 
   box-shadow:
-    inset 1px 1px 3px
-    rgba(255,255,255,.35),
-
-    inset -2px -2px 4px
-    rgba(0,0,0,.4),
-
-    0 10px 25px
-    rgba(0,0,0,.35);
+    inset 1px 1px 3px rgba(255,255,255,.35),
+    inset -2px -2px 4px rgba(0,0,0,.4),
+    0 10px 25px rgba(0,0,0,.35);
 
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
@@ -507,16 +389,13 @@ main{
 .avatar{
   width:48px;
   height:48px;
-
   min-width:48px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
   border-radius:14px;
-
   font-size:22px;
 
   background:
@@ -526,9 +405,7 @@ main{
       rgba(73,21,120,.3)
     );
 
-  border:
-    1px solid
-    rgba(224,180,255,.35);
+  border:1px solid rgba(224,180,255,.35);
 }
 
 .card-info{
@@ -538,35 +415,25 @@ main{
 
 .card-info h3{
   margin:0 0 6px;
-
   font-size:13px;
-
   overflow:hidden;
-
   text-overflow:ellipsis;
-
   white-space:nowrap;
 }
 
 .meta{
   color:#b8aebe;
-
   font-size:10px;
-
   line-height:1.8;
 }
 
 .view{
   color:#fff;
-
   text-decoration:none;
-
   white-space:nowrap;
 
   padding:9px 11px;
-
   border-radius:10px;
-
   font-size:10px;
 
   background:
@@ -576,26 +443,19 @@ main{
       rgba(78,23,135,.55)
     );
 
-  border:
-    1px solid
-    rgba(232,198,255,.4);
+  border:1px solid rgba(232,198,255,.4);
 }
 
 /* EMPTY */
 
 .empty{
   width:100%;
-
   padding:28px 15px;
-
   border-radius:18px;
 
   text-align:center;
-
   color:#a99caf;
-
   font-size:12px;
-
   line-height:2;
 
   background:
@@ -605,20 +465,15 @@ main{
       rgba(255,255,255,.035)
     );
 
-  border:
-    1px solid
-    rgba(255,255,255,.20);
+  border:1px solid rgba(255,255,255,.20);
 }
 
 /* FOOTER */
 
 footer{
   text-align:center;
-
   color:#817587;
-
   font-size:10px;
-
   padding:23px 10px 35px;
 }
 
@@ -659,240 +514,156 @@ footer{
 
 }
 
-</style>
-</head>
-
-<body>
-
-<header class="header">
-
-<div class="container">
-
-<div class="top">
-
-<div class="logo">
+</style></head><body><header class="header"><div class="container"><div class="top"><div class="logo">
 🔗 لینک‌دونی کرمانشاه
-</div>
-
-<div class="top-links">
-
-<a href="admin.html">
+</div><div class="top-links"><a href="admin.html">
 🛠️ مدیریت
-</a>
-
-<a href="register.html">
+</a><a href="register.html">
 👤 ورود
-</a>
+</a></div></div><!-- دکمه نصب --><button
+id="installButton"
+class="install-btn"
+type="button"
 
-</div>
+«»
 
-</div>
+📲 نصب برنامه
+</button>
 
-<div class="hero">
-
-<h1>
+<div class="hero"><h1>
 لینک‌دونی کرمانشاه
-</h1>
-
-<p>
+</h1><p>
 گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن
 <br>
 معرفی، جستجو و ثبت لینک در یکجا
-</p>
-
-<!-- INSTALL -->
-
-<button
-id="installBtn"
-class="install-btn"
-type="button">
-
-📲 نصب برنامه
-
-</button>
-
-</div>
-
-<div class="search">
-
-<input
+</p></div><div class="search"><input
 id="searchInput"
 type="search"
 placeholder="نام گروه، کانال یا موضوع..."
->
+
+«»
 
 <button
 type="button"
-onclick="searchLinks()">
+onclick="searchLinks()"
+
+«»
 
 جستجو
-
 </button>
 
-</div>
-
-</div>
-
-</header>
-
-<main>
-
-<div class="section-title">
-
-<h2>
+</div></div></header><main><div class="section-title"><h2>
 📂 دسته‌بندی‌ها
-</h2>
-
-<span id="categoryText">
+</h2><span id="categoryText">
 همه
-</span>
-
-</div>
-
-<div class="categories">
-
-<button
+</span></div><div class="categories"><button
 class="category"
 type="button"
-onclick="showCategory('all')">
+onclick="showCategory('all')"
+
+«»
 
 <span class="icon">⭐</span>
 
 <span class="name">
 همه لینک‌ها
-</span>
-
-</button>
-
-<button
+</span></button><button
 class="category"
 type="button"
-onclick="showCategory('group')">
+onclick="showCategory('group')"
+
+«»
 
 <span class="icon">👥</span>
 
 <span class="name">
 گروه‌های روبیکا
-</span>
-
-</button>
-
-<button
+</span></button><button
 class="category"
 type="button"
-onclick="showCategory('channel')">
+onclick="showCategory('channel')"
+
+«»
 
 <span class="icon">📢</span>
 
 <span class="name">
 کانال‌های روبیکا
-</span>
-
-</button>
-
-<button
+</span></button><button
 class="category"
 type="button"
-onclick="showCategory('music')">
+onclick="showCategory('music')"
+
+«»
 
 <span class="icon">🎵</span>
 
 <span class="name">
 موزیک
-</span>
-
-</button>
-
-<button
+</span></button><button
 class="category"
 type="button"
-onclick="showCategory('movie')">
+onclick="showCategory('movie')"
+
+«»
 
 <span class="icon">🎬</span>
 
 <span class="name">
 فیلم و سریال
-</span>
-
-</button>
-
-<button
+</span></button><button
 class="category"
 type="button"
-onclick="showCategory('game')">
+onclick="showCategory('game')"
+
+«»
 
 <span class="icon">🎮</span>
 
 <span class="name">
 بازی و سرگرمی
-</span>
-
-</button>
-
-<button
+</span></button><button
 class="category"
 type="button"
-onclick="showCategory('education')">
+onclick="showCategory('education')"
+
+«»
 
 <span class="icon">📚</span>
 
 <span class="name">
 آموزشی
-</span>
-
-</button>
-
-</div>
-
-<div class="actions">
-
-<a
+</span></button></div><div class="actions"><a
 href="add-link.html"
-class="action add-link">
+class="action add-link"
+
+«»
 
 ➕ ثبت گروه یا کانال روبیکا
-
 </a>
 
 <a
 href="premium.html"
-class="action premium-link">
+class="action premium-link"
+
+«»
 
 💎 ثبت لینک ویژه
-
 </a>
 
-</div>
-
-<div class="section-title">
-
-<h2 id="listTitle">
+</div><div class="section-title"><h2 id="listTitle">
 ⭐ لینک‌های منتخب
-</h2>
-
-<span id="count">
+</h2><span id="count">
 ۰ مورد
-</span>
-
-</div>
-
-<div
+</span></div><div
 id="userLinks"
-class="cards">
-</div>
-
-</main>
-
-<footer>
-
+class="cards"
+></div></main><footer>
 © 2026 لینک‌دونی کرمانشاه
-
-</footer>
-
-<script>
+</footer><script>
 
 /* =========================
-   LINKS
+   لینک‌های ذخیره شده
 ========================= */
 
 let savedLinks = [];
@@ -912,7 +683,7 @@ try{
 
 
 /* =========================
-   HELPERS
+   ابزارها
 ========================= */
 
 function clean(value){
@@ -926,7 +697,7 @@ function clean(value){
 
 function escapeText(value){
 
-  return String(value)
+  return String(value || "")
 
     .replace(/&/g,"&amp;")
     .replace(/</g,"&lt;")
@@ -938,7 +709,7 @@ function escapeText(value){
 
 
 /* =========================
-   RENDER
+   نمایش لینک‌ها
 ========================= */
 
 function renderLinks(list){
@@ -949,11 +720,18 @@ function renderLinks(list){
   const count =
     document.getElementById("count");
 
+  if(!box || !count){
+
+    return;
+
+  }
+
   box.innerHTML = "";
 
   count.innerText =
     list.length.toLocaleString("fa-IR") +
     " مورد";
+
 
   if(list.length === 0){
 
@@ -990,6 +768,7 @@ function renderLinks(list){
 
     const type =
       clean(item.type);
+
 
     const icon =
       type === "channel"
@@ -1048,9 +827,7 @@ function renderLinks(list){
         target="_blank"
         rel="noopener noreferrer"
       >
-
         ورود
-
       </a>
 
     `;
@@ -1064,7 +841,7 @@ function renderLinks(list){
 
 
 /* =========================
-   CATEGORY
+   دسته‌بندی
 ========================= */
 
 function showCategory(type){
@@ -1086,7 +863,6 @@ function showCategory(type){
       "⭐ لینک‌های منتخب";
 
   }
-
 
   else if(
     type === "group" ||
@@ -1117,7 +893,6 @@ function showCategory(type){
       : "📢 کانال‌های روبیکا";
 
   }
-
 
   else{
 
@@ -1162,13 +937,14 @@ function showCategory(type){
 
 
 /* =========================
-   SEARCH
+   جستجو
 ========================= */
 
 function searchLinks(){
 
   const input =
     document.getElementById("searchInput");
+
 
   const keyword =
     clean(input.value);
@@ -1190,13 +966,10 @@ function searchLinks(){
 
         String(item.title || "") +
         " " +
-
         String(item.description || "") +
         " " +
-
         String(item.category || "") +
         " " +
-
         String(item.type || "");
 
 
@@ -1222,8 +995,6 @@ function searchLinks(){
 }
 
 
-/* ENTER SEARCH */
-
 document
   .getElementById("searchInput")
   .addEventListener(
@@ -1240,7 +1011,9 @@ document
   );
 
 
-/* INITIAL */
+/* =========================
+   نمایش اولیه
+========================= */
 
 renderLinks(savedLinks);
 
@@ -1249,15 +1022,15 @@ renderLinks(savedLinks);
    PWA INSTALL
 ========================= */
 
-let deferredInstallPrompt = null;
+let deferredPrompt = null;
 
-const installBtn =
-  document.getElementById("installBtn");
+const installButton =
+  document.getElementById("installButton");
 
 
 /*
-  مرورگر زمانی این event را اجرا می‌کند
-  که سایت شرایط نصب PWA را داشته باشد.
+  Chrome وقتی برنامه قابلیت نصب داشته باشد
+  این رویداد را ارسال می‌کند.
 */
 
 window.addEventListener(
@@ -1266,12 +1039,11 @@ window.addEventListener(
 
     event.preventDefault();
 
-    deferredInstallPrompt = event;
+    deferredPrompt = event;
 
-    if(installBtn){
+    if(installButton){
 
-      installBtn.style.display =
-        "block";
+      installButton.style.display = "block";
 
     }
 
@@ -1279,18 +1051,21 @@ window.addEventListener(
 );
 
 
-/* CLICK INSTALL */
+/*
+  کلیک روی دکمه نصب
+*/
 
-if(installBtn){
+if(installButton){
 
-  installBtn.addEventListener(
+  installButton.addEventListener(
     "click",
     async function(){
 
-      if(!deferredInstallPrompt){
+      if(!deferredPrompt){
 
         alert(
-          "📲 نصب برنامه هنوز توسط مرورگر آماده نشده است."
+          "📲 نصب مستقیم در حال حاضر توسط مرورگر آماده نیست.\n\n"+
+          "در Chrome از منوی سه‌نقطه، گزینه «افزودن به صفحه اصلی» یا «Install app» را انتخاب کنید."
         );
 
         return;
@@ -1298,22 +1073,21 @@ if(installBtn){
       }
 
 
-      deferredInstallPrompt.prompt();
+      deferredPrompt.prompt();
 
 
       const result =
-        await deferredInstallPrompt.userChoice;
+        await deferredPrompt.userChoice;
 
 
       if(result.outcome === "accepted"){
 
-        installBtn.style.display =
-          "none";
+        installButton.style.display = "none";
 
       }
 
 
-      deferredInstallPrompt = null;
+      deferredPrompt = null;
 
     }
   );
@@ -1321,22 +1095,21 @@ if(installBtn){
 }
 
 
-/* APP INSTALLED */
+/*
+  اگر برنامه قبلاً نصب شده باشد
+*/
 
 window.addEventListener(
   "appinstalled",
   function(){
 
-    if(installBtn){
+    deferredPrompt = null;
 
-      installBtn.style.display =
-        "none";
+    if(installButton){
+
+      installButton.style.display = "none";
 
     }
-
-    console.log(
-      "لینک‌دونی با موفقیت نصب شد."
-    );
 
   }
 );
@@ -1375,7 +1148,5 @@ if("serviceWorker" in navigator){
 
 }
 
-</script>
-
-</body>
+</script></body>
 </html>

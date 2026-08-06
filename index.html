@@ -1,7 +1,27 @@
-<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport"
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>لینک‌دونی کرمانشاه</title><style>
+<link rel="manifest" href="./manifest.json">
+
+<meta name="theme-color" content="#6d20a8">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style"
+content="black-translucent">
+
+<title>لینک‌دونی کرمانشاه</title>
+
+<style>
 
 *{
 box-sizing:border-box;
@@ -786,171 +806,288 @@ grid-template-columns:1fr;
 
 }
 
-</style></head><body><header class="header"><div class="container"><div class="top"><div class="logo">🔗 لینک‌دونی کرمانشاه
+</style>
 
-</div><div class="top-links"><a href="admin.html">🛠️ مدیریت
+</head>
 
-</a><a href="register.html">👤 ورود
+<body>
 
-</a></div></div><div class="hero"><h1>لینک‌دونی کرمانشاه
+<header class="header">
 
-</h1><p>گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن
+<div class="container">
 
-<br>معرفی، جستجو و ثبت لینک در یکجا
+<div class="top">
 
-</p></div><div class="search"><input
+<div class="logo">
+🔗 لینک‌دونی کرمانشاه
+</div>
+
+<div class="top-links">
+
+<a href="admin.html">
+🛠️ مدیریت
+</a>
+
+<a href="register.html">
+👤 ورود
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero">
+
+<h1>
+لینک‌دونی کرمانشاه
+</h1>
+
+<p>
+گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن
+
+<br>
+
+معرفی، جستجو و ثبت لینک در یکجا
+</p>
+
+</div>
+
+
+<div class="search">
+
+<input
 id="searchInput"
 type="search"
 placeholder="نام گروه، کانال یا موضوع..."
-
-«»
+>
 
 <button
 type="button"
 onclick="searchLinks()"
-
-«»
-
+>
 جستجو
+</button>
 
-</button></div></div></header><main><div class="section-title"><h2>📂 دسته‌بندی‌ها
+</div>
 
-</h2><span id="categoryText">همه
+</div>
 
-</span></div><div class="categories"><button
+</header>
+
+
+<main>
+
+<div class="section-title">
+
+<h2>
+📂 دسته‌بندی‌ها
+</h2>
+
+<span id="categoryText">
+همه
+</span>
+
+</div>
+
+
+<div class="categories">
+
+<button
 class="category"
 type="button"
 onclick="showCategory('all')"
-
-«»
+>
 
 <span class="icon">
 ⭐
-</span><span class="name">
+</span>
+
+<span class="name">
 همه لینک‌ها
-</span></button><button
+</span>
+
+</button>
+
+
+<button
 class="category"
 type="button"
 onclick="showCategory('group')"
-
-«»
+>
 
 <span class="icon">
 👥
-</span><span class="name">
+</span>
+
+<span class="name">
 گروه‌های روبیکا
-</span></button><button
+</span>
+
+</button>
+
+
+<button
 class="category"
 type="button"
 onclick="showCategory('channel')"
-
-«»
+>
 
 <span class="icon">
 📢
-</span><span class="name">
+</span>
+
+<span class="name">
 کانال‌های روبیکا
-</span></button><button
+</span>
+
+</button>
+
+
+<button
 class="category"
 type="button"
 onclick="showCategory('music')"
-
-«»
+>
 
 <span class="icon">
 🎵
-</span><span class="name">
+</span>
+
+<span class="name">
 موزیک
-</span></button><button
+</span>
+
+</button>
+
+
+<button
 class="category"
 type="button"
 onclick="showCategory('movie')"
-
-«»
+>
 
 <span class="icon">
 🎬
-</span><span class="name">
+</span>
+
+<span class="name">
 فیلم و سریال
-</span></button><button
+</span>
+
+</button>
+
+
+<button
 class="category"
 type="button"
 onclick="showCategory('game')"
-
-«»
+>
 
 <span class="icon">
 🎮
-</span><span class="name">
+</span>
+
+<span class="name">
 بازی و سرگرمی
-</span></button><button
+</span>
+
+</button>
+
+
+<button
 class="category"
 type="button"
 onclick="showCategory('education')"
-
-«»
+>
 
 <span class="icon">
 📚
-</span><span class="name">
+</span>
+
+<span class="name">
 آموزشی
-</span></button></div><!-- ثبت لینک --><div class="actions"><a
+</span>
+
+</button>
+
+</div>
+
+
+<div class="actions">
+
+<a
 href="add-link.html"
 class="action add-link"
-
-«»
-
+>
 ➕ ثبت گروه یا کانال روبیکا
+</a>
 
-</a><a
+
+<a
 href="premium.html"
 class="action premium-link"
-
-«»
-
+>
 💎 ثبت لینک ویژه
+</a>
 
-</a></div><div class="section-title"><h2 id="listTitle">⭐ لینک‌های منتخب
+</div>
 
-</h2><span id="count">۰ مورد
 
-</span></div><div
+<div class="section-title">
+
+<h2 id="listTitle">
+⭐ لینک‌های منتخب
+</h2>
+
+<span id="count">
+۰ مورد
+</span>
+
+</div>
+
+
+<div
 id="userLinks"
 class="cards"
 >
-</div></main><footer>© 2026 لینک‌دونی کرمانشاه
+</div>
 
-</footer><script>
-
-
-let savedLinks=[];
+</main>
 
 
-try{
+<footer>
+© 2026 لینک‌دونی کرمانشاه
+</footer>
 
-savedLinks=
+
+<script>
+
+let savedLinks = [];
+
+try {
+
+savedLinks =
 JSON.parse(
 localStorage.getItem("rubikaLinks")
-)||[];
+) || [];
 
 }
 
-catch(error){
+catch(error) {
 
-savedLinks=[];
+savedLinks = [];
 
 }
-
 
 
 function clean(value){
 
-return String(value||"")
+return String(value || "")
 .trim()
 .toLowerCase();
 
 }
-
 
 
 function escapeText(value){
@@ -970,26 +1107,33 @@ return String(value)
 }
 
 
-
 function renderLinks(list){
 
-const box=
+const box =
 document.getElementById("userLinks");
 
-const count=
+const count =
 document.getElementById("count");
 
 
-box.innerHTML="";
+if(!box || !count){
+
+return;
+
+}
 
 
-count.innerText=
-list.length+" مورد";
+box.innerHTML = "";
 
 
-if(list.length===0){
+count.innerText =
+list.length.toLocaleString("fa-IR") +
+" مورد";
 
-box.innerHTML=`
+
+if(list.length === 0){
+
+box.innerHTML = `
 
 <div class="empty">
 
@@ -1014,45 +1158,45 @@ return;
 
 list.forEach(function(item){
 
-const card=
+const card =
 document.createElement("div");
 
 
-card.className="card";
+card.className = "card";
 
 
-const type=
+const type =
 clean(item.type);
 
 
-const icon=
-type==="channel"
-?"📢"
-:"👥";
+const icon =
+type === "channel"
+? "📢"
+: "👥";
 
 
-const typeName=
-type==="channel"
-?"کانال"
-:"گروه";
+const typeName =
+type === "channel"
+? "کانال"
+: "گروه";
 
 
-const title=
-item.title||
+const title =
+item.title ||
 "بدون نام";
 
 
-const category=
-item.category||
+const category =
+item.category ||
 "سایر";
 
 
-const link=
-item.link||
+const link =
+item.link ||
 "#";
 
 
-card.innerHTML=`
+card.innerHTML = `
 
 <div class="avatar">
 
@@ -1109,72 +1253,71 @@ box.appendChild(card);
 }
 
 
-
 function showCategory(type){
 
 let results;
 
 
-if(type==="all"){
+if(type === "all"){
 
-results=savedLinks;
+results = savedLinks;
 
 
 document
 .getElementById("categoryText")
-.innerText="همه";
+.innerText = "همه";
 
 
 document
 .getElementById("listTitle")
-.innerText=
+.innerText =
 "⭐ لینک‌های منتخب";
 
 }
 
 
 else if(
-type==="group"||
-type==="channel"
+type === "group" ||
+type === "channel"
 ){
 
-results=
+results =
 savedLinks.filter(function(item){
 
-return clean(item.type)===type;
+return clean(item.type) === type;
 
 });
 
 
 document
 .getElementById("categoryText")
-.innerText=
-type==="group"
-?"گروه‌ها"
-:"کانال‌ها";
+.innerText =
+type === "group"
+? "گروه‌ها"
+: "کانال‌ها";
 
 
 document
 .getElementById("listTitle")
-.innerText=
-type==="group"
-?"👥 گروه‌های روبیکا"
-:"📢 کانال‌های روبیکا";
+.innerText =
+type === "group"
+? "👥 گروه‌های روبیکا"
+: "📢 کانال‌های روبیکا";
 
 }
 
 
 else{
 
-results=
+results =
 savedLinks.filter(function(item){
 
-return clean(item.category)===type;
+return clean(item.category) === type;
 
 });
 
 
-const names={
+const names = {
 
 music:"🎵 موزیک",
 
@@ -1189,14 +1332,14 @@ education:"📚 آموزشی"
 
 document
 .getElementById("categoryText")
-.innerText=
-names[type]||"دسته";
+.innerText =
+names[type] || "دسته";
 
 
 document
 .getElementById("listTitle")
-.innerText=
-names[type]||"📂 دسته‌بندی";
+.innerText =
+names[type] || "📂 دسته‌بندی";
 
 }
 
@@ -1206,18 +1349,17 @@ renderLinks(results);
 }
 
 
-
 function searchLinks(){
 
-const input=
+const input =
 document.getElementById("searchInput");
 
 
-const keyword=
+const keyword =
 clean(input.value);
 
 
-if(keyword===""){
+if(keyword === ""){
 
 showCategory("all");
 
@@ -1226,18 +1368,18 @@ return;
 }
 
 
-const results=
+const results =
 savedLinks.filter(function(item){
 
-const text=
+const text =
 
-String(item.title||"")+" "+
+String(item.title || "") + " " +
 
-String(item.description||"")+" "+
+String(item.description || "") + " " +
 
-String(item.category||"")+" "+
+String(item.category || "") + " " +
 
-String(item.type||"");
+String(item.type || "");
 
 
 return clean(text)
@@ -1248,12 +1390,12 @@ return clean(text)
 
 document
 .getElementById("categoryText")
-.innerText="جستجو";
+.innerText = "جستجو";
 
 
 document
 .getElementById("listTitle")
-.innerText=
+.innerText =
 "🔎 نتایج جستجو";
 
 
@@ -1262,14 +1404,13 @@ renderLinks(results);
 }
 
 
-
 document
 .getElementById("searchInput")
 .addEventListener(
 "keydown",
 function(event){
 
-if(event.key==="Enter"){
+if(event.key === "Enter"){
 
 searchLinks();
 
@@ -1278,7 +1419,45 @@ searchLinks();
 });
 
 
+/* نمایش اولیه */
+
 renderLinks(savedLinks);
 
 
-</script></body></html>
+/* فعال‌سازی PWA */
+
+if("serviceWorker" in navigator){
+
+window.addEventListener(
+"load",
+function(){
+
+navigator.serviceWorker
+.register("./sw.js")
+
+.then(function(){
+
+console.log(
+"Linkdooni PWA ready"
+);
+
+})
+
+.catch(function(error){
+
+console.log(
+"Service Worker Error:",
+error
+);
+
+});
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>

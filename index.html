@@ -1,683 +1,653 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- PWA --><link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#6d20a8">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>لینک‌دونی کرمانشاه</title><style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  background:#030305;
-}
-
-body{
-  min-height:100vh;
-  font-family:Tahoma,Arial,sans-serif;
-  color:#fff;
-
-  background:
-    radial-gradient(
-      circle at 15% 5%,
-      rgba(150,45,255,.30),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 25%,
-      rgba(90,20,180,.25),
-      transparent 30%
-    ),
-    linear-gradient(
-      145deg,
-      #020203,
-      #09040f 50%,
-      #030305
-    );
-}
-
-/* HEADER */
-
-.header{
-  padding:20px 15px 35px;
-
-  border-radius:
-    0 0 35px 35px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(15,7,25,.98),
-      rgba(64,17,105,.92)
-    );
-
-  border-bottom:
-    1px solid
-    rgba(210,140,255,.45);
-
-  box-shadow:
-    0 20px 70px
-    rgba(112,30,255,.25);
-}
-
-.container{
-  width:100%;
-  max-width:720px;
-  margin:auto;
-}
-
-.top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-}
-
-.logo{
-  font-size:19px;
-  font-weight:bold;
-
-  text-shadow:
-    0 0 10px rgba(218,163,255,.8),
-    0 0 25px rgba(139,50,255,.5);
-}
-
-.top-links{
-  display:flex;
-  gap:7px;
-}
-
-.top-links a{
-  text-decoration:none;
-  color:#fff;
-
-  padding:10px 12px;
-
-  border-radius:12px;
-
-  font-size:10px;
-  font-weight:bold;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,.20),
-      rgba(255,255,255,.05)
-    );
-
-  border:
-    1px solid
-    rgba(255,255,255,.35);
-
-  box-shadow:
-    inset 1px 1px 2px
-    rgba(255,255,255,.5),
-
-    inset -1px -1px 2px
-    rgba(0,0,0,.3),
-
-    0 0 18px
-    rgba(148,48,255,.25);
-
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-}
-
-/* HERO */
-
-.hero{
-  text-align:center;
-  padding:35px 5px 0;
-}
-
-.hero h1{
-  font-size:25px;
-  line-height:1.7;
-  margin-bottom:10px;
-
-  text-shadow:
-    0 0 12px rgba(224,177,255,.8),
-    0 0 35px rgba(141,43,255,.55);
-}
-
-.hero p{
-  font-size:12px;
-  line-height:2;
-  color:#d8cce0;
-}
-
-/* SEARCH */
-
-.search{
-  display:flex;
-  gap:6px;
-  margin-top:22px;
-  padding:6px;
-
-  border-radius:17px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,.16),
-      rgba(255,255,255,.035)
-    );
-
-  border:
-    1px solid
-    rgba(255,255,255,.30);
-
-  box-shadow:
-    inset 1px 1px 2px rgba(255,255,255,.4),
-    inset -2px -2px 4px rgba(0,0,0,.5),
-    0 0 25px rgba(131,38,255,.22);
-
-  backdrop-filter:blur(15px);
-  -webkit-backdrop-filter:blur(15px);
-}
-
-.search input{
-  width:100%;
-  min-width:0;
-  border:0;
-  outline:0;
-  background:transparent;
-  color:#fff;
-  padding:13px;
-  font-family:Tahoma;
-  font-size:12px;
-}
-
-.search input::placeholder{
-  color:#b8a9c1;
-}
-
-.search button{
-  border:1px solid rgba(235,206,255,.5);
-  color:#fff;
-  font-family:Tahoma;
-  font-weight:bold;
-  padding:0 17px;
-  border-radius:12px;
-  cursor:pointer;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(174,83,255,.85),
-      rgba(83,24,150,.9)
-    );
-}
-
-/* MAIN */
-
-main{
-  width:100%;
-  max-width:720px;
-  margin:auto;
-  padding:23px 15px;
-}
-
-.section-title{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:14px;
-}
-
-.section-title h2{
-  font-size:16px;
-}
-
-.section-title span{
-  font-size:10px;
-  color:#a99caf;
-}
-
-/* CATEGORIES */
-
-.categories{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
-}
-
-.category{
-  position:relative;
-  overflow:hidden;
-
-  width:100%;
-  min-height:105px;
-
-  border-radius:20px;
-
-  font-family:Tahoma;
-  color:#fff;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.20),
-      rgba(255,255,255,.055) 45%,
-      rgba(124,40,190,.16)
-    );
-
-  border:
-    1px solid
-    rgba(255,255,255,.34);
-
-  box-shadow:
-    inset 2px 2px 3px rgba(255,255,255,.42),
-    inset -3px -3px 5px rgba(0,0,0,.45),
-    0 10px 25px rgba(0,0,0,.4),
-    0 0 20px rgba(132,42,255,.18);
-
-  backdrop-filter:blur(15px);
-  -webkit-backdrop-filter:blur(15px);
-
-  cursor:pointer;
-  transition:.2s;
-}
-
-.category:active{
-  transform:scale(.95);
-}
-
-.category .icon{
-  display:block;
-  font-size:31px;
-  padding-top:17px;
-}
-
-.category .name{
-  display:block;
-  margin-top:9px;
-  font-size:11px;
-  font-weight:bold;
-}
-
-/* BUTTONS */
-
-.actions{
-  display:grid;
-  gap:12px;
-  margin:23px 0;
-}
-
-.action{
-  display:block;
-  width:100%;
-  padding:16px;
-  border-radius:17px;
-
-  text-align:center;
-  text-decoration:none;
-
-  font-family:Tahoma;
-  font-size:13px;
-  font-weight:bold;
-  color:#fff;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(178,82,255,.82),
-      rgba(72,19,130,.92)
-    );
-
-  border:
-    1px solid
-    rgba(239,211,255,.65);
-
-  box-shadow:
-    inset 2px 2px 4px rgba(255,255,255,.48),
-    inset -3px -3px 5px rgba(0,0,0,.38),
-    0 10px 28px rgba(0,0,0,.45),
-    0 0 25px rgba(151,45,255,.35);
-}
-
-.add-link{
-  background:
-    linear-gradient(
-      135deg,
-      #9b42ec,
-      #55149a
-    );
-}
-
-.premium-link{
-  background:
-    linear-gradient(
-      135deg,
-      #c35cff,
-      #7019ad
-    );
-}
-
-/* CARDS */
-
-.cards{
-  display:grid;
-  gap:11px;
-}
-
-.card{
-  display:flex;
-  align-items:center;
-  gap:11px;
-
-  width:100%;
-  padding:14px;
-  border-radius:18px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.16),
-      rgba(255,255,255,.045)
-    );
-
-  border:
-    1px solid
-    rgba(255,255,255,.27);
-
-  box-shadow:
-    inset 1px 1px 3px rgba(255,255,255,.35),
-    inset -2px -2px 4px rgba(0,0,0,.4),
-    0 10px 25px rgba(0,0,0,.35);
-
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-}
-
-.avatar{
-  width:48px;
-  height:48px;
-  min-width:48px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:14px;
-  font-size:22px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(183,91,255,.35),
-      rgba(73,21,120,.3)
-    );
-
-  border:
-    1px solid
-    rgba(224,180,255,.35);
-}
-
-.card-info{
-  flex:1;
-  min-width:0;
-}
-
-.card-info h3{
-  margin:0 0 6px;
-  font-size:13px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-}
-
-.meta{
-  color:#b8aebe;
-  font-size:10px;
-  line-height:1.8;
-}
-
-.view{
-  color:#fff;
-  text-decoration:none;
-  white-space:nowrap;
-
-  padding:9px 11px;
-  border-radius:10px;
-  font-size:10px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(174,76,255,.55),
-      rgba(78,23,135,.55)
-    );
-
-  border:
-    1px solid
-    rgba(232,198,255,.4);
-}
-
-/* EMPTY */
-
-.empty{
-  width:100%;
-  padding:28px 15px;
-  border-radius:18px;
-
-  text-align:center;
-  color:#a99caf;
-  font-size:12px;
-  line-height:2;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.11),
-      rgba(255,255,255,.035)
-    );
-
-  border:
-    1px solid
-    rgba(255,255,255,.20);
-}
-
-/* FOOTER */
-
-footer{
-  text-align:center;
-  color:#817587;
-  font-size:10px;
-  padding:23px 10px 35px;
-}
-
-/* MOBILE */
-
-@media(max-width:420px){
-
-  .top{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .logo{
-    text-align:center;
-    margin-bottom:4px;
-  }
-
-  .top-links{
-    width:100%;
-  }
-
-  .top-links a{
-    flex:1;
-    text-align:center;
-  }
-
-  .hero h1{
-    font-size:21px;
-  }
-}
-
-@media(max-width:350px){
-
-  .categories{
-    grid-template-columns:1fr;
-  }
-}
-</style></head><body><header class="header"><div class="container"><div class="top"><div class="logo">
-🔗 لینک‌دونی کرمانشاه
-</div><div class="top-links"><a href="admin.html">
-🛠️ مدیریت
-</a><a href="register.html">
-👤 ورود
-</a></div>
-</div><div class="hero"><h1>
-لینک‌دونی کرمانشاه
-</h1><p>
-گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن
-<br>
-معرفی، جستجو و ثبت لینک در یکجا
-</p></div><div class="search"><input
-id="searchInput"
-type="search"
-placeholder="نام گروه، کانال یا موضوع..."
-
-«»
-
-<button
-type="button"
-onclick="searchLinks()"
-
-«»
-
-جستجو
+<!DOCTYPE html><html lang="fa" dir="rtl"><head>
+  <meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#6d20a8"><meta name="description"
+content="گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن">
+
+  <!-- PWA -->  <link rel="manifest" href="./manifest.json">  <link rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="./icon-192.png">  <link rel="apple-touch-icon"
+        href="./icon-192.png"><meta name="mobile-web-app-capable"
+content="yes">
+
+<meta name="apple-mobile-web-app-capable"
+content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style"
+content="black-translucent">
+
+  <title>لینک‌دونی کرمانشاه</title>  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      background:#030305;
+    }
+
+    body{
+      min-height:100vh;
+      font-family:Tahoma,Arial,sans-serif;
+      color:#fff;
+
+      background:
+        radial-gradient(
+          circle at 15% 5%,
+          rgba(150,45,255,.30),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 25%,
+          rgba(90,20,180,.25),
+          transparent 30%
+        ),
+        linear-gradient(
+          145deg,
+          #020203,
+          #09040f 50%,
+          #030305
+        );
+    }
+
+    .header{
+      padding:20px 15px 35px;
+      border-radius:0 0 35px 35px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(15,7,25,.98),
+          rgba(64,17,105,.92)
+        );
+
+      border-bottom:1px solid rgba(210,140,255,.45);
+
+      box-shadow:
+        0 20px 70px rgba(112,30,255,.25);
+    }
+
+    .container{
+      width:100%;
+      max-width:720px;
+      margin:auto;
+    }
+
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .logo{
+      font-size:19px;
+      font-weight:bold;
+
+      text-shadow:
+        0 0 10px rgba(218,163,255,.8),
+        0 0 25px rgba(139,50,255,.5);
+    }
+
+    .top-links{
+      display:flex;
+      gap:7px;
+    }
+
+    .top-links a{
+      text-decoration:none;
+      color:#fff;
+      padding:10px 12px;
+      border-radius:12px;
+      font-size:10px;
+      font-weight:bold;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.20),
+          rgba(255,255,255,.05)
+        );
+
+      border:1px solid rgba(255,255,255,.35);
+
+      box-shadow:
+        inset 1px 1px 2px rgba(255,255,255,.5),
+        inset -1px -1px 2px rgba(0,0,0,.3),
+        0 0 18px rgba(148,48,255,.25);
+
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+    }
+
+    .hero{
+      text-align:center;
+      padding:35px 5px 0;
+    }
+
+    .hero h1{
+      font-size:25px;
+      line-height:1.7;
+      margin-bottom:10px;
+
+      text-shadow:
+        0 0 12px rgba(224,177,255,.8),
+        0 0 35px rgba(141,43,255,.55);
+    }
+
+    .hero p{
+      font-size:12px;
+      line-height:2;
+      color:#d8cce0;
+    }
+
+    .search{
+      display:flex;
+      gap:6px;
+      margin-top:22px;
+      padding:6px;
+      border-radius:17px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.16),
+          rgba(255,255,255,.035)
+        );
+
+      border:1px solid rgba(255,255,255,.30);
+
+      box-shadow:
+        inset 1px 1px 2px rgba(255,255,255,.4),
+        inset -2px -2px 4px rgba(0,0,0,.5),
+        0 0 25px rgba(131,38,255,.22);
+
+      backdrop-filter:blur(15px);
+      -webkit-backdrop-filter:blur(15px);
+    }
+
+    .search input{
+      width:100%;
+      min-width:0;
+      border:0;
+      outline:0;
+      background:transparent;
+      color:#fff;
+      padding:13px;
+      font-family:Tahoma;
+      font-size:12px;
+    }
+
+    .search input::placeholder{
+      color:#b8a9c1;
+    }
+
+    .search button{
+      border:1px solid rgba(235,206,255,.5);
+      color:#fff;
+      font-family:Tahoma;
+      font-weight:bold;
+      padding:0 17px;
+      border-radius:12px;
+      cursor:pointer;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(174,83,255,.85),
+          rgba(83,24,150,.9)
+        );
+    }
+
+    main{
+      width:100%;
+      max-width:720px;
+      margin:auto;
+      padding:23px 15px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:14px;
+    }
+
+    .section-title h2{
+      font-size:16px;
+    }
+
+    .section-title span{
+      font-size:10px;
+      color:#a99caf;
+    }
+
+    .categories{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .category{
+      position:relative;
+      overflow:hidden;
+      width:100%;
+      min-height:105px;
+      border-radius:20px;
+      font-family:Tahoma;
+      color:#fff;
+      cursor:pointer;
+      transition:.2s;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.20),
+          rgba(255,255,255,.055) 45%,
+          rgba(124,40,190,.16)
+        );
+
+      border:1px solid rgba(255,255,255,.34);
+
+      box-shadow:
+        inset 2px 2px 3px rgba(255,255,255,.42),
+        inset -3px -3px 5px rgba(0,0,0,.45),
+        0 10px 25px rgba(0,0,0,.4),
+        0 0 20px rgba(132,42,255,.18);
+
+      backdrop-filter:blur(15px);
+      -webkit-backdrop-filter:blur(15px);
+    }
+
+    .category:active{
+      transform:scale(.95);
+    }
+
+    .category .icon{
+      display:block;
+      font-size:31px;
+      padding-top:17px;
+    }
+
+    .category .name{
+      display:block;
+      margin-top:9px;
+      font-size:11px;
+      font-weight:bold;
+    }
+
+    .actions{
+      display:grid;
+      gap:12px;
+      margin:23px 0;
+    }
+
+    .action{
+      display:block;
+      width:100%;
+      padding:16px;
+      border-radius:17px;
+      text-align:center;
+      text-decoration:none;
+      font-family:Tahoma;
+      font-size:13px;
+      font-weight:bold;
+      color:#fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(178,82,255,.82),
+          rgba(72,19,130,.92)
+        );
+
+      border:1px solid rgba(239,211,255,.65);
+
+      box-shadow:
+        inset 2px 2px 4px rgba(255,255,255,.48),
+        inset -3px -3px 5px rgba(0,0,0,.38),
+        0 10px 28px rgba(0,0,0,.45),
+        0 0 25px rgba(151,45,255,.35);
+    }
+
+    .add-link{
+      background:linear-gradient(135deg,#9b42ec,#55149a);
+    }
+
+    .premium-link{
+      background:linear-gradient(135deg,#c35cff,#7019ad);
+    }
+
+    .cards{
+      display:grid;
+      gap:11px;
+    }
+
+    .card{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      width:100%;
+      padding:14px;
+      border-radius:18px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.16),
+          rgba(255,255,255,.045)
+        );
+
+      border:1px solid rgba(255,255,255,.27);
+
+      box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,.35),
+        inset -2px -2px 4px rgba(0,0,0,.4),
+        0 10px 25px rgba(0,0,0,.35);
+
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+
+    .avatar{
+      width:48px;
+      height:48px;
+      min-width:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:14px;
+      font-size:22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(183,91,255,.35),
+          rgba(73,21,120,.3)
+        );
+
+      border:1px solid rgba(224,180,255,.35);
+    }
+
+    .card-info{
+      flex:1;
+      min-width:0;
+    }
+
+    .card-info h3{
+      margin:0 0 6px;
+      font-size:13px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .meta{
+      color:#b8aebe;
+      font-size:10px;
+      line-height:1.8;
+    }
+
+    .view{
+      color:#fff;
+      text-decoration:none;
+      white-space:nowrap;
+      padding:9px 11px;
+      border-radius:10px;
+      font-size:10px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(174,76,255,.55),
+          rgba(78,23,135,.55)
+        );
+
+      border:1px solid rgba(232,198,255,.4);
+    }
+
+    .empty{
+      width:100%;
+      padding:28px 15px;
+      border-radius:18px;
+      text-align:center;
+      color:#a99caf;
+      font-size:12px;
+      line-height:2;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.11),
+          rgba(255,255,255,.035)
+        );
+
+      border:1px solid rgba(255,255,255,.20);
+    }
+
+    footer{
+      text-align:center;
+      color:#817587;
+      font-size:10px;
+      padding:23px 10px 35px;
+    }
+
+    @media(max-width:420px){
+
+      .top{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .logo{
+        text-align:center;
+        margin-bottom:4px;
+      }
+
+      .top-links{
+        width:100%;
+      }
+
+      .top-links a{
+        flex:1;
+        text-align:center;
+      }
+
+      .hero h1{
+        font-size:21px;
+      }
+    }
+
+    @media(max-width:350px){
+
+      .categories{
+        grid-template-columns:1fr;
+      }
+    }
+  </style></head><body><header class="header">  <div class="container"><div class="top">
+
+  <div class="logo">
+    🔗 لینک‌دونی کرمانشاه
+  </div>
+
+  <div class="top-links">
+
+    <a href="admin.html">
+      🛠️ مدیریت
+    </a>
+
+    <a href="register.html">
+      👤 ورود
+    </a>
+
+  </div>
+
+</div>
+
+<div class="hero">
+
+  <h1>
+    لینک‌دونی کرمانشاه
+  </h1>
+
+  <p>
+    گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن
+    <br>
+    معرفی، جستجو و ثبت لینک در یکجا
+  </p>
+
+</div>
+
+<div class="search">
+
+  <input
+    id="searchInput"
+    type="search"
+    placeholder="نام گروه، کانال یا موضوع..."
+    autocomplete="off"
+  >
+
+  <button
+    id="searchButton"
+    type="button"
+  >
+    جستجو
+  </button>
+
+</div>
+
+  </div></header><main>  <div class="section-title"><h2>
+  📂 دسته‌بندی‌ها
+</h2>
+
+<span id="categoryText">
+  همه
+</span>
+
+  </div>  <div class="categories"><button
+  class="category"
+  type="button"
+  data-category="all"
+>
+  <span class="icon">⭐</span>
+  <span class="name">همه لینک‌ها</span>
 </button>
 
-</div></div></header><main><div class="section-title"><h2>
-📂 دسته‌بندی‌ها
-</h2><span id="categoryText">
-همه
-</span></div><div class="categories"><button
-class="category"
-type="button"
-onclick="showCategory('all')"
+<button
+  class="category"
+  type="button"
+  data-category="group"
+>
+  <span class="icon">👥</span>
+  <span class="name">گروه‌های روبیکا</span>
+</button>
 
-«»
+<button
+  class="category"
+  type="button"
+  data-category="channel"
+>
+  <span class="icon">📢</span>
+  <span class="name">کانال‌های روبیکا</span>
+</button>
 
-<span class="icon">⭐</span>
+<button
+  class="category"
+  type="button"
+  data-category="music"
+>
+  <span class="icon">🎵</span>
+  <span class="name">موزیک</span>
+</button>
 
-<span class="name">
-همه لینک‌ها
-</span></button><button
-class="category"
-type="button"
-onclick="showCategory('group')"
+<button
+  class="category"
+  type="button"
+  data-category="movie"
+>
+  <span class="icon">🎬</span>
+  <span class="name">فیلم و سریال</span>
+</button>
 
-«»
+<button
+  class="category"
+  type="button"
+  data-category="game"
+>
+  <span class="icon">🎮</span>
+  <span class="name">بازی و سرگرمی</span>
+</button>
 
-<span class="icon">👥</span>
+<button
+  class="category"
+  type="button"
+  data-category="education"
+>
+  <span class="icon">📚</span>
+  <span class="name">آموزشی</span>
+</button>
 
-<span class="name">
-گروه‌های روبیکا
-</span></button><button
-class="category"
-type="button"
-onclick="showCategory('channel')"
-
-«»
-
-<span class="icon">📢</span>
-
-<span class="name">
-کانال‌های روبیکا
-</span></button><button
-class="category"
-type="button"
-onclick="showCategory('music')"
-
-«»
-
-<span class="icon">🎵</span>
-
-<span class="name">
-موزیک
-</span></button><button
-class="category"
-type="button"
-onclick="showCategory('movie')"
-
-«»
-
-<span class="icon">🎬</span>
-
-<span class="name">
-فیلم و سریال
-</span></button><button
-class="category"
-type="button"
-onclick="showCategory('game')"
-
-«»
-
-<span class="icon">🎮</span>
-
-<span class="name">
-بازی و سرگرمی
-</span></button><button
-class="category"
-type="button"
-onclick="showCategory('education')"
-
-«»
-
-<span class="icon">📚</span>
-
-<span class="name">
-آموزشی
-</span></button></div><div class="actions"><a
-href="add-link.html"
-class="action add-link"
-
-«»
-
-➕ ثبت گروه یا کانال روبیکا
+  </div>  <div class="actions"><a
+  href="add-link.html"
+  class="action add-link"
+>
+  ➕ ثبت گروه یا کانال روبیکا
 </a>
 
 <a
-href="premium.html"
-class="action premium-link"
-
-«»
-
-💎 ثبت لینک ویژه
+  href="premium.html"
+  class="action premium-link"
+>
+  💎 ثبت لینک ویژه
 </a>
 
-</div><div class="section-title"><h2 id="listTitle">
-⭐ لینک‌های منتخب
-</h2><span id="count">
-۰ مورد
-</span></div><div
-id="userLinks"
-class="cards"
-></div></main><footer>
-© 2026 لینک‌دونی کرمانشاه
+  </div>  <div class="section-title"><h2 id="listTitle">
+  ⭐ لینک‌های منتخب
+</h2>
+
+<span id="count">
+  ۰ مورد
+</span>
+
+  </div>  <div
+    id="userLinks"
+    class="cards"
+  ></div></main><footer>
+  © 2026 لینک‌دونی کرمانشاه
 </footer><script>
+
+"use strict";
+
+/* =========================
+   اطلاعات لینک‌ها
+========================= */
 
 let savedLinks = [];
 
-try{
+try {
 
   savedLinks =
     JSON.parse(
       localStorage.getItem("rubikaLinks")
     ) || [];
 
-}catch(error){
+  if(!Array.isArray(savedLinks)){
+    savedLinks = [];
+  }
+
+} catch(error) {
 
   savedLinks = [];
 
 }
+
+
+/* =========================
+   ابزارها
+========================= */
 
 function clean(value){
 
@@ -687,10 +657,10 @@ function clean(value){
 
 }
 
+
 function escapeText(value){
 
-  return String(value)
-
+  return String(value || "")
     .replace(/&/g,"&amp;")
     .replace(/</g,"&lt;")
     .replace(/>/g,"&gt;")
@@ -698,6 +668,11 @@ function escapeText(value){
     .replace(/'/g,"&#039;");
 
 }
+
+
+/* =========================
+   نمایش لینک‌ها
+========================= */
 
 function renderLinks(list){
 
@@ -707,11 +682,16 @@ function renderLinks(list){
   const count =
     document.getElementById("count");
 
+  if(!box || !count){
+    return;
+  }
+
   box.innerHTML = "";
 
   count.innerText =
     list.length.toLocaleString("fa-IR") +
     " مورد";
+
 
   if(list.length === 0){
 
@@ -737,6 +717,7 @@ function renderLinks(list){
 
   }
 
+
   list.forEach(function(item){
 
     const card =
@@ -744,30 +725,37 @@ function renderLinks(list){
 
     card.className = "card";
 
+
     const type =
       clean(item.type);
+
 
     const icon =
       type === "channel"
       ? "📢"
       : "👥";
 
+
     const typeName =
       type === "channel"
       ? "کانال"
       : "گروه";
 
+
     const title =
       item.title ||
       "بدون نام";
+
 
     const category =
       item.category ||
       "سایر";
 
+
     const link =
       item.link ||
       "#";
+
 
     card.innerHTML = `
 
@@ -804,15 +792,22 @@ function renderLinks(list){
 
     `;
 
+
     box.appendChild(card);
 
   });
 
 }
 
+
+/* =========================
+   دسته‌بندی
+========================= */
+
 function showCategory(type){
 
   let results;
+
 
   if(type === "all"){
 
@@ -829,6 +824,7 @@ function showCategory(type){
 
   }
 
+
   else if(
     type === "group" ||
     type === "channel"
@@ -841,12 +837,14 @@ function showCategory(type){
 
       });
 
+
     document
       .getElementById("categoryText")
       .innerText =
       type === "group"
       ? "گروه‌ها"
       : "کانال‌ها";
+
 
     document
       .getElementById("listTitle")
@@ -857,6 +855,7 @@ function showCategory(type){
 
   }
 
+
   else{
 
     results =
@@ -865,6 +864,7 @@ function showCategory(type){
         return clean(item.category) === type;
 
       });
+
 
     const names = {
 
@@ -878,10 +878,12 @@ function showCategory(type){
 
     };
 
+
     document
       .getElementById("categoryText")
       .innerText =
       names[type] || "دسته";
+
 
     document
       .getElementById("listTitle")
@@ -890,17 +892,29 @@ function showCategory(type){
 
   }
 
+
   renderLinks(results);
 
 }
+
+
+/* =========================
+   جستجو
+========================= */
 
 function searchLinks(){
 
   const input =
     document.getElementById("searchInput");
 
+  if(!input){
+    return;
+  }
+
+
   const keyword =
     clean(input.value);
+
 
   if(keyword === ""){
 
@@ -909,6 +923,7 @@ function searchLinks(){
     return;
 
   }
+
 
   const results =
     savedLinks.filter(function(item){
@@ -923,23 +938,40 @@ function searchLinks(){
         " " +
         String(item.type || "");
 
+
       return clean(text)
         .includes(keyword);
 
     });
 
+
   document
     .getElementById("categoryText")
     .innerText = "جستجو";
+
 
   document
     .getElementById("listTitle")
     .innerText =
     "🔎 نتایج جستجو";
 
+
   renderLinks(results);
 
 }
+
+
+/* =========================
+   رویدادها
+========================= */
+
+document
+  .getElementById("searchButton")
+  .addEventListener(
+    "click",
+    searchLinks
+  );
+
 
 document
   .getElementById("searchInput")
@@ -956,31 +988,65 @@ document
     }
   );
 
-/* نمایش اولیه */
+
+document
+  .querySelectorAll(".category")
+  .forEach(function(button){
+
+    button.addEventListener(
+      "click",
+      function(){
+
+        showCategory(
+          button.dataset.category
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================
+   نمایش اولیه
+========================= */
 
 renderLinks(savedLinks);
 
-/* ثبت Service Worker */
 
-if("serviceWorker" in navigator){
+/* =========================
+   PWA / Service Worker
+========================= */
+
+if(
+  "serviceWorker" in navigator
+){
 
   window.addEventListener(
     "load",
     function(){
 
       navigator.serviceWorker
-        .register("./sw.js")
-        .then(function(){
+        .register(
+          "./sw.js",
+          {
+            scope:"./"
+          }
+        )
+
+        .then(function(registration){
 
           console.log(
-            "Service Worker فعال شد."
+            "✅ Service Worker فعال شد:",
+            registration.scope
           );
 
         })
+
         .catch(function(error){
 
-          console.log(
-            "خطا در Service Worker:",
+          console.error(
+            "❌ خطا در Service Worker:",
             error
           );
 
@@ -992,4 +1058,4 @@ if("serviceWorker" in navigator){
 }
 
 </script></body>
-</html>
+  </html>

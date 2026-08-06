@@ -1,11 +1,19 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
-<head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>لینک‌دونی کرمانشاه</title><!-- PWA --><link rel="manifest" href="./manifest.json">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>لینک‌دونی کرمانشاه</title>
+
+<!-- PWA -->
+<link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#6d20a8">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><style>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+<style>
 *{
   box-sizing:border-box;
   margin:0;
@@ -89,52 +97,53 @@ body{
     );
 
   border:1px solid rgba(255,255,255,.35);
-
-  box-shadow:
-    inset 1px 1px 2px rgba(255,255,255,.5),
-    inset -1px -1px 2px rgba(0,0,0,.3),
-    0 0 18px rgba(148,48,255,.25);
-
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
 }
 
 /* INSTALL BUTTON */
 
-.install-btn{
-  display:none;
+.install-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:16px;
+}
 
-  margin:15px auto 0;
-
-  padding:8px 13px;
+#installBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
 
   border:1px solid rgba(235,206,255,.45);
   border-radius:11px;
 
+  padding:8px 13px;
+
+  color:#fff;
   background:
     linear-gradient(
       135deg,
-      rgba(174,83,255,.65),
-      rgba(83,24,150,.75)
+      rgba(174,83,255,.72),
+      rgba(83,24,150,.78)
     );
 
-  color:#fff;
+  box-shadow:
+    0 0 16px rgba(145,43,255,.20),
+    inset 1px 1px 2px rgba(255,255,255,.35);
 
   font-family:Tahoma;
   font-size:10px;
   font-weight:bold;
 
   cursor:pointer;
-
-  box-shadow:
-    0 0 15px rgba(148,48,255,.22),
-    inset 1px 1px 2px rgba(255,255,255,.35);
-
-  transition:.2s;
 }
 
-.install-btn:active{
-  transform:scale(.95);
+#installBtn:active{
+  transform:scale(.96);
+}
+
+#installBtn.installed{
+  opacity:.7;
+  cursor:default;
 }
 
 /* HERO */
@@ -167,7 +176,6 @@ body{
   gap:6px;
   margin-top:22px;
   padding:6px;
-
   border-radius:17px;
 
   background:
@@ -183,9 +191,6 @@ body{
     inset 1px 1px 2px rgba(255,255,255,.4),
     inset -2px -2px 4px rgba(0,0,0,.5),
     0 0 25px rgba(131,38,255,.22);
-
-  backdrop-filter:blur(15px);
-  -webkit-backdrop-filter:blur(15px);
 }
 
 .search input{
@@ -282,11 +287,7 @@ main{
     0 10px 25px rgba(0,0,0,.4),
     0 0 20px rgba(132,42,255,.18);
 
-  backdrop-filter:blur(15px);
-  -webkit-backdrop-filter:blur(15px);
-
   cursor:pointer;
-  transition:.2s;
 }
 
 .category:active{
@@ -306,7 +307,7 @@ main{
   font-weight:bold;
 }
 
-/* BUTTONS */
+/* ACTIONS */
 
 .actions{
   display:grid;
@@ -344,12 +345,13 @@ main{
     0 0 25px rgba(151,45,255,.35);
 }
 
-.add-link{
-  background:linear-gradient(135deg,#9b42ec,#55149a);
-}
-
 .premium-link{
-  background:linear-gradient(135deg,#c35cff,#7019ad);
+  background:
+    linear-gradient(
+      135deg,
+      #c35cff,
+      #7019ad
+    );
 }
 
 /* CARDS */
@@ -381,9 +383,6 @@ main{
     inset 1px 1px 3px rgba(255,255,255,.35),
     inset -2px -2px 4px rgba(0,0,0,.4),
     0 10px 25px rgba(0,0,0,.35);
-
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
 }
 
 .avatar{
@@ -446,8 +445,6 @@ main{
   border:1px solid rgba(232,198,255,.4);
 }
 
-/* EMPTY */
-
 .empty{
   width:100%;
   padding:28px 15px;
@@ -468,16 +465,12 @@ main{
   border:1px solid rgba(255,255,255,.20);
 }
 
-/* FOOTER */
-
 footer{
   text-align:center;
   color:#817587;
   font-size:10px;
   padding:23px 10px 35px;
 }
-
-/* MOBILE */
 
 @media(max-width:420px){
 
@@ -503,7 +496,6 @@ footer{
   .hero h1{
     font-size:21px;
   }
-
 }
 
 @media(max-width:350px){
@@ -511,159 +503,225 @@ footer{
   .categories{
     grid-template-columns:1fr;
   }
-
 }
+</style>
+</head>
 
-</style></head><body><header class="header"><div class="container"><div class="top"><div class="logo">
+<body>
+
+<header class="header">
+
+<div class="container">
+
+<div class="top">
+
+<div class="logo">
 🔗 لینک‌دونی کرمانشاه
-</div><div class="top-links"><a href="admin.html">
+</div>
+
+<div class="top-links">
+
+<a href="admin.html">
 🛠️ مدیریت
-</a><a href="register.html">
+</a>
+
+<a href="register.html">
 👤 ورود
-</a></div></div><!-- دکمه نصب --><button
-id="installButton"
-class="install-btn"
+</a>
+
+</div>
+
+</div>
+
+<!-- دکمه نصب -->
+
+<div class="install-wrap">
+
+<button
+id="installBtn"
 type="button"
-
-«»
-
+onclick="installApp()"
+>
 📲 نصب برنامه
 </button>
 
-<div class="hero"><h1>
+</div>
+
+<div class="hero">
+
+<h1>
 لینک‌دونی کرمانشاه
-</h1><p>
+</h1>
+
+<p>
 گروه‌ها و کانال‌های روبیکای کرمانشاه را پیدا کن
 <br>
 معرفی، جستجو و ثبت لینک در یکجا
-</p></div><div class="search"><input
+</p>
+
+</div>
+
+<div class="search">
+
+<input
 id="searchInput"
 type="search"
 placeholder="نام گروه، کانال یا موضوع..."
-
-«»
+>
 
 <button
 type="button"
 onclick="searchLinks()"
-
-«»
-
+>
 جستجو
 </button>
 
-</div></div></header><main><div class="section-title"><h2>
+</div>
+
+</div>
+
+</header>
+
+
+<main>
+
+<div class="section-title">
+
+<h2>
 📂 دسته‌بندی‌ها
-</h2><span id="categoryText">
+</h2>
+
+<span id="categoryText">
 همه
-</span></div><div class="categories"><button
+</span>
+
+</div>
+
+
+<div class="categories">
+
+<button
 class="category"
 type="button"
 onclick="showCategory('all')"
-
-«»
-
+>
 <span class="icon">⭐</span>
+<span class="name">همه لینک‌ها</span>
+</button>
 
-<span class="name">
-همه لینک‌ها
-</span></button><button
+
+<button
 class="category"
 type="button"
 onclick="showCategory('group')"
-
-«»
-
+>
 <span class="icon">👥</span>
+<span class="name">گروه‌های روبیکا</span>
+</button>
 
-<span class="name">
-گروه‌های روبیکا
-</span></button><button
+
+<button
 class="category"
 type="button"
 onclick="showCategory('channel')"
-
-«»
-
+>
 <span class="icon">📢</span>
+<span class="name">کانال‌های روبیکا</span>
+</button>
 
-<span class="name">
-کانال‌های روبیکا
-</span></button><button
+
+<button
 class="category"
 type="button"
 onclick="showCategory('music')"
-
-«»
-
+>
 <span class="icon">🎵</span>
+<span class="name">موزیک</span>
+</button>
 
-<span class="name">
-موزیک
-</span></button><button
+
+<button
 class="category"
 type="button"
 onclick="showCategory('movie')"
-
-«»
-
+>
 <span class="icon">🎬</span>
+<span class="name">فیلم و سریال</span>
+</button>
 
-<span class="name">
-فیلم و سریال
-</span></button><button
+
+<button
 class="category"
 type="button"
 onclick="showCategory('game')"
-
-«»
-
+>
 <span class="icon">🎮</span>
+<span class="name">بازی و سرگرمی</span>
+</button>
 
-<span class="name">
-بازی و سرگرمی
-</span></button><button
+
+<button
 class="category"
 type="button"
 onclick="showCategory('education')"
-
-«»
-
+>
 <span class="icon">📚</span>
+<span class="name">آموزشی</span>
+</button>
 
-<span class="name">
-آموزشی
-</span></button></div><div class="actions"><a
+</div>
+
+
+<div class="actions">
+
+<a
 href="add-link.html"
-class="action add-link"
-
-«»
-
+class="action"
+>
 ➕ ثبت گروه یا کانال روبیکا
 </a>
+
 
 <a
 href="premium.html"
 class="action premium-link"
-
-«»
-
+>
 💎 ثبت لینک ویژه
 </a>
 
-</div><div class="section-title"><h2 id="listTitle">
+</div>
+
+
+<div class="section-title">
+
+<h2 id="listTitle">
 ⭐ لینک‌های منتخب
-</h2><span id="count">
+</h2>
+
+<span id="count">
 ۰ مورد
-</span></div><div
+</span>
+
+</div>
+
+
+<div
 id="userLinks"
 class="cards"
-></div></main><footer>
+></div>
+
+</main>
+
+
+<footer>
 © 2026 لینک‌دونی کرمانشاه
-</footer><script>
+</footer>
+
+
+<script>
 
 /* =========================
-   لینک‌های ذخیره شده
+   نمایش لینک‌ها
 ========================= */
 
 let savedLinks = [];
@@ -682,10 +740,6 @@ try{
 }
 
 
-/* =========================
-   ابزارها
-========================= */
-
 function clean(value){
 
   return String(value || "")
@@ -698,7 +752,6 @@ function clean(value){
 function escapeText(value){
 
   return String(value || "")
-
     .replace(/&/g,"&amp;")
     .replace(/</g,"&lt;")
     .replace(/>/g,"&gt;")
@@ -707,10 +760,6 @@ function escapeText(value){
 
 }
 
-
-/* =========================
-   نمایش لینک‌ها
-========================= */
 
 function renderLinks(list){
 
@@ -721,9 +770,7 @@ function renderLinks(list){
     document.getElementById("count");
 
   if(!box || !count){
-
     return;
-
   }
 
   box.innerHTML = "";
@@ -769,32 +816,15 @@ function renderLinks(list){
     const type =
       clean(item.type);
 
-
     const icon =
       type === "channel"
       ? "📢"
       : "👥";
 
-
     const typeName =
       type === "channel"
       ? "کانال"
       : "گروه";
-
-
-    const title =
-      item.title ||
-      "بدون نام";
-
-
-    const category =
-      item.category ||
-      "سایر";
-
-
-    const link =
-      item.link ||
-      "#";
 
 
     card.innerHTML = `
@@ -806,7 +836,7 @@ function renderLinks(list){
       <div class="card-info">
 
         <h3>
-          ${escapeText(title)}
+          ${escapeText(item.title || "بدون نام")}
         </h3>
 
         <div class="meta">
@@ -815,7 +845,7 @@ function renderLinks(list){
 
           <br>
 
-          📂 ${escapeText(category)}
+          📂 ${escapeText(item.category || "سایر")}
 
         </div>
 
@@ -823,7 +853,7 @@ function renderLinks(list){
 
       <a
         class="view"
-        href="${escapeText(link)}"
+        href="${escapeText(item.link || "#")}"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -840,10 +870,6 @@ function renderLinks(list){
 }
 
 
-/* =========================
-   دسته‌بندی
-========================= */
-
 function showCategory(type){
 
   let results;
@@ -853,16 +879,13 @@ function showCategory(type){
 
     results = savedLinks;
 
-    document
-      .getElementById("categoryText")
-      .innerText = "همه";
+    document.getElementById("categoryText").innerText = "همه";
 
-    document
-      .getElementById("listTitle")
-      .innerText =
+    document.getElementById("listTitle").innerText =
       "⭐ لینک‌های منتخب";
 
   }
+
 
   else if(
     type === "group" ||
@@ -877,22 +900,19 @@ function showCategory(type){
       });
 
 
-    document
-      .getElementById("categoryText")
-      .innerText =
+    document.getElementById("categoryText").innerText =
       type === "group"
       ? "گروه‌ها"
       : "کانال‌ها";
 
 
-    document
-      .getElementById("listTitle")
-      .innerText =
+    document.getElementById("listTitle").innerText =
       type === "group"
       ? "👥 گروه‌های روبیکا"
       : "📢 کانال‌های روبیکا";
 
   }
+
 
   else{
 
@@ -907,25 +927,18 @@ function showCategory(type){
     const names = {
 
       music:"🎵 موزیک",
-
       movie:"🎬 فیلم و سریال",
-
       game:"🎮 بازی و سرگرمی",
-
       education:"📚 آموزشی"
 
     };
 
 
-    document
-      .getElementById("categoryText")
-      .innerText =
+    document.getElementById("categoryText").innerText =
       names[type] || "دسته";
 
 
-    document
-      .getElementById("listTitle")
-      .innerText =
+    document.getElementById("listTitle").innerText =
       names[type] || "📂 دسته‌بندی";
 
   }
@@ -936,18 +949,12 @@ function showCategory(type){
 }
 
 
-/* =========================
-   جستجو
-========================= */
-
 function searchLinks(){
 
-  const input =
-    document.getElementById("searchInput");
-
-
   const keyword =
-    clean(input.value);
+    clean(
+      document.getElementById("searchInput").value
+    );
 
 
   if(keyword === ""){
@@ -973,20 +980,16 @@ function searchLinks(){
         String(item.type || "");
 
 
-      return clean(text)
-        .includes(keyword);
+      return clean(text).includes(keyword);
 
     });
 
 
-  document
-    .getElementById("categoryText")
-    .innerText = "جستجو";
+  document.getElementById("categoryText").innerText =
+    "جستجو";
 
 
-  document
-    .getElementById("listTitle")
-    .innerText =
+  document.getElementById("listTitle").innerText =
     "🔎 نتایج جستجو";
 
 
@@ -1011,26 +1014,22 @@ document
   );
 
 
-/* =========================
-   نمایش اولیه
-========================= */
-
 renderLinks(savedLinks);
 
 
 /* =========================
-   PWA INSTALL
+   PWA
 ========================= */
 
 let deferredPrompt = null;
 
-const installButton =
-  document.getElementById("installButton");
+const installBtn =
+  document.getElementById("installBtn");
 
 
 /*
-  Chrome وقتی برنامه قابلیت نصب داشته باشد
-  این رویداد را ارسال می‌کند.
+  این رویداد فقط وقتی اجرا می‌شود
+  که مرورگر واقعاً اجازه نصب PWA را بدهد.
 */
 
 window.addEventListener(
@@ -1041,82 +1040,94 @@ window.addEventListener(
 
     deferredPrompt = event;
 
-    if(installButton){
-
-      installButton.style.display = "block";
-
-    }
+    installBtn.style.display = "inline-flex";
 
   }
 );
 
 
-/*
-  کلیک روی دکمه نصب
-*/
+/* نصب */
 
-if(installButton){
+async function installApp(){
 
-  installButton.addEventListener(
-    "click",
-    async function(){
+  /*
+    اگر مرورگر پنجره نصب واقعی را آماده کرده باشد
+  */
 
-      if(!deferredPrompt){
+  if(deferredPrompt){
 
-        alert(
-          "📲 نصب مستقیم در حال حاضر توسط مرورگر آماده نیست.\n\n"+
-          "در Chrome از منوی سه‌نقطه، گزینه «افزودن به صفحه اصلی» یا «Install app» را انتخاب کنید."
-        );
+    deferredPrompt.prompt();
 
-        return;
+    const result =
+      await deferredPrompt.userChoice;
 
-      }
+    if(result.outcome === "accepted"){
 
+      installBtn.innerText =
+        "✅ نصب شد";
 
-      deferredPrompt.prompt();
-
-
-      const result =
-        await deferredPrompt.userChoice;
-
-
-      if(result.outcome === "accepted"){
-
-        installButton.style.display = "none";
-
-      }
-
-
-      deferredPrompt = null;
+      installBtn.classList.add("installed");
 
     }
+
+    deferredPrompt = null;
+
+    return;
+
+  }
+
+
+  /*
+    اگر قبلاً برنامه نصب شده باشد
+  */
+
+  if(
+    window.matchMedia(
+      "(display-mode: standalone)"
+    ).matches
+  ){
+
+    alert(
+      "✅ برنامه لینک‌دونی روی دستگاه شما نصب شده است."
+    );
+
+    return;
+
+  }
+
+
+  /*
+    اگر مرورگر دکمه نصب خودکار را
+    در اختیار صفحه قرار نداده باشد
+  */
+
+  alert(
+    "📲 برای نصب برنامه:\n\n" +
+    "در مرورگر روی منوی ⋮ بزنید و گزینه «افزودن به صفحه اصلی» یا «Install app» را انتخاب کنید."
   );
 
 }
 
 
-/*
-  اگر برنامه قبلاً نصب شده باشد
-*/
+/* وقتی برنامه نصب شد */
 
 window.addEventListener(
   "appinstalled",
   function(){
 
+    installBtn.innerText =
+      "✅ برنامه نصب شد";
+
+    installBtn.classList.add("installed");
+
     deferredPrompt = null;
-
-    if(installButton){
-
-      installButton.style.display = "none";
-
-    }
 
   }
 );
 
 
 /* =========================
-   SERVICE WORKER
+   Service Worker
 ========================= */
 
 if("serviceWorker" in navigator){
@@ -1148,5 +1159,7 @@ if("serviceWorker" in navigator){
 
 }
 
-</script></body>
+</script>
+
+</body>
 </html>

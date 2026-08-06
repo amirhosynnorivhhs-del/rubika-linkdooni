@@ -8,270 +8,180 @@ box-sizing:border-box;
 }
 
 body{
-
 margin:0;
-
-font-family:
-Tahoma,
-Arial,
-sans-serif;
-
+font-family:Tahoma,Arial,sans-serif;
 background:#f4f6fb;
-
 color:#172033;
-
 padding:20px;
-
 }
 
 .container{
-
 max-width:700px;
-
 margin:auto;
-
 }
 
 .header{
-
-background:
-linear-gradient(
-135deg,
-#4d5bea,
-#7138d8
-);
-
+background:linear-gradient(135deg,#4d5bea,#7138d8);
 color:white;
-
 padding:22px;
-
 border-radius:20px;
-
 margin-bottom:18px;
-
 }
 
 .header h1{
-
 margin:0 0 8px;
-
 font-size:20px;
-
 }
 
 .header p{
-
 margin:0;
-
 font-size:12px;
-
 opacity:.9;
-
 }
 
 .actions{
-
 display:flex;
-
 gap:10px;
-
 margin-bottom:18px;
-
 }
 
 .btn{
-
 flex:1;
-
 border:0;
-
 border-radius:12px;
-
 padding:13px;
-
 font-family:Tahoma;
-
 font-weight:bold;
-
 text-decoration:none;
-
 text-align:center;
-
 cursor:pointer;
-
 }
 
 .home{
-
 background:#172033;
-
 color:white;
-
 }
 
 .clear{
-
 background:#ffe8e8;
-
 color:#d33;
-
 }
 
 .stats{
-
 display:grid;
-
-grid-template-columns:
-1fr 1fr;
-
+grid-template-columns:1fr 1fr;
 gap:10px;
-
 margin-bottom:18px;
-
 }
 
 .stat{
-
 background:white;
-
 border-radius:16px;
-
 padding:18px;
-
 text-align:center;
-
 border:1px solid #e7e9f0;
-
 }
 
 .stat strong{
-
 display:block;
-
 font-size:22px;
-
 color:#4d55e8;
-
 margin-bottom:5px;
-
 }
 
 .stat span{
-
 font-size:11px;
-
 color:#777;
-
 }
 
 .requests{
-
 display:grid;
-
 gap:12px;
-
 }
 
 .request{
-
 background:white;
-
 border-radius:17px;
-
 padding:16px;
-
 border:1px solid #e7e9f0;
-
 }
 
 .request h3{
-
 margin:0 0 10px;
-
 font-size:15px;
-
 }
 
 .info{
-
 font-size:11px;
-
 line-height:2;
-
 color:#666;
+word-break:break-word;
+}
 
+.status{
+display:inline-block;
+margin-top:10px;
+padding:6px 9px;
+border-radius:8px;
+font-size:10px;
+font-weight:bold;
+}
+
+.waiting{
+background:#fff4d6;
+color:#9a6a00;
+}
+
+.approved{
+background:#dff7e8;
+color:#138342;
+}
+
+.rejected{
+background:#ffe2e2;
+color:#c62828;
 }
 
 .request-buttons{
-
 display:flex;
-
 gap:8px;
-
 margin-top:13px;
+}
 
+.approve,
+.reject{
+flex:1;
+border:0;
+border-radius:10px;
+padding:10px;
+font-family:Tahoma;
+cursor:pointer;
+font-weight:bold;
 }
 
 .approve{
-
-flex:1;
-
 background:#18a957;
-
 color:white;
-
-border:0;
-
-border-radius:10px;
-
-padding:10px;
-
-font-family:Tahoma;
-
-cursor:pointer;
-
 }
 
 .reject{
-
-flex:1;
-
 background:#ffe5e5;
-
 color:#d33;
-
-border:0;
-
-border-radius:10px;
-
-padding:10px;
-
-font-family:Tahoma;
-
-cursor:pointer;
-
 }
 
 .empty{
-
 background:white;
-
 border-radius:17px;
-
 padding:30px 15px;
-
 text-align:center;
-
 color:#777;
-
 font-size:13px;
-
 }
 
 </style></head><body><div class="container"><div class="header"><h1>
 🛠️ پنل مدیریت لینک‌دونی روبیکا
 </h1><p>
-مدیریت درخواست‌های ثبت لینک
+مدیریت درخواست‌های ثبت لینک ویژه
 </p></div><div class="actions"><a
 href="index.html"
 class="btn home"
@@ -287,7 +197,7 @@ onclick="clearRequests()"
 
 «»
 
-🗑️ پاک کردن درخواست‌ها
+🗑️ پاک کردن همه
 </button>
 
 </div><div class="stats"><div class="stat"><strong id="total">
@@ -305,229 +215,297 @@ id="requests"
 </div></div><script>
 
 
+/* دریافت درخواست‌ها */
+
 function getRequests(){
 
-return JSON.parse(
-localStorage.getItem("premiumRequests")
-) || [];
+    return JSON.parse(
+        localStorage.getItem("premiumRequests")
+    ) || [];
 
 }
 
 
+
+/* ذخیره درخواست‌ها */
+
+function saveRequests(requests){
+
+    localStorage.setItem(
+        "premiumRequests",
+        JSON.stringify(requests)
+    );
+
+}
+
+
+
+/* نمایش درخواست‌ها */
 
 function renderRequests(){
 
-let requests =
-getRequests();
+    const requests =
+        getRequests();
 
-let container =
-document.getElementById("requests");
+    const container =
+        document.getElementById("requests");
 
-let total =
-document.getElementById("total");
+    const total =
+        document.getElementById("total");
 
-let waiting =
-document.getElementById("waiting");
-
-
-total.innerText =
-requests.length;
+    const waiting =
+        document.getElementById("waiting");
 
 
-waiting.innerText =
-requests.filter(
-function(item){
+    total.innerText =
+        requests.length;
 
-return item.status ===
-"waiting";
+
+    waiting.innerText =
+        requests.filter(function(item){
+
+            return !item.status ||
+                   item.status === "waiting";
+
+        }).length;
+
+
+    container.innerHTML = "";
+
+
+    if(requests.length === 0){
+
+        container.innerHTML = `
+
+        <div class="empty">
+
+            📭
+
+            <br><br>
+
+            هنوز هیچ درخواستی ثبت نشده است.
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    requests.forEach(function(item,index){
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "request";
+
+
+        let status =
+            item.status || "waiting";
+
+
+        let statusText =
+            status === "approved"
+            ? "✅ تأیید شده"
+            : status === "rejected"
+            ? "❌ رد شده"
+            : "⏳ در انتظار بررسی";
+
+
+        card.innerHTML = `
+
+        <h3>
+            ${escapeHTML(item.title || "بدون نام")}
+        </h3>
+
+
+        <div class="info">
+
+            🔗 لینک:
+            ${escapeHTML(item.link || "-")}
+
+            <br>
+
+            📝 توضیحات:
+            ${escapeHTML(item.description || "بدون توضیحات")}
+
+            <br>
+
+            💰 مبلغ:
+            ${Number(item.amount || 50000).toLocaleString("fa-IR")}
+            تومان
+
+            <br>
+
+            📅 تاریخ:
+            ${escapeHTML(item.date || "-")}
+
+        </div>
+
+
+        <div class="status ${status}">
+            ${statusText}
+        </div>
+
+
+        ${
+            status === "waiting"
+            ? `
+
+            <div class="request-buttons">
+
+                <button
+                    class="approve"
+                    onclick="approveRequest(${index})"
+                >
+                    ✅ تأیید درخواست
+                </button>
+
+                <button
+                    class="reject"
+                    onclick="rejectRequest(${index})"
+                >
+                    ❌ رد درخواست
+                </button>
+
+            </div>
+
+            `
+            : ""
+        }
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
 
 }
-).length;
 
 
-container.innerHTML = "";
 
-
-if(requests.length === 0){
-
-container.innerHTML = `
-
-<div class="empty">
-
-📭
-
-<br><br>
-
-درخواستی برای نمایش وجود ندارد.
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-requests.forEach(
-function(item,index){
-
-let div =
-document.createElement("div");
-
-div.className =
-"request";
-
-
-let statusText =
-item.status === "approved"
-? "✅ تأیید شده"
-: item.status === "rejected"
-? "❌ رد شده"
-: "⏳ در انتظار بررسی";
-
-
-div.innerHTML = `
-
-<h3>
-${item.title || "بدون نام"}
-</h3>
-
-<div class="info">
-
-🔗 لینک:
-${item.link || "-"}
-
-<br>
-
-📝 توضیحات:
-${item.description || "بدون توضیحات"}
-
-<br>
-
-💰 مبلغ:
-${item.amount || 50000}
-تومان
-
-<br>
-
-📅 تاریخ:
-${item.date || "-"}
-
-<br>
-
-📌 وضعیت:
-${statusText}
-
-</div>
-
-
-<div class="request-buttons">
-
-<button
-class="approve"
-onclick="approveRequest(${index})"
->
-✅ تأیید
-</button>
-
-<button
-class="reject"
-onclick="rejectRequest(${index})"
->
-❌ رد
-</button>
-
-</div>
-
-`;
-
-
-container.appendChild(div);
-
-});
-
-}
-
-
+/* تأیید */
 
 function approveRequest(index){
 
-let requests =
-getRequests();
+    const requests =
+        getRequests();
 
 
-requests[index].status =
-"approved";
+    if(!requests[index]){
+        return;
+    }
 
 
-localStorage.setItem(
-"premiumRequests",
-JSON.stringify(requests)
-);
+    requests[index].status =
+        "approved";
 
 
-renderRequests();
+    saveRequests(requests);
 
-alert(
-"✅ درخواست تأیید شد."
-);
+    renderRequests();
+
+
+    alert(
+        "✅ درخواست تأیید شد."
+    );
 
 }
 
 
+
+/* رد */
 
 function rejectRequest(index){
 
-let requests =
-getRequests();
+    const requests =
+        getRequests();
 
 
-requests[index].status =
-"rejected";
+    if(!requests[index]){
+        return;
+    }
 
 
-localStorage.setItem(
-"premiumRequests",
-JSON.stringify(requests)
-);
+    requests[index].status =
+        "rejected";
 
 
-renderRequests();
+    saveRequests(requests);
 
-alert(
-"❌ درخواست رد شد."
-);
+    renderRequests();
+
+
+    alert(
+        "❌ درخواست رد شد."
+    );
 
 }
 
 
+
+/* پاک کردن همه */
 
 function clearRequests(){
 
-if(
-!confirm(
-"آیا مطمئن هستید همه درخواست‌ها پاک شوند؟"
-)
-){
+    const requests =
+        getRequests();
 
-return;
+
+    if(requests.length === 0){
+
+        alert(
+            "درخواستی برای پاک کردن وجود ندارد."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !confirm(
+            "آیا مطمئن هستید همه درخواست‌ها پاک شوند؟"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        "premiumRequests"
+    );
+
+
+    renderRequests();
 
 }
 
 
-localStorage.removeItem(
-"premiumRequests"
-);
 
+/* جلوگیری از ورود HTML مخرب */
 
-renderRequests();
+function escapeHTML(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 
 
-renderRequests();
+/* شروع */
 
+renderRequests();
 
 </script></body></html>

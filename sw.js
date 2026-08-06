@@ -1,14 +1,15 @@
-const CACHE_NAME = "linkdooni-v1";
+const CACHE_NAME = "rubika-linkdooni-v1";
 
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
-  "./manifest.json"
+  "./manifest.json",
+  "./sw.js"
 ];
 
-self.addEventListener("install", function(event) {
+self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
+    caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(FILES_TO_CACHE);
     })
   );
@@ -16,28 +17,24 @@ self.addEventListener("install", function(event) {
   self.skipWaiting();
 });
 
-self.addEventListener("activate", function(event) {
+self.addEventListener("activate", event => {
   event.waitUntil(
-    self.clients.claim()
-  );
-});
-
-self.addEventListener("fetch", function(event) {
-
-  if (event.request.method !== "GET") {
-    return;
-  }
-
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-
-      if (response) {
-        return response;
-      }
-
-      return fetch(event.request);
-
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys
+          .filter(key => key !== CACHE_NAME)
+          .map(key => caches.delete(key))
+      );
     })
   );
 
+  self.clients.claim();
+});
+
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    caches.match(event.request).then(cachedResponse => {
+      return cachedResponse || fetch(event.request);
+    })
+  );
 });
